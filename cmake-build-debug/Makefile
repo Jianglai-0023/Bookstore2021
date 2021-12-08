@@ -177,54 +177,6 @@ Bookstorebody/blocklist.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/blocklist.cpp.s
 .PHONY : Bookstorebody/blocklist.cpp.s
 
-Bookstorebody/bookstore.o: Bookstorebody/bookstore.cpp.o
-.PHONY : Bookstorebody/bookstore.o
-
-# target to build an object file
-Bookstorebody/bookstore.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/bookstore.cpp.o
-.PHONY : Bookstorebody/bookstore.cpp.o
-
-Bookstorebody/bookstore.i: Bookstorebody/bookstore.cpp.i
-.PHONY : Bookstorebody/bookstore.i
-
-# target to preprocess a source file
-Bookstorebody/bookstore.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/bookstore.cpp.i
-.PHONY : Bookstorebody/bookstore.cpp.i
-
-Bookstorebody/bookstore.s: Bookstorebody/bookstore.cpp.s
-.PHONY : Bookstorebody/bookstore.s
-
-# target to generate assembly for a file
-Bookstorebody/bookstore.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/bookstore.cpp.s
-.PHONY : Bookstorebody/bookstore.cpp.s
-
-Bookstorebody/usermanager.o: Bookstorebody/usermanager.cpp.o
-.PHONY : Bookstorebody/usermanager.o
-
-# target to build an object file
-Bookstorebody/usermanager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/usermanager.cpp.o
-.PHONY : Bookstorebody/usermanager.cpp.o
-
-Bookstorebody/usermanager.i: Bookstorebody/usermanager.cpp.i
-.PHONY : Bookstorebody/usermanager.i
-
-# target to preprocess a source file
-Bookstorebody/usermanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/usermanager.cpp.i
-.PHONY : Bookstorebody/usermanager.cpp.i
-
-Bookstorebody/usermanager.s: Bookstorebody/usermanager.cpp.s
-.PHONY : Bookstorebody/usermanager.s
-
-# target to generate assembly for a file
-Bookstorebody/usermanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/usermanager.cpp.s
-.PHONY : Bookstorebody/usermanager.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,12 +192,6 @@ help:
 	@echo "... Bookstorebody/blocklist.o"
 	@echo "... Bookstorebody/blocklist.i"
 	@echo "... Bookstorebody/blocklist.s"
-	@echo "... Bookstorebody/bookstore.o"
-	@echo "... Bookstorebody/bookstore.i"
-	@echo "... Bookstorebody/bookstore.s"
-	@echo "... Bookstorebody/usermanager.o"
-	@echo "... Bookstorebody/usermanager.i"
-	@echo "... Bookstorebody/usermanager.s"
 .PHONY : help
 
 

@@ -10,8 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/Bookstore.dir/Bookstorebody/Main.cpp.o"
   "/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/Bookstore.dir/Bookstorebody/blocklist.cpp.o"
-  "/Users/jianglai/Desktop/Bookstore/Bookstorebody/bookstore.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/Bookstore.dir/Bookstorebody/bookstore.cpp.o"
-  "/Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/Bookstore.dir/Bookstorebody/usermanager.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

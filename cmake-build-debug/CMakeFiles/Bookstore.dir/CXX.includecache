@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp
+iostream
+-
+blocklist.h
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
+fstream
+-
+cstring
+-
+vector
+-
+algorithm
+-
+
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
+fstream
+-
+

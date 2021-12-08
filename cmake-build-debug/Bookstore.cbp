@@ -91,18 +91,6 @@
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h">
 			<Option target="Bookstore"/>
 		</Unit>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/bookstore.cpp">
-			<Option target="Bookstore"/>
-		</Unit>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/bookstore.h">
-			<Option target="Bookstore"/>
-		</Unit>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.cpp">
-			<Option target="Bookstore"/>
-		</Unit>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.h">
-			<Option target="Bookstore"/>
-		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

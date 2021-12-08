@@ -1,8 +1,8 @@
 
 #ifndef BOOKSTORE_BLOCKLIST_H
 #define BOOKSTORE_BLOCKLIST_H
-#define BLOCK_SIZE 317
-#define BLOCK_SPLIT_THRESHOLD
+#define BLOCK_SIZE 634
+#define BLOCK_SPLIT_THRESHOLD 630
 #define BLOCK_SPLIT_LEFT 85
 #define BLOCK_MERGE_THRESHOLD 20
 #include<fstream>
@@ -16,6 +16,7 @@ public:
     char str[64];
 
     bool operator<(const UllNode &x) const;
+    bool operator>(const UllNode &x) const;
     // Compares str
 
     UllNode();
