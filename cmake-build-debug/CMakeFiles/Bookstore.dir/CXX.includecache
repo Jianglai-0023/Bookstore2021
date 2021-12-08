@@ -17,6 +17,10 @@ algorithm
 -
 cstring
 -
+vector
+-
+iostream
+-
 
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
 fstream

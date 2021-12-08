@@ -4,11 +4,12 @@
 #include<algorithm>
 #include<cstring>
 #include<vector>
+#include<iostream>
 using namespace ::std;
 
 fstream fileIndex;
 
-int addNums = 0;
+//int addNums = 0;
 int sizeofBlock = sizeof(UllBlock);
 int totalblock = 0;
 
@@ -34,6 +35,7 @@ UllBlock::UllBlock() {};
 
 
 void Ull::mergeBlock(const int &offset1, const int &offset2) {
+    //要求第一参数为pre，第二参数为nxt；
     UllBlock block1, block2, newblock;
     fileIndex.seekg(offset1);
     fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
@@ -53,15 +55,16 @@ void Ull::mergeBlock(const int &offset1, const int &offset2) {
     fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
 };
 
-void Ull::splitBlock(const int &offset) {//文件已打开
+void Ull::splitBlock(const int &offset) {
+    ++totalblock;//总块数+1
     UllBlock block, newblock;
     UllNode node;
     fileIndex.seekg(offset);//移动指针到指定位置
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-    int nums = block.num / 2;
+    int nums = BLOCK_SPLIT_LEFT;
     for (int i = nums; i < block.num; ++i) {//复制过程
         newblock.array[i - nums] = block.array[i];
-        block.array[i] = node;
+        block.array[i] = node;//可删去
     }
     //修改元素数量
     newblock.num = block.num - nums;
@@ -70,25 +73,20 @@ void Ull::splitBlock(const int &offset) {//文件已打开
     newblock.nxt = block.nxt;
     newblock.pre = offset;
     fileIndex.seekg(0, ios::end);
-    block.nxt = fileIndex.tellg();/*//todo*/
+    block.nxt = fileIndex.tellg();
     //写入两个block
+    fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
     fileIndex.seekg(offset);
     fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-    fileIndex.seekg(0, ios::end);
-    fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
 };
 
 void Ull::addNode(const UllNode &node) {
-    //分块操作
-//    fileIndex.open("books.index");
     UllBlock block;
     UllBlock block1, block2;
     if (totalblock == 0) {//第一个block
-        block.pre = 0;
         block.array[block.num] = node;
         ++totalblock;
         ++block.num;
-        sort(block.array, block.array + block.num);//维护数组有序
         fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
     } else if (totalblock == 1) {//只有一个block
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
@@ -97,7 +95,7 @@ void Ull::addNode(const UllNode &node) {
         sort(block.array, block.array + block.num);
         fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
         if (block.num > BLOCK_SPLIT_THRESHOLD) {
-            splitBlock(1);
+            splitBlock(0);
         }
     } else {//遍历链表头
         //特判：node比第一个链表头小
@@ -109,8 +107,10 @@ void Ull::addNode(const UllNode &node) {
             sort(block1.array, block1.array + block1.num);
             fileIndex.seekg(0);
             fileIndex.write(reinterpret_cast<char *>(&block1), sizeofBlock);
-        }
-            //正常遍历
+            if (block1.num > BLOCK_SPLIT_THRESHOLD) {
+                splitBlock(0);
+            }
+        }//正常遍历
         else {
             fileIndex.seekg(0);
             for (int i = 0; i < totalblock - 1; ++i) {
@@ -125,9 +125,11 @@ void Ull::addNode(const UllNode &node) {
                     sort(block1.array, block1.array + block1.num);
                     fileIndex.seekg(block2.pre);
                     fileIndex.write(reinterpret_cast<char *>(&block1), sizeofBlock);
+                    //判断分块
                     if (block1.num > BLOCK_SPLIT_THRESHOLD) {
                         splitBlock(block2.pre);
                     }
+                    //完成插入，退出循环
                     break;
                 } else if (i != totalblock - 2) {
                     fileIndex.seekg(block2.nxt);
@@ -152,7 +154,8 @@ void Ull::findNode(const std::string &key, std::vector<int> &array0) {
     bool haveread = false;
     while(true){
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-    if (strcmp(key.c_str(), block.array[0].str) <= 0 && strcmp(block.array[block.num - 1].str, key.c_str()) >= 0) {
+    std::cout << block.array[0].str << "here" << '\n';
+    if (strcmp(key.c_str(), block.array[0].str) >= 0 && strcmp(block.array[block.num - 1].str, key.c_str()) >= 0) {
         haveread = true;
         for (int i = 0; i < block.num; ++i) {
             if (strcmp(block.array[i].str, key.c_str()) == 0) {
@@ -162,12 +165,12 @@ void Ull::findNode(const std::string &key, std::vector<int> &array0) {
         if(block.nxt != -1){
             fileIndex.seekg(block.nxt);
         }
-        else break;
+        else break;//读到最后一块
     }
     else if(block.nxt != -1 && !haveread){
         fileIndex.seekg(block.nxt);
-    }
-    else break;
+    }//已经读过，未到末位
+    else break;//到达末尾/已经读过
 
     }
 };
@@ -198,7 +201,7 @@ int Ull::deleteNode(const UllNode &node) {
                         mergeBlock(block.pre,block_p.nxt);
                     }
                     else if(block.num + block_n.num < BLOCK_MERGE_THRESHOLD){
-                        mergeBlock(block.nxt,block_n.pre);
+                        mergeBlock(block_n.pre,block.nxt);
                     }
                         break;
                 }
