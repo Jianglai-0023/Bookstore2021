@@ -6,18 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp
-iostream
--
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp
 blocklist.h
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
-fstream
--
 cstring
 -
-vector
+fstream
 -
 algorithm
+-
+cstring
 -
 
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h

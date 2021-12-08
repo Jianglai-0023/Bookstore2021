@@ -5,8 +5,9 @@
 #include<vector>
 #include<algorithm>
 
+
+std::vector<int> answer;
 using namespace std;
-vector<int> answer;
 int main(){
     string command, index;
     Ull ull("books.index");
@@ -25,7 +26,7 @@ int main(){
         else if(command == "find"){
             cin >> index;
             ull.findNode(index,answer);
-//            sort(answer.begin(),answer.end(),answer);
+            sort(answer.begin(),answer.end(),answer);
             if(!answer.size()) cout << "null" << endl;
             else{
                 for(auto iter= answer.begin(); iter != answer.end(); ++iter){

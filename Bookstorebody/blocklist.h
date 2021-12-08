@@ -17,6 +17,9 @@ public:
 
     bool operator<(const UllNode &x) const;
     bool operator>(const UllNode &x) const;
+    bool operator<=(const UllNode &x) const;
+    bool operator>=(const UllNode &x) const;
+    bool operator==(const UllNode &x) const;
     // Compares str
 
     UllNode();
@@ -29,8 +32,8 @@ public:
 class UllBlock {
 // For ULL class internal use only
 public:
-    int nxt = 0;
-    int pre = 0;
+    int nxt = -1;
+    int pre = -1;
     int num = 0;
     //数组里读head和tail
 
@@ -71,7 +74,7 @@ public:
 
     ~Ull();
 
-    void findNode(const std::string &key, std::vector<int> &array);
+    void findNode(const std::string &key, std::vector<int> &array0);
     // Returns an empty array if the node doesn't exist
 
     void addNode(const UllNode &node);
