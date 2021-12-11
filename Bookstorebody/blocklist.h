@@ -7,6 +7,7 @@
 #define BLOCK_MERGE_THRESHOLD 300
 #include<fstream>
 #include<vector>
+void Test();
 class UllNode {
 // Stores key-value data
 // The data type of key is `int` and the data type
@@ -68,7 +69,7 @@ private:
 
     void mergeBlock(const int &offset1, const int &offset2);
 
-    void splitBlock(const int &offset);
+    void splitBlock(int offset);
 
 public:
     Ull(const std::string &arg);
