@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(Bookstorebody)
 
-add_executable(Bookstore
+add_executable(code
         Bookstorebody/blocklist.cpp
         Bookstorebody/blocklist.h
         Bookstorebody/Main.cpp

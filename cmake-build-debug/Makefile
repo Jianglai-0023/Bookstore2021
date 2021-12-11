@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Bookstore
+# Target rules for targets named code
 
 # Build rule for target.
-Bookstore: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Bookstore
-.PHONY : Bookstore
+code: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code
+.PHONY : code
 
 # fast build rule for target.
-Bookstore/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/build
-.PHONY : Bookstore/fast
+code/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/build
+.PHONY : code/fast
 
 Bookstorebody/Main.o: Bookstorebody/Main.cpp.o
 .PHONY : Bookstorebody/Main.o
 
 # target to build an object file
 Bookstorebody/Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/Main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Main.cpp.o
 .PHONY : Bookstorebody/Main.cpp.o
 
 Bookstorebody/Main.i: Bookstorebody/Main.cpp.i
@@ -142,7 +142,7 @@ Bookstorebody/Main.i: Bookstorebody/Main.cpp.i
 
 # target to preprocess a source file
 Bookstorebody/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/Main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Main.cpp.i
 .PHONY : Bookstorebody/Main.cpp.i
 
 Bookstorebody/Main.s: Bookstorebody/Main.cpp.s
@@ -150,7 +150,7 @@ Bookstorebody/Main.s: Bookstorebody/Main.cpp.s
 
 # target to generate assembly for a file
 Bookstorebody/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/Main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Main.cpp.s
 .PHONY : Bookstorebody/Main.cpp.s
 
 Bookstorebody/blocklist.o: Bookstorebody/blocklist.cpp.o
@@ -158,7 +158,7 @@ Bookstorebody/blocklist.o: Bookstorebody/blocklist.cpp.o
 
 # target to build an object file
 Bookstorebody/blocklist.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/blocklist.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.o
 .PHONY : Bookstorebody/blocklist.cpp.o
 
 Bookstorebody/blocklist.i: Bookstorebody/blocklist.cpp.i
@@ -166,7 +166,7 @@ Bookstorebody/blocklist.i: Bookstorebody/blocklist.cpp.i
 
 # target to preprocess a source file
 Bookstorebody/blocklist.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/blocklist.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.i
 .PHONY : Bookstorebody/blocklist.cpp.i
 
 Bookstorebody/blocklist.s: Bookstorebody/blocklist.cpp.s
@@ -174,7 +174,7 @@ Bookstorebody/blocklist.s: Bookstorebody/blocklist.cpp.s
 
 # target to generate assembly for a file
 Bookstorebody/blocklist.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bookstore.dir/build.make CMakeFiles/Bookstore.dir/Bookstorebody/blocklist.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.s
 .PHONY : Bookstorebody/blocklist.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Bookstore"
+	@echo "... code"
 	@echo "... Bookstorebody/Main.o"
 	@echo "... Bookstorebody/Main.i"
 	@echo "... Bookstorebody/Main.s"
