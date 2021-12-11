@@ -40,9 +40,9 @@ int main(){
             UllNode node(value,index);
             ull.deleteNode(node);
         }
-        else if(command == "test"){
-            Test();
-        }
+//        else if(command == "test"){
+//            Test();
+//        }
 
     }
 
