@@ -20,9 +20,13 @@ int main(){
             cin >> index >> value;
             //维护索引文件
             UllNode node(value,index);
+//            cout << node.position << "**"<< endl;
+//            cout << node.str << "**" << endl;
             ull.addNode(node);
         }
         else if(command == "find"){
+            answer.clear();
+//            cout << answer.size() << "yuy";
             cin >> index;
             ull.findNode(index,answer);
             if(!answer.size()) cout << "null" << endl;

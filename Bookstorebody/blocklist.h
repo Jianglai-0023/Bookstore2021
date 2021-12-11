@@ -4,7 +4,7 @@
 #define BLOCK_SIZE 634
 #define BLOCK_SPLIT_THRESHOLD 630
 #define BLOCK_SPLIT_LEFT 300
-#define BLOCK_MERGE_THRESHOLD 20
+#define BLOCK_MERGE_THRESHOLD 300
 #include<fstream>
 class UllNode {
 // Stores key-value data
@@ -41,7 +41,7 @@ public:
 
     UllBlock();
 
-    UllBlock &operator=(const UllBlock &right);
+//    UllBlock &operator=(const UllBlock &right);
 };
 
 
