@@ -1,13 +1,13 @@
 
 #ifndef BOOKSTORE_BLOCKLIST_H
 #define BOOKSTORE_BLOCKLIST_H
-#define BLOCK_SIZE 634
-#define BLOCK_SPLIT_THRESHOLD 630
-#define BLOCK_SPLIT_LEFT 300
-#define BLOCK_MERGE_THRESHOLD 300
+#define BLOCK_SIZE 4
+#define BLOCK_SPLIT_THRESHOLD 2
+#define BLOCK_SPLIT_LEFT 1
+#define BLOCK_MERGE_THRESHOLD 3
 #include<fstream>
 #include<vector>
-void Test();
+void Test(int x);
 class UllNode {
 // Stores key-value data
 // The data type of key is `int` and the data type

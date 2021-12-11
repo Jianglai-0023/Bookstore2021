@@ -16,12 +16,14 @@ int totalblock = 0;
 
 
 Ull::Ull(const std::string &arg) : file_name(arg) {
-    fileIndex.open(file_name);
-    if (!fileIndex.good()) {
-        fileIndex.open(file_name, ios::out);
-        fileIndex.close();
+    fileIndex.open(file_name,ios::out);
+    fileIndex.close();
         fileIndex.open(file_name);
-    }
+//    if (!fileIndex.good()) {
+//        fileIndex.open(file_name, ios::out);
+//        fileIndex.close();
+//        fileIndex.open(file_name);
+//    }
 };
 
 Ull::~Ull() {
@@ -214,9 +216,10 @@ void Ull::findNode(const std::string &key, std::vector<int> &array0) {
 int Ull::deleteNode(const UllNode &node) {
     UllBlock block;
     fileIndex.seekg(0);
+    fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+//    cout << block.nxt << "test" << block.pre << endl;
     //遍历block
     for (int i = 1; i <= totalblock; ++i) {
-        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
         //查找node;
         if (node >= block.array[0] && node <= block.array[block.num - 1]) {
             //删除node
@@ -254,6 +257,7 @@ int Ull::deleteNode(const UllNode &node) {
             break;
         }
         fileIndex.seekg(block.nxt);
+        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     }
 }
 
@@ -305,16 +309,18 @@ inline void Ull::delBlock(const int &offset) {
 
 };
 
-void Test() {
-    UllBlock block;
+void Test(int x) {
+    UllBlock block0;
     fileIndex.seekg(0);
-    fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+    fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
+    cout << block0.nxt << ' ' << "text" << endl;
+    cout << "______" << x << "______" << endl;
     for (int i = 0; i < totalblock; ++i) {
-        cout << "pre nxt" << ' ' << block.pre << ' ' << block.nxt << endl;
-        for (int j = 0; j < block.num; ++j) {
-            cout << block.array[j].str << endl;
+        cout << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << endl;
+        for (int j = 0; j < block0.num; ++j) {
+            cout << block0.array[j].str << endl;
         }
-        fileIndex.seekg(block.nxt);
-        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+        fileIndex.seekg(block0.nxt);
+        fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
     }
 }
