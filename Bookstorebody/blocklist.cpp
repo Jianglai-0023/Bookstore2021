@@ -13,17 +13,16 @@ fstream fileIndex;
 //int addNums = 0;
 int sizeofBlock = sizeof(UllBlock);
 int totalblock = 0;
-
+UllBlock block0;
 
 Ull::Ull(const std::string &arg) : file_name(arg) {
-    fileIndex.open(file_name,ios::out);
-    fileIndex.close();
+    fileIndex.open(file_name);
+    if (!fileIndex.good()) {
+        fileIndex.open(file_name, ios::out);
+        fileIndex.close();
         fileIndex.open(file_name);
-//    if (!fileIndex.good()) {
-//        fileIndex.open(file_name, ios::out);
-//        fileIndex.close();
-//        fileIndex.open(file_name);
-//    }
+    }
+//    cout << "open" <<' ' <<  fileIndex.bad() << endl;
 };
 
 Ull::~Ull() {
@@ -310,16 +309,16 @@ inline void Ull::delBlock(const int &offset) {
 };
 
 void Test(int x) {
-    UllBlock block0;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
-    cout << block0.nxt << ' ' << "text" << endl;
-    cout << "______" << x << "______" << endl;
+    cout << "______" << "______" << endl;
     for (int i = 0; i < totalblock; ++i) {
         cout << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << endl;
         for (int j = 0; j < block0.num; ++j) {
             cout << block0.array[j].str << endl;
         }
+        if(block0.nxt == -1)
+            return;
         fileIndex.seekg(block0.nxt);
         fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
     }
