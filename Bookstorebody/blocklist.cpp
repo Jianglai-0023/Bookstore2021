@@ -147,7 +147,7 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
         //开始只有一个block的情况
         fileIndex.seekg(0 + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-        if (node < block.array[0] && block.nxt != -1 || block.nxt == -1) {
+        if (node < block.array[0] && block.num != 0 || block.nxt == -1) {
             block.array[block.num] = node;
             ++block.num;
             sort(block.array, block.array + block.num);
@@ -197,6 +197,8 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
 };
 
 void Ull::findNode(const std::string &key, std::vector<int> &array0) {
+    fileIndex.seekg(0);
+    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     if(totalblock == 0) return;
     UllBlock block;
     fileIndex.seekg(0 + sizeofInt);
