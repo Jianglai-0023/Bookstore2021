@@ -249,7 +249,7 @@ int Ull::deleteNode(const UllNode &node) {
     UllBlock block;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-//    cout << block.nxt << "test" << block.pre << endl;
+    int index = 0;
     //遍历block
     for (int i = 1; i <= totalblock; ++i) {
         //查找node;
@@ -267,7 +267,7 @@ int Ull::deleteNode(const UllNode &node) {
             }
             --block.num;
             //写回文件
-            fileIndex.seekg((i - 1) * sizeofBlock);
+            fileIndex.seekg(index);
             fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
             //有前置block
             if (block.pre != -1) {
@@ -288,6 +288,7 @@ int Ull::deleteNode(const UllNode &node) {
             }
             break;
         }
+        index = block.nxt;
         fileIndex.seekg(block.nxt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     }
