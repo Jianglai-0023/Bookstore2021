@@ -1,12 +1,10 @@
 
 #ifndef BOOKSTORE_BLOCKLIST_H
 #define BOOKSTORE_BLOCKLIST_H
-
 #define BLOCK_SIZE 634
 #define BLOCK_SPLIT_THRESHOLD 630
 #define BLOCK_SPLIT_LEFT 300
 #define BLOCK_MERGE_THRESHOLD 300
-
 #include<fstream>
 #include<vector>
 void Test(int x);

@@ -142,24 +142,24 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
         ++block.num;
         fileIndex.seekg(0 + sizeofInt);
         fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-    } else if (totalblock == 1) {//只有一个block
-        fileIndex.seekg(0 + sizeofInt);
-        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-        block.array[block.num] = node;
-        ++block.num;
-        sort(block.array, block.array + block.num);
-        fileIndex.seekg(0 + sizeofInt);
-        fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-//        cout << block.num << ' ' << "num_test" << endl;
-//        cout  << block.array[0].str <<' ' << "block_array_add_test" << endl;
-        if (block.num > BLOCK_SPLIT_THRESHOLD) {
-            splitBlock(0);
-        }
+//    } else if (totalblock == 1) {//只有一个block
+//        fileIndex.seekg(0 + sizeofInt);
+//        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+//        block.array[block.num] = node;
+//        ++block.num;
+//        sort(block.array, block.array + block.num);
+//        fileIndex.seekg(0 + sizeofInt);
+//        fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
+//        if (block.num > BLOCK_SPLIT_THRESHOLD) {
+//            splitBlock(0);
+//        }
     } else {//遍历链表头
         //特判：node比第一个链表头小
+        //delete后只有一个block的情况
+        //开始只有一个block的情况
         fileIndex.seekg(0 + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-        if (node < block.array[0]) {
+        if (node < block.array[0] && block.nxt != -1 || block.nxt == -1) {
             block.array[block.num] = node;
             ++block.num;
             sort(block.array, block.array + block.num);
@@ -189,7 +189,7 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
                     }
                     //完成插入，退出循环
                     break;
-                } else if (i != totalblock - 2) {
+                } else if (block2.nxt != -1) {
                     fileIndex.seekg(block1.nxt + sizeofInt);
                     fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
                 } else {//特判：只能插入最后一个block
