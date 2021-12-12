@@ -1,581 +1,517 @@
-7______10______
-|pre nxt -1 568|1+2 
-|pre nxt 0 852|1+3 
-|pre nxt 568 1136|1+4 
-|pre nxt 852 1420|1+5 
-|pre nxt 1136 1704|1+6 
-|pre nxt 1420 -1|1+7 1+8 
-7______15______
-|pre nxt -1 1704|1+6 
-|pre nxt 0 -1|1+7 1+8 
-7______19______
-|pre nxt -1 -1|
-1 2 3 4 5 6 7 8 
-13______29______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______30______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______31______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______32______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______33______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______34______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______35______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______36______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______37______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______38______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______39______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______40______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______41______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______42______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______43______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______44______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______45______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______46______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______47______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______48______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______49______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______50______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______51______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______52______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______53______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______54______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______55______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______56______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______57______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______58______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______59______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______60______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______61______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______62______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______63______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______64______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______65______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______66______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______67______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______68______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______69______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______70______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______71______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______72______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______73______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______74______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______75______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______76______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______77______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______78______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______79______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______80______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______81______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______82______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______83______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______84______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______85______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______86______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______87______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______88______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______89______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______90______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______91______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______92______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______93______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______94______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______95______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______96______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______97______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______98______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
-13______99______
-|pre nxt -1 1988|1+1 
-|pre nxt 0 2272|1+2 
-|pre nxt 1988 2556|1+3 
-|pre nxt 2272 2840|1+4 
-|pre nxt 2556 3124|1+5 
-|pre nxt 2840 3408|1+6 
-|pre nxt 3124 -1|1+7 1+8 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+0 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+0 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+1 
+null
+null
+null
+null
+1 
+null
+null
+null
+null
+0 
+null
+null
+null
+null
+null
+null
+0 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+0 
+null
+null
+null
+null
+null
+0 
+0 
+null
+null
+null
+null
+null
+null
+null
+3 
+null
+null
+null
+null
+null
+0 
+0 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+0 
+null
+1 
+null
+null
+null
+null
+1 
+1 
+null
+null
+null
+null
+null
+null
+null
+null
+0 
+null
+0 
+0 
+null
+0 
+1 
+null
+null
+null
+null
+null
+0 1 
+null
+4 
+0 
+6 
+null
+null
+null
+null
+0 1 
+null
+null
+null
+3 
+0 
+4 
+0 1 
+null
+null
+null
+null
+0 
+1 
+0 
+null
+null
+0 
+null
+0 
+null
+null
+null
+null
+null
+null
+1 
+null
+null
+null
+null
+1 
+null
+0 
+0 
+null
+null
+null
+null
+null
+null
+0 
+null
+null
+null
+null
+0 
+null
+null
+3 
+null
+null
+null
+null
+1 
+null
+null
+0 
+null
+null
+null
+null
+0 
+null
+1 
+0 
+null
+null
+null
+0 1 
+4 
+null
+0 
+1 
+null
+null
+null
+null
+null
+null
+null
+4 
+null
+null
+null
+0 
+null
+null
+null
+0 
+4 
+null
+null
+0 
+null
+null
+1 
+0 1 
+0 
+null
+null
+1 2 
+null
+null
+null
+5 6 
+null
+null
+null
+null
+1 
+null
+null
+null
+0 
+null
+null
+0 
+null
+0 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+0 1 
+null
+null
+1 
+null
+1 
+0 
+null
+null
+null
+null
+null
+6 
+0 
+1 
+null
+null
+null
+0 
+null
+null
+1 
+0 
+null
+null
+null
+null
+null
+null
+null
+0 
+0 1 
+null
+null
+null
+0 
+0 
+null
+null
+0 1 
+null
+null
+null
+null
+null
+null
+6 
+null
+0 1 
+null
+null
+0 
+null
+null
+null
+null
+null
+0 
+2 
+null
+null
+5 6 
+null
+null
+null
+1 2 
+null
+null
+null
+null
+null
+null
+null
+0 
+4 
+null
+0 
+0 1 
+null
+2 
+0 
+1 
+null
+null
+null
+null
+0 
+null
+null
+0 
+null
+null
+null
+null
+2 
+1 
+0 
+2 
+4 
+null
+null
+0 1 
+null
+4 5 
+null
+1 2 3 
+3 4 
+null
+null
+null
+6 
+null
+null
+0 1 
+null
+0 
+null
+0 1 
+null
+null
+0 
+null
+null
+4 
+null
+null
+null
+0 
+0 
+null
+null
+1 
+null
+null
+null
+null
+0 1 
+0 
+null
+null
+null
+3 
+null
+null
+0 1 
+null
+0 
+null
+null
+null
+0 
+0 
+null
+null
+null
+0 
+null
+null
+null
+null
+null
+null
+1 
+null
+null
+2 
+null
+null
+null
+4 
+0 
+null
+null
+4 5 6 
+1 
+null
+null
+null
+null
+0 
+null
+null
+1 2 
+null
+null
+null
+0 
+0 
+null
+null
+null
+null
+3 4 
+3 
+1 
+null
+null
+0 
+null
+null
+null
+null
+null
+null
+null
+null
+null
+0 
+null
+1 
+null
+0 
+3 
+1 2 
+0 1 
+null
+null
+1 
+null
+null
+0 
+null
+5 6 
+0 
+null
+0 
+0 

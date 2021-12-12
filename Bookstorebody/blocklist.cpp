@@ -237,6 +237,7 @@ int Ull::deleteNode(const UllNode &node) {
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     if(block.num == 0) return 0;
     int index = 0;
+    bool havedeleted = false;
     //遍历block
     for (int i = 1; i <= totalblock; ++i) {
         //查找node;
@@ -244,16 +245,21 @@ int Ull::deleteNode(const UllNode &node) {
         if (node >= block.array[0] && node <= block.array[block.num - 1]) {
             //删除node
             //准备merge，分别与前后两个块合并
+            //可能找不到这个元素，不能--num
             UllBlock block_p, block_n;
             for (int j = 0; j < block.num; ++j) {
                 if (block.array[j] == node) {
+                    havedeleted = true;
                     for (int t = j; t < block.num - 1; ++t) {
                         block.array[t] = block.array[t + 1];
                     }
                     break;
                 }
             }
-            --block.num;
+            if(havedeleted == true){
+                --block.num;
+            }
+
             //写回文件
             fileIndex.seekg(index + sizeofInt);
             fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);

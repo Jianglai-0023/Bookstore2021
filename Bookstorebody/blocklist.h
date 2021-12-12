@@ -4,7 +4,7 @@
 #define BLOCK_SIZE 634
 #define BLOCK_SPLIT_THRESHOLD 630
 #define BLOCK_SPLIT_LEFT 300
-#define BLOCK_MERGE_THRESHOLD 300
+#define BLOCK_MERGE_THRESHOLD 290
 #include<fstream>
 #include<vector>
 void Test(int x);
