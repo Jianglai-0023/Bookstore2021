@@ -80,29 +80,44 @@ void Ull::mergeBlock(const int &offset1, const int &offset2) {
 
 void Ull::splitBlock(int offset) {
     ++totalblock;//总块数+1
-    UllBlock block, newblock;
-    UllNode node;
+    UllBlock block, newblock,block3;
+//    UllNode node;
     fileIndex.seekg(offset);//移动指针到指定位置//未读出第一个block
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-    int nums = BLOCK_SPLIT_LEFT;
-    for (int i = nums; i < block.num; ++i) {//复制过程
-        newblock.array[i - nums] = block.array[i];
-        block.array[i] = node;//可删去
+//    int nums = ;
+    for (int i = BLOCK_SPLIT_LEFT; i < block.num; ++i) {//复制过程
+        newblock.array[i - BLOCK_SPLIT_LEFT] = block.array[i];
+//        block.array[i] = node;//可删去
     }
     //修改元素数量
-    newblock.num = block.num - nums;
-    block.num = nums;
-    //改变节点
+    newblock.num = block.num - BLOCK_SPLIT_LEFT;
+    block.num = BLOCK_SPLIT_LEFT;
+    //本身是末位节点
+    if(block.nxt == -1){
     newblock.pre = offset;
+    newblock.nxt = block.nxt;
     block.nxt = (totalblock - 1) * sizeofBlock;
     //写入两个block
     fileIndex.seekg(block.nxt);
     fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
     fileIndex.seekg(offset);
     fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-//    fileIndex.seekg(0);
-//    fileIndex.read(reinterpret_cast<char *>(&newblock), sizeofBlock);
-//    cout << newblock.nxt << ' ' << newblock.pre << "&&" << endl;
+    }
+    //不是末位节点
+    else{
+        fileIndex.seekg(block.nxt);
+        fileIndex.read(reinterpret_cast<char *>(&block3), sizeofBlock);
+        newblock.nxt = block.nxt;
+        newblock.pre = offset;
+        block3.pre = (totalblock - 1) * sizeofBlock;
+        block.nxt = (totalblock - 1) * sizeofBlock;
+        fileIndex.seekg(block.nxt);
+        fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
+        fileIndex.seekg(offset);
+        fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
+        fileIndex.seekg(newblock.nxt);
+        fileIndex.write(reinterpret_cast<char *>(&block3), sizeofBlock);
+    }
 };
 
 void Ull::addNode(const UllNode &node) {
@@ -145,8 +160,8 @@ void Ull::addNode(const UllNode &node) {
         }//正常遍历
         else {
             fileIndex.seekg(0);
+            fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
             for (int i = 0; i < totalblock - 1; ++i) {
-                fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
                 int index = block1.nxt;
                 fileIndex.seekg(index);
                 fileIndex.read(reinterpret_cast<char *>(&block2), sizeofBlock);
@@ -165,6 +180,7 @@ void Ull::addNode(const UllNode &node) {
                     break;
                 } else if (i != totalblock - 2) {
                     fileIndex.seekg(block1.nxt);
+                    fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
                 } else {//特判：只能插入最后一个block
                     block2.array[block2.num] = node;
                     ++block2.num;
