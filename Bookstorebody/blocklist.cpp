@@ -42,7 +42,7 @@ UllBlock::UllBlock() {};
 
 void Ull::mergeBlock(const int &offset1, const int &offset2) {
     //要求第一参数为pre，第二参数为nxt；
-    UllBlock block1, block2, newblock;
+    UllBlock block1, block2, block3,newblock;
     fileIndex.seekg(offset1);
     fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
     fileIndex.seekg(offset2);
@@ -54,11 +54,28 @@ void Ull::mergeBlock(const int &offset1, const int &offset2) {
             newblock.array[i] = block2.array[i - block1.num];
         }
     }
+    //修改2或3个块的头节点，两种情况讨论
+    //后面仍有节点
+    if(block2.nxt != -1){
+        fileIndex.seekg(block2.nxt);
+        fileIndex.read(reinterpret_cast<char *>(&block3), sizeofBlock);
+        newblock.pre = block1.pre;
+        newblock.nxt = block2.nxt;
+        newblock.num = block1.num + block2.num;
+        block3.pre = offset1;
+        fileIndex.seekg(block2.nxt);
+//        cout << block2.nxt << "test" << endl;
+        fileIndex.write(reinterpret_cast<char *>(&block3), sizeofBlock);
+        fileIndex.seekg(offset1);
+        fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
+    }//后面无节点
+    else{
     newblock.pre = block1.pre;
     newblock.nxt = block2.nxt;
     newblock.num = block1.num + block2.num;
     fileIndex.seekg(offset1);
     fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
+    }
 };
 
 void Ull::splitBlock(int offset) {
@@ -311,12 +328,13 @@ inline void Ull::delBlock(const int &offset) {
 void Test(int x) {
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
-    cout << "______" << "______" << endl;
+    cout << "______" << x << "______" << endl;
     for (int i = 0; i < totalblock; ++i) {
-        cout << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << endl;
+        cout <<'|' << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << '|' ;
         for (int j = 0; j < block0.num; ++j) {
-            cout << block0.array[j].str << endl;
+            cout << block0.array[j].str <<'+' << block0.array[j].position << ' ';
         }
+        cout << endl;
         if(block0.nxt == -1)
             return;
         fileIndex.seekg(block0.nxt);
