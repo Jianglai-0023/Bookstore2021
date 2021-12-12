@@ -135,31 +135,19 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     UllBlock block1, block2;
     if (totalblock == 0) {//第一个block
         block.array[block.num] = node;
-//        cout << node.str <<' ' <<  "first_node" << endl;
         ++totalblock;
         fileIndex.seekg(0);
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
         ++block.num;
         fileIndex.seekg(0 + sizeofInt);
         fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-//    } else if (totalblock == 1) {//只有一个block
-//        fileIndex.seekg(0 + sizeofInt);
-//        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-//        block.array[block.num] = node;
-//        ++block.num;
-//        sort(block.array, block.array + block.num);
-//        fileIndex.seekg(0 + sizeofInt);
-//        fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-//        if (block.num > BLOCK_SPLIT_THRESHOLD) {
-//            splitBlock(0);
-//        }
     } else {//遍历链表头
         //特判：node比第一个链表头小
         //delete后只有一个block的情况
         //开始只有一个block的情况
         fileIndex.seekg(0 + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-        if (node < block.array[0] && block.nxt != -1 || block.nxt == -1) {
+        if (node < block.array[0] && block.num != 0 || block.nxt == -1) {
             block.array[block.num] = node;
             ++block.num;
             sort(block.array, block.array + block.num);
@@ -197,7 +185,6 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
                     ++block2.num;
                     sort(block2.array, block2.array + block2.num);
                     fileIndex.seekg(block1.nxt + sizeofInt);
-//                    cout << "QWQ" << ' ' << block1.nxt << endl;
                     fileIndex.write(reinterpret_cast<char *>(&block2), sizeofBlock);
                     if (block2.num > BLOCK_SPLIT_THRESHOLD) {
                         splitBlock(block1.nxt);
@@ -210,12 +197,14 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
 };
 
 void Ull::findNode(const std::string &key, std::vector<int> &array0) {
+    if(totalblock == 0) return;
     UllBlock block;
     fileIndex.seekg(0 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-//    cout << '$' << block.pre << ' ' << block.nxt << endl;
+    if(block.num == 0) return;
     bool haveread = false;
     while (true) {
+        if(strcmp(key.c_str(), block.array[0].str) < 0) return;
         if (strcmp(key.c_str(), block.array[0].str) >= 0 && strcmp(key.c_str(), block.array[block.num - 1].str) <= 0) {
             haveread = true;
             for (int i = 0; i < block.num; ++i) {
@@ -235,37 +224,22 @@ void Ull::findNode(const std::string &key, std::vector<int> &array0) {
         }
         else break;
     }
-//    while (true) {
-//        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-//        if (strcmp(key.c_str(), block.array[0].str) >= 0 && strcmp(block.array[block.num - 1].str, key.c_str()) >= 0) {
-//            for (int i = 0; i < block.num; ++i) {
-//                if (strcmp(block.array[i].str, key.c_str()) == 0) {
-//                    array0.push_back(block.array[i].position);
-//                }
-//            }
-//        }
-//        if (block.nxt != -1) {
-//                fileIndex.seekg(block.nxt);
-//        } else break;//读到最后一块
-//
-//        } else if (block.nxt != -1 && !haveread) {
-//            fileIndex.seekg(block.nxt);
-//        }//已经读过，未到末位
-//        else break;//到达末尾/已经读过
-
 }
 
 
 int Ull::deleteNode(const UllNode &node) {
+    if(totalblock == 0) return 0;
     UllBlock block;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     fileIndex.seekg(0 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+    if(block.num == 0) return 0;
     int index = 0;
     //遍历block
     for (int i = 1; i <= totalblock; ++i) {
         //查找node;
+        if(node < block.array[0]) return 0;
         if (node >= block.array[0] && node <= block.array[block.num - 1]) {
             //删除node
             //准备merge，分别与前后两个块合并
