@@ -13,8 +13,8 @@ int main(){
     Ull ull("books.index");
     int value;
     int n;
-//    freopen("1.in","r",stdin);
-//    freopen("1.out","w",stdout);
+    freopen("1.in","r",stdin);
+    freopen("1.out","w",stdout);
     cin >> n;
     for(int i = 0; i < n; ++i){
         cin >> command ;

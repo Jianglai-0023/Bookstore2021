@@ -202,9 +202,10 @@ void Ull::findNode(const std::string &key, std::vector<int> &array0) {
     fileIndex.seekg(0 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     if(block.num == 0) return;
+    if(strcmp(key.c_str(), block.array[0].str) < 0) return;
     bool haveread = false;
     while (true) {
-        if(strcmp(key.c_str(), block.array[0].str) < 0) return;
+//        if(strcmp(key.c_str(), block.array[0].str) < 0) return;
         if (strcmp(key.c_str(), block.array[0].str) >= 0 && strcmp(key.c_str(), block.array[block.num - 1].str) <= 0) {
             haveread = true;
             for (int i = 0; i < block.num; ++i) {
@@ -228,10 +229,10 @@ void Ull::findNode(const std::string &key, std::vector<int> &array0) {
 
 
 int Ull::deleteNode(const UllNode &node) {
-    if(totalblock == 0) return 0;
     UllBlock block;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
+    if(totalblock == 0) return 0;
     fileIndex.seekg(0 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     if(block.num == 0) return 0;
@@ -260,7 +261,7 @@ int Ull::deleteNode(const UllNode &node) {
             if (block.pre != -1) {
                 fileIndex.seekg(block.pre + sizeofInt);
                 fileIndex.read(reinterpret_cast<char *>(&block_p), sizeofBlock);
-                if (block.num + block_p.num < BLOCK_MERGE_THRESHOLD) {
+                if (block.num + block_p.num < BLOCK_MERGE_THRESHOLD || block.num == 0) {
                     mergeBlock(block.pre, block_p.nxt);
                     break;
                 }
@@ -268,7 +269,7 @@ int Ull::deleteNode(const UllNode &node) {
             if (block.nxt != -1) {
                 fileIndex.seekg(block.nxt + sizeofInt);
                 fileIndex.read(reinterpret_cast<char *>(&block_n), sizeofBlock);
-                if (block.num + block_n.num < BLOCK_MERGE_THRESHOLD) {
+                if (block.num + block_n.num < BLOCK_MERGE_THRESHOLD || block.num == 0) {
                     mergeBlock(block_n.pre, block.nxt);
                     break;
                 }
