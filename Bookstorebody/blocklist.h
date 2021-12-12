@@ -1,91 +1,66 @@
-
 #ifndef BOOKSTORE_BLOCKLIST_H
 #define BOOKSTORE_BLOCKLIST_H
 #define BLOCK_SIZE 634
-#define BLOCK_SPLIT_THRESHOLD 630
+#define BLOCK_MAX 630//use for split
+#define BLOCK_MIN 290//use for merge
 #define BLOCK_SPLIT_LEFT 300
-#define BLOCK_MERGE_THRESHOLD 290
+
 #include<fstream>
 #include<vector>
+
 void Test(int x);
-class UllNode {
-// Stores key-value data
-// The data type of key is `int` and the data type
-// of value is `char[64]`, but the constructor only
-// accepts `std::string` as value.
+
+class BlockNode {
+
 public:
+
     int position;
     char str[64];
 
-    bool operator<(const UllNode &x) const;
-    bool operator>(const UllNode &x) const;
-    bool operator<=(const UllNode &x) const;
-    bool operator>=(const UllNode &x) const;
-    bool operator==(const UllNode &x) const;
-    // Compares str
+    bool operator<(const BlockNode &x) const;
 
-    UllNode();
+    bool operator>(const BlockNode &x) const;
 
-    UllNode(const int &arg1, const std::string &arg2);
+    bool operator<=(const BlockNode &x) const;
 
-//    UllNode &operator=(const UllNode &right);
+    bool operator>=(const BlockNode &x) const;
+
+    bool operator==(const BlockNode &x) const;
+
+    BlockNode();
+
+    BlockNode(const int &index, const std::string &filename);
 };
 
-class UllBlock {
-// For ULL class internal use only
+class Block {
 public:
     int nxt = -1;
     int pre = -1;
     int num = 0;
-    //数组里读head和tail
-
-    UllNode array[BLOCK_SIZE];
-
-    UllBlock();
-
-//    UllBlock &operator=(const UllBlock &right);
+    //read head and tail from array
+    BlockNode array[BLOCK_SIZE];
+    Block();
 };
 
-
-
-
-
-
-
-class Ull {
-// 'Unrolled Linked List'
-// A data structure used for file data storage.
-// The advantage is that it is easy to write.
-// But it is inferior to 'B+ Tree' in performance.
+class Blocklist {
 private:
     const std::string file_name;
-    std::fstream fi, fo, fi2, fo2, fip, fip2, fop, fop2;
-    // File Input/Output fstream objects
-    // P for private methods
 
-    inline int nextBlock(const int &offset);
+    void MergeBlock(const int &offset1, const int &offset2);
 
-    inline void delBlock(const int &offset);
-
-    void mergeBlock(const int &offset1, const int &offset2);
-
-    void splitBlock(int offset);
+    void SplitBlock(int offset);
 
 public:
-    Ull(const std::string &arg);
 
-    ~Ull();
+    Blocklist(const std::string &arg);
 
-    void findNode(const std::string &key, std::vector<int> &array0);
-    // Returns an empty array if the node doesn't exist
+    ~Blocklist();
 
-    void addNode(const UllNode &node);
+    void AddNode(const BlockNode &BlockNode);
 
-    int deleteNode(const UllNode &node);
+    int DeleteNode(const BlockNode &BlockNode);
 
-#ifdef PPL_DEBUG
-    void debugPrint();
-#endif
+    void FindNode(const std::string &key, std::vector<int> &array0);
 
 };
 

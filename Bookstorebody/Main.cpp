@@ -4,30 +4,26 @@
 #include<cstring>
 #include<vector>
 #include<algorithm>
-
-
 std::vector<int> answer;
 using namespace std;
 int main(){
     string command, index;
-    Ull ull("books.index");
+    Blocklist blocklist("books.index");
     int value;
     int n;
-//    freopen("1.in","r",stdin);
-//    freopen("1.out","w",stdout);
     cin >> n;
     for(int i = 0; i < n; ++i){
         cin >> command ;
         if(command == "insert"){
             cin >> index >> value;
             //维护索引文件
-            UllNode node(value,index);
-            ull.addNode(node);
+            BlockNode node(value,index);
+            blocklist.AddNode(node);
         }
         else if(command == "find"){
             answer.clear();
             cin >> index;
-            ull.findNode(index,answer);
+            blocklist.FindNode(index,answer);
             if(!answer.size()) cout << "null" << endl;
             else{
                 for(auto iter= answer.begin(); iter != answer.end(); ++iter){
@@ -35,17 +31,12 @@ int main(){
                 }
                 cout << '\n';
             }
-
         }
         else if(command == "delete"){
             cin >> index >> value;
-            UllNode node(value,index);
-            ull.deleteNode(node);
+            BlockNode node(value,index);
+            blocklist.DeleteNode(node);
         }
-        else if(command == "test"){
-            Test(i);
-        }
-
     }
 
 }
