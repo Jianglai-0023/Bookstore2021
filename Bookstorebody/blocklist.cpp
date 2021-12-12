@@ -301,10 +301,12 @@ int Ull::deleteNode(const UllNode &node) {
             }
             break;
         }
+        if(block.nxt == -1) return 0;
         index = block.nxt;
         fileIndex.seekg(block.nxt + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     }
+    return 0;
 }
 
 
