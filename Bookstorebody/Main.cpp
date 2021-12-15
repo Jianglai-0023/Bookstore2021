@@ -1,5 +1,6 @@
 #include <iostream>
 #include "blocklist.h"
+#include "usermanager.h"
 #include<fstream>
 #include<cstring>
 #include<vector>
@@ -11,6 +12,8 @@ int main(){
     Blocklist blocklist("books.index");
     int value;
     int n;
+//    freopen("1.in", "r",stdin);
+//    freopen("1.out","w",stdout);
     cin >> n;
     for(int i = 0; i < n; ++i){
         cin >> command ;
@@ -24,6 +27,8 @@ int main(){
             answer.clear();
             cin >> index;
             blocklist.FindNode(index,answer);
+            cout << index << endl;
+            Test(i);
             if(!answer.size()) cout << "null" << endl;
             else{
                 for(auto iter= answer.begin(); iter != answer.end(); ++iter){

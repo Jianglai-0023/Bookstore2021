@@ -1,9 +1,9 @@
 #ifndef BOOKSTORE_BLOCKLIST_H
 #define BOOKSTORE_BLOCKLIST_H
-#define BLOCK_SIZE 634
-#define BLOCK_MAX 630//use for split
-#define BLOCK_MIN 290//use for merge
-#define BLOCK_SPLIT_LEFT 300
+#define BLOCK_SIZE 305
+#define BLOCK_MAX 300
+#define BLOCK_MIN 150
+#define BLOCK_SPLIT_LEFT 145
 
 #include<fstream>
 #include<vector>
