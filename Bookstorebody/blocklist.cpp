@@ -252,9 +252,9 @@ int Blocklist::DeleteNode(const BlockNode &node) {
                     break;
                 }
             }
-//            if(havedeleted == true){
+            if(havedeleted == true){
                 --block.num;
-//            }
+            }
 
             //写回文件
             fileIndex.seekg(index + sizeofInt);
