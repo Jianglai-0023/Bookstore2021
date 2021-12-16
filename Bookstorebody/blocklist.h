@@ -45,7 +45,7 @@ public:
 class Blocklist {
 private:
     const std::string file_name;
-
+    std::fstream fileIndex;
     void MergeBlock(const int &offset1, const int &offset2);
 
     void SplitBlock(int offset);

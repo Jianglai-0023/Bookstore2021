@@ -129,29 +129,53 @@ code/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/build
 .PHONY : code/fast
 
-Bookstorebody/Main.o: Bookstorebody/Main.cpp.o
-.PHONY : Bookstorebody/Main.o
+Bookstorebody/Bookstore_main.o: Bookstorebody/Bookstore_main.cpp.o
+.PHONY : Bookstorebody/Bookstore_main.o
 
 # target to build an object file
-Bookstorebody/Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Main.cpp.o
-.PHONY : Bookstorebody/Main.cpp.o
+Bookstorebody/Bookstore_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o
+.PHONY : Bookstorebody/Bookstore_main.cpp.o
 
-Bookstorebody/Main.i: Bookstorebody/Main.cpp.i
-.PHONY : Bookstorebody/Main.i
+Bookstorebody/Bookstore_main.i: Bookstorebody/Bookstore_main.cpp.i
+.PHONY : Bookstorebody/Bookstore_main.i
 
 # target to preprocess a source file
-Bookstorebody/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Main.cpp.i
-.PHONY : Bookstorebody/Main.cpp.i
+Bookstorebody/Bookstore_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.i
+.PHONY : Bookstorebody/Bookstore_main.cpp.i
 
-Bookstorebody/Main.s: Bookstorebody/Main.cpp.s
-.PHONY : Bookstorebody/Main.s
+Bookstorebody/Bookstore_main.s: Bookstorebody/Bookstore_main.cpp.s
+.PHONY : Bookstorebody/Bookstore_main.s
 
 # target to generate assembly for a file
-Bookstorebody/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Main.cpp.s
-.PHONY : Bookstorebody/Main.cpp.s
+Bookstorebody/Bookstore_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.s
+.PHONY : Bookstorebody/Bookstore_main.cpp.s
+
+Bookstorebody/Command.o: Bookstorebody/Command.cpp.o
+.PHONY : Bookstorebody/Command.o
+
+# target to build an object file
+Bookstorebody/Command.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Command.cpp.o
+.PHONY : Bookstorebody/Command.cpp.o
+
+Bookstorebody/Command.i: Bookstorebody/Command.cpp.i
+.PHONY : Bookstorebody/Command.i
+
+# target to preprocess a source file
+Bookstorebody/Command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Command.cpp.i
+.PHONY : Bookstorebody/Command.cpp.i
+
+Bookstorebody/Command.s: Bookstorebody/Command.cpp.s
+.PHONY : Bookstorebody/Command.s
+
+# target to generate assembly for a file
+Bookstorebody/Command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Command.cpp.s
+.PHONY : Bookstorebody/Command.cpp.s
 
 Bookstorebody/blocklist.o: Bookstorebody/blocklist.cpp.o
 .PHONY : Bookstorebody/blocklist.o
@@ -177,6 +201,30 @@ Bookstorebody/blocklist.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.s
 .PHONY : Bookstorebody/blocklist.cpp.s
 
+Bookstorebody/usermanager.o: Bookstorebody/usermanager.cpp.o
+.PHONY : Bookstorebody/usermanager.o
+
+# target to build an object file
+Bookstorebody/usermanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o
+.PHONY : Bookstorebody/usermanager.cpp.o
+
+Bookstorebody/usermanager.i: Bookstorebody/usermanager.cpp.i
+.PHONY : Bookstorebody/usermanager.i
+
+# target to preprocess a source file
+Bookstorebody/usermanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.i
+.PHONY : Bookstorebody/usermanager.cpp.i
+
+Bookstorebody/usermanager.s: Bookstorebody/usermanager.cpp.s
+.PHONY : Bookstorebody/usermanager.s
+
+# target to generate assembly for a file
+Bookstorebody/usermanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.s
+.PHONY : Bookstorebody/usermanager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... code"
-	@echo "... Bookstorebody/Main.o"
-	@echo "... Bookstorebody/Main.i"
-	@echo "... Bookstorebody/Main.s"
+	@echo "... Bookstorebody/Bookstore_main.o"
+	@echo "... Bookstorebody/Bookstore_main.i"
+	@echo "... Bookstorebody/Bookstore_main.s"
+	@echo "... Bookstorebody/Command.o"
+	@echo "... Bookstorebody/Command.i"
+	@echo "... Bookstorebody/Command.s"
 	@echo "... Bookstorebody/blocklist.o"
 	@echo "... Bookstorebody/blocklist.i"
 	@echo "... Bookstorebody/blocklist.s"
+	@echo "... Bookstorebody/usermanager.o"
+	@echo "... Bookstorebody/usermanager.i"
+	@echo "... Bookstorebody/usermanager.s"
 .PHONY : help
 
 

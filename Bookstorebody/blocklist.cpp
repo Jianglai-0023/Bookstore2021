@@ -8,7 +8,7 @@
 
 using namespace ::std;
 
-fstream fileIndex;
+//fstream fileIndex;
 
 int sizeofInt = sizeof(int);
 int sizeofBlock = sizeof(Block);
@@ -329,23 +329,23 @@ bool BlockNode::operator==(const BlockNode &x) const {
 
 
 
-void Test(int x) {
-    Block block0;
-    fileIndex.seekg(0);
-    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
-    cout << totalblock;
-    fileIndex.seekg(0 + sizeofInt);
-    fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
-    cout << "______" << x << "______" << endl;
-    for (int i = 0; i < totalblock; ++i) {
-        cout <<'|' << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << '|' ;
-        for (int j = 0; j < block0.num; ++j) {
-            cout << block0.array[j].str <<'+' << block0.array[j].position << ' ';
-        }
-        cout << endl;
-        if(block0.nxt == -1)
-            return;
-        fileIndex.seekg(block0.nxt + sizeofInt);
-        fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
-    }
-}
+//void Test(int x) {
+//    Block block0;
+//    fileIndex.seekg(0);
+//    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
+//    cout << totalblock;
+//    fileIndex.seekg(0 + sizeofInt);
+//    fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
+//    cout << "______" << x << "______" << endl;
+//    for (int i = 0; i < totalblock; ++i) {
+//        cout <<'|' << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << '|' ;
+//        for (int j = 0; j < block0.num; ++j) {
+//            cout << block0.array[j].str <<'+' << block0.array[j].position << ' ';
+//        }
+//        cout << endl;
+//        if(block0.nxt == -1)
+//            return;
+//        fileIndex.seekg(block0.nxt + sizeofInt);
+//        fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
+//    }
+//}

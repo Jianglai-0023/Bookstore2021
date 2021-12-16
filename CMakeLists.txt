@@ -8,5 +8,7 @@ include_directories(Bookstorebody)
 add_executable(code
         Bookstorebody/blocklist.cpp
         Bookstorebody/blocklist.h
-        Bookstorebody/Main.cpp
+        Bookstorebody/Bookstore_main.cpp
+        Bookstorebody/Command.cpp
+        Bookstorebody/usermanager.cpp
         )

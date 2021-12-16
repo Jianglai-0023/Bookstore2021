@@ -8,23 +8,25 @@ using namespace std;
 
 class UserSelect{
 public:
-    char ID[30];
-
-    int index_user;
-
-    int priority;
-
-    char isbn[20];
-
-    int index_book;
-
-    bool bookselected_ = false;
 
     UserSelect();
 
     UserSelect(string id);
 
     ~UserSelect();
+private:
+    char ID[31];
+
+    int index_user;
+
+    int priority;
+
+    char isbn[21];
+
+    int index_book;
+
+    bool bookselected_ = false;
+
 };
 
 
@@ -34,7 +36,14 @@ private:
 
     vector<string> command_words;
 
+    //priority{0,1,3,7}
+    //begin as 0;
+    int priority_now = 0;
+
 public:
+
+    void Init();
+
     void Run(string command);
 
     string SplitString(string &before, string after, int devidedbykey = 0);

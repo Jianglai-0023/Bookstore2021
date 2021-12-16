@@ -79,32 +79,62 @@ CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp -o CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.s
 
-CMakeFiles/code.dir/Bookstorebody/Main.cpp.o: CMakeFiles/code.dir/flags.make
-CMakeFiles/code.dir/Bookstorebody/Main.cpp.o: ../Bookstorebody/Main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/code.dir/Bookstorebody/Main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/code.dir/Bookstorebody/Main.cpp.o -c /Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp
+CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o: ../Bookstorebody/Bookstore_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o -c /Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp
 
-CMakeFiles/code.dir/Bookstorebody/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/Bookstorebody/Main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp > CMakeFiles/code.dir/Bookstorebody/Main.cpp.i
+CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp > CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.i
 
-CMakeFiles/code.dir/Bookstorebody/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/Bookstorebody/Main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp -o CMakeFiles/code.dir/Bookstorebody/Main.cpp.s
+CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp -o CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.s
+
+CMakeFiles/code.dir/Bookstorebody/Command.cpp.o: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/Bookstorebody/Command.cpp.o: ../Bookstorebody/Command.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/code.dir/Bookstorebody/Command.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/code.dir/Bookstorebody/Command.cpp.o -c /Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp
+
+CMakeFiles/code.dir/Bookstorebody/Command.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/Bookstorebody/Command.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp > CMakeFiles/code.dir/Bookstorebody/Command.cpp.i
+
+CMakeFiles/code.dir/Bookstorebody/Command.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/Bookstorebody/Command.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp -o CMakeFiles/code.dir/Bookstorebody/Command.cpp.s
+
+CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o: ../Bookstorebody/usermanager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o -c /Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.cpp
+
+CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.cpp > CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.i
+
+CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.cpp -o CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.s
 
 # Object files for target code
 code_OBJECTS = \
 "CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.o" \
-"CMakeFiles/code.dir/Bookstorebody/Main.cpp.o"
+"CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o" \
+"CMakeFiles/code.dir/Bookstorebody/Command.cpp.o" \
+"CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o"
 
 # External object files for target code
 code_EXTERNAL_OBJECTS =
 
 code: CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.o
-code: CMakeFiles/code.dir/Bookstorebody/Main.cpp.o
+code: CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o
+code: CMakeFiles/code.dir/Bookstorebody/Command.cpp.o
+code: CMakeFiles/code.dir/Bookstorebody/usermanager.cpp.o
 code: CMakeFiles/code.dir/build.make
 code: CMakeFiles/code.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable code"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/code.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

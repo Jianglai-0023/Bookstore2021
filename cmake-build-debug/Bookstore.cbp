@@ -82,13 +82,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Main.cpp">
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.h">
 			<Option target="code"/>
 		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/CMakeLists.txt">
