@@ -201,6 +201,54 @@ Bookstorebody/blocklist.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.s
 .PHONY : Bookstorebody/blocklist.cpp.s
 
+Bookstorebody/file.o: Bookstorebody/file.cpp.o
+.PHONY : Bookstorebody/file.o
+
+# target to build an object file
+Bookstorebody/file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/file.cpp.o
+.PHONY : Bookstorebody/file.cpp.o
+
+Bookstorebody/file.i: Bookstorebody/file.cpp.i
+.PHONY : Bookstorebody/file.i
+
+# target to preprocess a source file
+Bookstorebody/file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/file.cpp.i
+.PHONY : Bookstorebody/file.cpp.i
+
+Bookstorebody/file.s: Bookstorebody/file.cpp.s
+.PHONY : Bookstorebody/file.s
+
+# target to generate assembly for a file
+Bookstorebody/file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/file.cpp.s
+.PHONY : Bookstorebody/file.cpp.s
+
+Bookstorebody/lubang.o: Bookstorebody/lubang.cpp.o
+.PHONY : Bookstorebody/lubang.o
+
+# target to build an object file
+Bookstorebody/lubang.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/lubang.cpp.o
+.PHONY : Bookstorebody/lubang.cpp.o
+
+Bookstorebody/lubang.i: Bookstorebody/lubang.cpp.i
+.PHONY : Bookstorebody/lubang.i
+
+# target to preprocess a source file
+Bookstorebody/lubang.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/lubang.cpp.i
+.PHONY : Bookstorebody/lubang.cpp.i
+
+Bookstorebody/lubang.s: Bookstorebody/lubang.cpp.s
+.PHONY : Bookstorebody/lubang.s
+
+# target to generate assembly for a file
+Bookstorebody/lubang.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/lubang.cpp.s
+.PHONY : Bookstorebody/lubang.cpp.s
+
 Bookstorebody/usermanager.o: Bookstorebody/usermanager.cpp.o
 .PHONY : Bookstorebody/usermanager.o
 
@@ -243,6 +291,12 @@ help:
 	@echo "... Bookstorebody/blocklist.o"
 	@echo "... Bookstorebody/blocklist.i"
 	@echo "... Bookstorebody/blocklist.s"
+	@echo "... Bookstorebody/file.o"
+	@echo "... Bookstorebody/file.i"
+	@echo "... Bookstorebody/file.s"
+	@echo "... Bookstorebody/lubang.o"
+	@echo "... Bookstorebody/lubang.i"
+	@echo "... Bookstorebody/lubang.s"
 	@echo "... Bookstorebody/usermanager.o"
 	@echo "... Bookstorebody/usermanager.i"
 	@echo "... Bookstorebody/usermanager.s"

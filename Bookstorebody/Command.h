@@ -4,6 +4,15 @@
 #include<vector>
 #include<cstring>
 using namespace std;
+class Book_error {
+public:
+    Book_error();
+
+    const char *what() const { return message; }
+
+private:
+    const char *message;
+};
 
 
 class UserSelect{
@@ -14,7 +23,7 @@ public:
     UserSelect(string id);
 
     ~UserSelect();
-private:
+//private:
     char ID[31];
 
     int index_user;
@@ -32,7 +41,7 @@ private:
 
 class CommandManager{
 private:
-    vector<class UserSelect> userselect;
+    vector<class UserSelect> user_select;
 
     vector<string> command_words;
 
@@ -46,9 +55,11 @@ public:
 
     void Run(string command);
 
-    string SplitString(string &before, string after, int devidedbykey = 0);
+//    string SplitString(string &before, string after, int devidedbykey = 0);
 
-    bool CheckPriority(UserSelect);
+    bool CheckPriority(string com);
+
+//    bool CheckSentence(const vector<string> sentence);
 
     CommandManager();
 

@@ -8,7 +8,7 @@
 #include<fstream>
 #include<vector>
 
-void Test(int x);
+//void Test(int x);
 
 class BlockNode {
 
