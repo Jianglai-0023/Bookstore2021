@@ -9,6 +9,17 @@
 #include<iostream>
 
 using namespace std;
+
+class Book_error {
+public:
+    Book_error();
+
+    const char *what() const { return message; }
+
+private:
+    const char *message;
+};
+
 class Lubang{
 
 public:

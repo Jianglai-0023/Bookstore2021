@@ -13,8 +13,6 @@ using namespace std;
 int main() {
     string command;
     CommandManager commandManager;
-    File user("userbasic.dat");
-    Blocklist index_user("index_id");
     getline(cin, command);
     try {
     commandManager.Run(command);

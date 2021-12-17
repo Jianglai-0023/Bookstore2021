@@ -26,11 +26,9 @@ Blocklist::Blocklist(const std::string &a0) : file_name(a0) {
         totalblock = 0;
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
     }
+    fileIndex.close();
 };
 
-Blocklist::~Blocklist() {
-    fileIndex.close();
-}
 
 BlockNode::BlockNode(const int &index, const std::string &filename) {
     position = index;
@@ -45,6 +43,7 @@ Block::Block() {};
 
 void Blocklist::MergeBlock(const int &index1, const int &index2) {
     //要求第一参数为pre，第二参数为nxt；
+    fileIndex.open(file_name);
     Block block1, block2, block3,newblock;
     fileIndex.seekg(index1 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
@@ -78,9 +77,11 @@ void Blocklist::MergeBlock(const int &index1, const int &index2) {
     fileIndex.seekg(index1 + sizeofInt);
     fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
     }
+    fileIndex.close();
 };
 
 void Blocklist::SplitBlock(int index) {
+    fileIndex.open(file_name);
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     ++totalblock;//总块数+1
@@ -121,9 +122,11 @@ void Blocklist::SplitBlock(int index) {
         fileIndex.seekg(newblock.nxt + sizeofInt);
         fileIndex.write(reinterpret_cast<char *>(&block3), sizeofBlock);
     }
+    fileIndex.close();
 };
 
 void Blocklist::AddNode(const BlockNode &node) {
+    fileIndex.open(file_name);
 fileIndex.seekg(0);
 fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     Block block;
@@ -189,9 +192,11 @@ fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
             }
         }
     }
+    fileIndex.close();
 };
 
 void Blocklist::FindNode(const std::string &key, std::vector<int> &array0) {
+    fileIndex.open(file_name);
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     if(totalblock == 0) return;
@@ -221,10 +226,12 @@ void Blocklist::FindNode(const std::string &key, std::vector<int> &array0) {
         }
         else break;
     }
+    fileIndex.close();
 }
 
 
 int Blocklist::DeleteNode(const BlockNode &node) {
+    fileIndex.open(file_name);
     Block block;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
@@ -283,6 +290,7 @@ int Blocklist::DeleteNode(const BlockNode &node) {
         fileIndex.seekg(block.nxt + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     }
+    fileIndex.close();
     return 0;
 }
 

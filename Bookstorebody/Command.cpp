@@ -4,7 +4,7 @@
 #include"usermanager.h"
 #include"file.h"
 #include "lubang.h"
-Book_error::Book_error():message("Invalid"){};
+//Book_error::Book_error():message("Invalid"){};
 
 UserSelect::UserSelect(string id) {
     //todo
@@ -15,41 +15,30 @@ UserSelect::UserSelect() {}
 
 UserSelect::~UserSelect() {}
 
-void CommandManager::Init() {
-    //add root
-    User root("root", "root", "sjtu", 7);
-    //add root to file
-    File user("userbasic.dat");
-    Blocklist index_user("index_id");
-    user.W
-
-    BlockNode rootnode;
-    index_user.AddNode();
-
-
-}
+CommandManager::CommandManager() {}
 
 
 bool CommandManager::CheckPriority(string com) {
     if(com == "su"){
-
+        return true;
     }
-    else if(com == "logout"){
+    if(com == "logout"){
        if(priority_now < 1) return false;
-       if(user_select.empty()) return false;
        return true;
     }
     else if(com == "register"){
-
+       return true;
     }
     else if(com == "passwd"){
-
+        if(priority_now < 1) return false;
+        return true;
     }
     else if(com == "useradd"){
-
+        if(priority_now < 3) return false;
+        return true;
     }
     else if(com == "delete"){
-        if(priority_now != 7) return false;
+        if(priority_now < 7) return false;
         return true;
     }
         //Booksystem
@@ -106,30 +95,57 @@ void CommandManager::Run(string command){
     //run
     else{
         //UserManager
+        priority_now = usersystem.Tell_priority();
         if(command_words[0] == "su"){
+            if(!lubang_check.checkSentence(command_words)) throw Book_error();
+            if(command_words.size() == 2){
+                usersystem.Su(command_words[1]);
+            }
+            else {
+                usersystem.Su(command_words[1],command_words[2]);
+            }
 
         }
         else if(command_words[0] == "logout"){
             if(!lubang_check.checkSentence(command_words)) throw Book_error();
             if (!CheckPriority(command_words[0])) throw Book_error();
             else {
-                user_select.pop_back();
-                priority_now = user_select[user_select.size() - 1].priority;
+                usersystem.Logout();
             }
         }
         else if(command_words[0] == "register"){
-
+            if(!lubang_check.checkSentence(command_words)) throw Book_error();
+            if (!CheckPriority(command_words[0])) throw Book_error();
+            else{
+                usersystem.Register(command_words[1],command_words[2],command_words[3]);
+            }
         }
         else if(command_words[0] == "passwd"){
-
+            if(!lubang_check.checkSentence(command_words)) throw Book_error();
+            if (!CheckPriority(command_words[0])) throw Book_error();
+            else{
+                if(command_words.size() == 4){
+                    usersystem.Passwd(command_words[1],command_words[3],command_words[2]);
+                }
+                else{
+                    usersystem.Passwd(command_words[1],command_words[2]);
+                }
+            }
         }
         else if(command_words[0] == "useradd"){
-
+            if(!lubang_check.checkSentence(command_words)) throw Book_error();
+            if (!CheckPriority(command_words[0])) throw Book_error();
+            else{
+               usersystem.UserAdd(command_words[1],command_words[2],command_words[3],command_words[4]);
+            }
         }
         else if(command_words[0] == "delete"){
             //lubang
-            if(user_select.size() != 2) throw Book_error();
+            if(!lubang_check.checkSentence(command_words)) throw Book_error();
             if (!CheckPriority(command_words[0])) throw Book_error();
+            else{
+                usersystem.Delete(command_words[1]);
+            }
 
         }
         //Booksystem

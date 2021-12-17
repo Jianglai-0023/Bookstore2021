@@ -1,6 +1,8 @@
 #include "lubang.h"
 
 
+Book_error::Book_error():message("Invalid"){};
+
 bool Lubang::checkWord(const char c, int n) {
     if(n == 0){
         if(c >= '0'&& c <='9' || c >='a' && c <= 'z' || c>= 'A' && c <= 'Z' || c == '_') return true;

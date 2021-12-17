@@ -3,16 +3,18 @@
 
 #include<vector>
 #include<cstring>
+#include"file.h"
+#include"usermanager.h"
 using namespace std;
-class Book_error {
-public:
-    Book_error();
-
-    const char *what() const { return message; }
-
-private:
-    const char *message;
-};
+//class Book_error {
+//public:
+//    Book_error();
+//
+//    const char *what() const { return message; }
+//
+//private:
+//    const char *message;
+//};
 
 
 class UserSelect{
@@ -41,9 +43,11 @@ public:
 
 class CommandManager{
 private:
-    vector<class UserSelect> user_select;
+//    vector<class UserSelect> user_select;
 
     vector<string> command_words;
+
+    Usersystem usersystem;
 
     //priority{0,1,3,7}
     //begin as 0;
