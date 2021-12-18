@@ -85,6 +85,12 @@
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp">
 			<Option target="code"/>
 		</Unit>

@@ -14,10 +14,12 @@ class Book_error {
 public:
     Book_error();
 
-    const char *what() const { return message; }
+    Book_error(string s);
+
+    string what() const { return message; }
 
 private:
-    const char *message;
+    string message;
 };
 
 class Lubang{

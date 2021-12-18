@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o"
+  "/Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/code.dir/Bookstorebody/Booksystem.cpp.o"
   "/Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/code.dir/Bookstorebody/Command.cpp.o"
   "/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.o"
   "/Users/jianglai/Desktop/Bookstore/Bookstorebody/file.cpp" "/Users/jianglai/Desktop/Bookstore/cmake-build-debug/CMakeFiles/code.dir/Bookstorebody/file.cpp.o"

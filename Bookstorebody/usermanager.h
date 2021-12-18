@@ -12,7 +12,6 @@ public:
 
     UserSelect();
 
-    UserSelect(string id);
 
     ~UserSelect();
 //private:
@@ -42,9 +41,9 @@ public:
 //public:
     User();
 
-    User(string id, string name, string password, int p);
+    User(string id,  string password, string priority,string name);
 
-    User(string name, string password, int p);
+    User(string id,  string password, int priority,string name);
 
 };
 
@@ -74,5 +73,9 @@ public:
     void Delete(string user_ID);
 
     int Tell_priority();
+
+    void UserSelectBook(int book_index);
+
+    int BookNow();
 };
 #endif //BOOKSTORE_USERMANAGER_H

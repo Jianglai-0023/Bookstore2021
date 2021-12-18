@@ -13,4 +13,6 @@ add_executable(code
         Bookstorebody/usermanager.cpp
         Bookstorebody/file.cpp
         Bookstorebody/lubang.cpp
+        Bookstorebody/Booksystem.cpp
+
         )

@@ -10,7 +10,9 @@ private:
     int sizeofInt = sizeof(int);
 public:
 
-    File(string file_name):file_name_(file_name){};
+    File(string file_name):file_name_(file_name){
+        Initialize();
+    };
 
     void Initialize(){
         file.open(file_name_);
@@ -18,7 +20,7 @@ public:
             file.open(file_name_, ios::out);
             file.close();
             file.open(file_name_);
-            file.seekg(0);
+
         }
         file.close();
         WriteInfo(0);
