@@ -18,7 +18,7 @@ int main() {
             commandManager.Run(command);
         }
         catch (Book_error er) {
-            cout <<"Error:" << er.what() << endl;
+            cout << "Error:" << er.what() << endl;
         }
     };
 }

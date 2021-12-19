@@ -12,7 +12,9 @@
 class Book {
 public:
     Book();
+
     Book(string isbn);
+
     char isbn_[21];
 
     char name_[61];
@@ -28,9 +30,9 @@ public:
 
     int quantity_;
 
-    bool operator <(Book b){
-        if(strcmp(isbn_,b.isbn_) == 0) return false;
-        else if(strcmp(isbn_,b.isbn_) < 0) return true;
+    bool operator<(Book b) {
+        if (strcmp(isbn_, b.isbn_) == 0) return false;
+        else if (strcmp(isbn_, b.isbn_) < 0) return true;
         return false;
     };
 
@@ -54,32 +56,34 @@ private:
 
     vector<int> book_key;
 
+    vector<string> keyword_;
+
 public:
     BookSystem();
 
-    void showISBN(string isbn,vector<Book> &res);
+    void showISBN(string isbn);
 
-    void showName(string name,vector<Book> &res);
+    void showName(string name);
 
-    void showAuthor(string author,vector<Book> &res);
+    void showAuthor(string author);
 
-    void showKeyword(string keyword,vector<Book> &res);
+    void showKeyword(string keyword);
 
     void showAll();
 
     void Print(vector<Book> &res);
 
-    void Buy(string isbn,int quantity);
-
+    void Buy(string isbn, int quantity);
 
     int Select(string isbn);
 
-    void Modify(string isbn,string name,string author,string keyword, string price,int index);
+    void Modify(string isbn, string name, string author, string keyword, string price, int index);
 
-    void Import(int quantity,int index);
+    void Import(int quantity, int index);
+
+    void ReturnKeyWord(string s, std::vector<string> word);
 
 };
-
 
 
 #endif //BOOKSTORE_BOOKSYSTEM_H

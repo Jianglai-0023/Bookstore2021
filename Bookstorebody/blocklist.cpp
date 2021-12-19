@@ -15,7 +15,6 @@ int sizeofBlock = sizeof(Block);
 int totalblock;
 
 
-
 Blocklist::Blocklist(const std::string &a0) : file_name(a0) {
     fileIndex.open(file_name);
     if (!fileIndex.good()) {
@@ -44,7 +43,7 @@ Block::Block() {};
 void Blocklist::MergeBlock(const int &index1, const int &index2) {
     //要求第一参数为pre，第二参数为nxt；
     fileIndex.open(file_name);
-    Block block1, block2, block3,newblock;
+    Block block1, block2, block3, newblock;
     fileIndex.seekg(index1 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block1), sizeofBlock);
     fileIndex.seekg(index2 + sizeofInt);
@@ -58,7 +57,7 @@ void Blocklist::MergeBlock(const int &index1, const int &index2) {
     }
     //修改2或3个块的头节点，两种情况讨论
     //后面仍有节点
-    if(block2.nxt != -1){
+    if (block2.nxt != -1) {
         fileIndex.seekg(block2.nxt + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block3), sizeofBlock);
         newblock.pre = block1.pre;
@@ -70,12 +69,12 @@ void Blocklist::MergeBlock(const int &index1, const int &index2) {
         fileIndex.seekg(index1 + sizeofInt);
         fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
     }//后面无节点
-    else{
-    newblock.pre = block1.pre;
-    newblock.nxt = block2.nxt;
-    newblock.num = block1.num + block2.num;
-    fileIndex.seekg(index1 + sizeofInt);
-    fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
+    else {
+        newblock.pre = block1.pre;
+        newblock.nxt = block2.nxt;
+        newblock.num = block1.num + block2.num;
+        fileIndex.seekg(index1 + sizeofInt);
+        fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
     }
     fileIndex.close();
 };
@@ -87,7 +86,7 @@ void Blocklist::SplitBlock(int index) {
     ++totalblock;//总块数+1
     fileIndex.seekg(0);
     fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
-    Block block, newblock,block3;
+    Block block, newblock, block3;
     fileIndex.seekg(index + sizeofInt);//移动指针到指定位置//未读出第一个block
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
     for (int i = BLOCK_SPLIT_LEFT; i < block.num; ++i) {//复制过程
@@ -97,18 +96,18 @@ void Blocklist::SplitBlock(int index) {
     newblock.num = block.num - BLOCK_SPLIT_LEFT;
     block.num = BLOCK_SPLIT_LEFT;
     //本身是末位节点
-    if(block.nxt == -1){
-    newblock.pre = index;
-    newblock.nxt = block.nxt;
-    block.nxt = (totalblock - 1) * sizeofBlock;
-    //写入两个block
-    fileIndex.seekg(block.nxt + sizeofInt);
-    fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
-    fileIndex.seekg(index + sizeofInt);
-    fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
+    if (block.nxt == -1) {
+        newblock.pre = index;
+        newblock.nxt = block.nxt;
+        block.nxt = (totalblock - 1) * sizeofBlock;
+        //写入两个block
+        fileIndex.seekg(block.nxt + sizeofInt);
+        fileIndex.write(reinterpret_cast<char *>(&newblock), sizeofBlock);
+        fileIndex.seekg(index + sizeofInt);
+        fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
     }
-    //不是末位节点
-    else{
+        //不是末位节点
+    else {
         fileIndex.seekg(block.nxt + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block3), sizeofBlock);
         newblock.nxt = block.nxt;
@@ -127,8 +126,8 @@ void Blocklist::SplitBlock(int index) {
 
 void Blocklist::AddNode(const BlockNode &node) {
     fileIndex.open(file_name);
-fileIndex.seekg(0);
-fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
+    fileIndex.seekg(0);
+    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     Block block;
     Block block1, block2;
     if (totalblock == 0) {//第一个block
@@ -199,12 +198,12 @@ void Blocklist::FindNode(const std::string &key, std::vector<int> &array0) {
     fileIndex.open(file_name);
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
-    if(totalblock == 0) return;
+    if (totalblock == 0) return;
     Block block;
     fileIndex.seekg(0 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-    if(block.num == 0) return;
-    if(strcmp(key.c_str(), block.array[0].str) < 0) return;
+    if (block.num == 0) return;
+    if (strcmp(key.c_str(), block.array[0].str) < 0) return;
     bool haveread = false;
     while (true) {
         if (strcmp(key.c_str(), block.array[0].str) >= 0 && strcmp(key.c_str(), block.array[block.num - 1].str) <= 0) {
@@ -214,37 +213,54 @@ void Blocklist::FindNode(const std::string &key, std::vector<int> &array0) {
                     array0.push_back(block.array[i].position);
                 }
             }
-            if(block.nxt != -1){
+            if (block.nxt != -1) {
                 fileIndex.seekg(block.nxt + sizeofInt);
                 fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-            }
-            else break;
-        }
-        else if (block.nxt != -1 && !haveread) {
+            } else break;
+        } else if (block.nxt != -1 && !haveread) {
             fileIndex.seekg(block.nxt + sizeofInt);
             fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-        }
-        else break;
+        } else break;
     }
     fileIndex.close();
 }
 
+void Blocklist::FindAll(std::vector<int> &array0) {
+    fileIndex.open(file_name);
+    fileIndex.seekg(0);
+    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
+    if (totalblock == 0) return;
+    Block block;
+    fileIndex.seekg(0 + sizeofInt);
+    fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+    if (block.num == 0) return;
+    while (true) {
+        for (int i = 0; i < block.num; ++i) {
+            array0.push_back(block.array[i].position);
+        }
+        if (block.nxt == -1) return;
+        fileIndex.seekg(block.nxt + sizeofInt);
+        fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
+    }
+    fileIndex.close();
+
+}
 
 int Blocklist::DeleteNode(const BlockNode &node) {
     fileIndex.open(file_name);
     Block block;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
-    if(totalblock == 0) return 0;
+    if (totalblock == 0) return 0;
     fileIndex.seekg(0 + sizeofInt);
     fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);
-    if(block.num == 0) return 0;
+    if (block.num == 0) return 0;
     int index = 0;
     bool havedeleted = false;
     //遍历block
     for (int i = 1; i <= totalblock; ++i) {
         //查找node;
-        if(node < block.array[0]) return 0;
+        if (node < block.array[0]) return 0;
         if (node >= block.array[0] && node <= block.array[block.num - 1]) {
             //删除node
             //准备merge，分别与前后两个块合并
@@ -259,7 +275,7 @@ int Blocklist::DeleteNode(const BlockNode &node) {
                     break;
                 }
             }
-            if(havedeleted == true){
+            if (havedeleted == true) {
                 --block.num;
             }
 
@@ -285,7 +301,7 @@ int Blocklist::DeleteNode(const BlockNode &node) {
             }
             break;
         }
-        if(block.nxt == -1) return 0;
+        if (block.nxt == -1) return 0;
         index = block.nxt;
         fileIndex.seekg(block.nxt + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block), sizeofBlock);

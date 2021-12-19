@@ -70,10 +70,13 @@ public:
 
     bool CheckPriority(string com);
 
-    int stringToint(string q);
+    int StringToInt(string q);
 
-    int stringTodouble(string q);
-//    bool CheckSentence(const vector<string> sentence);
+    string ReturnRight(string s);
+
+    string ReturnLeft(string s);
+
+
 
     CommandManager();
 

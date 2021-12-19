@@ -63,6 +63,7 @@ public:
 
     void FindNode(const std::string &key, std::vector<int> &array0);
 
+    void FindAll(std::vector<int> &array0);
 };
 
 

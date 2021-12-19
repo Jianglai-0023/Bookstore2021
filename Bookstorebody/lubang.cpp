@@ -3,7 +3,7 @@
 
 Book_error::Book_error() : message("Invalid") {};
 
-Book_error::Book_error(const string s){
+Book_error::Book_error(const string s) {
     message = s;
 }
 

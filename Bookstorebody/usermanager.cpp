@@ -38,10 +38,12 @@ Usersystem::Usersystem() : file_user_data("user_data"), file_user_index("user_in
     file_user_index.FindNode("root", debug);
     file_user_data.Add(root);
 };
+
 int Usersystem::BookNow() {
-    if(!user_select_[user_select_.size() - 1].bookselected_) return -1;
+    if (!user_select_[user_select_.size() - 1].bookselected_) return -1;
     return user_select_[user_select_.size() - 1].index_book;
 }
+
 int Usersystem::Tell_priority() {
     if (user_select_.empty()) return 0;
     return user_select_[user_select_.size() - 1].priority;

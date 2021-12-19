@@ -85,9 +85,36 @@ void CommandManager::DealString(string command) {
     word.clear();
 }
 
-int CommandManager::stringToint(string q) {
+string CommandManager::ReturnRight(string s) {
+    string right;
+    right.clear();
+    bool flag = false;
+    for (int i = 0; i < s.length(); ++i) {
+        if (s[i] == '=') flag = true;
+        if (!flag) continue;
+        else {
+            right += s[i];
+        }
+    }
+    return right;
+}
+
+string CommandManager::ReturnLeft(string s) {
+    string right;
+    right.clear();
+    for (int i = 0; i < s.length(); ++i) {
+        if (s[i] == '=') break;
+        else {
+            right += s[i];
+        }
+    }
+    return right;
+}
+
+
+int CommandManager::StringToInt(string q) {
     int ans = 0;
-    for(int i = 0; i < q.length(); ++i){
+    for (int i = 0; i < q.length(); ++i) {
         ans *= 10;
         ans += q[i] - '0';
     }
@@ -148,14 +175,23 @@ void CommandManager::Run(string command) {
         }
             //Booksystem
         else if (command_words[0] == "show") {
+            if (!lubang_check.checkSentence(command_words)) throw Book_error("show_checkSen");
+            if (!CheckPriority(command_words[0])) throw Book_error("show_prio");
+            else {
+                if (command_words.size() == 1) booksystem.showAll();
+                else if (command_words[1][1] == 'I')booksystem.showISBN(ReturnRight(command_words[1]));
+                else if (command_words[1][1] == 'n')booksystem.showName(ReturnRight(command_words[1]));
+                else if (command_words[1][1] == 'a')booksystem.showAuthor(ReturnRight(command_words[1]));
+                else if (command_words[1][1] == 'k')booksystem.showKeyword(ReturnRight(command_words[1]));
 
+            }
         } else if (command_words[0] == "buy") {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("buy_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("buy_prio");
             else {
                 int quantity;
-                quantity = stringToint(command_words[2]);
-                booksystem.Buy(command_words[1],quantity);
+                quantity = StringToInt(command_words[2]);
+                booksystem.Buy(command_words[1], quantity);
             }
 
         } else if (command_words[0] == "select") {
@@ -171,16 +207,16 @@ void CommandManager::Run(string command) {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("modify_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("modify_prio");
             else {
-                if(usersystem.BookNow() == -1) throw Book_error("modify: no book is selected");
+                if (usersystem.BookNow() == -1) throw Book_error("modify: no book is selected");
 
             }
         } else if (command_words[0] == "import") {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("import_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("import_prio");
             else {
-                if(usersystem.BookNow() == -1) throw Book_error("import: no book is selected");
-                int quantity = stringToint(command_words[1]);
-                booksystem.Import(quantity,usersystem.BookNow());
+                if (usersystem.BookNow() == -1) throw Book_error("import: no book is selected");
+                int quantity = StringToInt(command_words[1]);
+                booksystem.Import(quantity, usersystem.BookNow());
             }
         }
             //LogSystem
