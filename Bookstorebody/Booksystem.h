@@ -77,11 +77,17 @@ public:
 
     int Select(string isbn);
 
-    void Modify(string isbn, string name, string author, string keyword, string price, int index);
+//    void Modify(string isbn, string name, string author, string keyword, string price, int index);
+
+    void Modify(const vector<string> &command, int index);
 
     void Import(int quantity, int index);
 
     void ReturnKeyWord(string s, std::vector<string> word);
+
+    string ReturnRight(string s);
+
+    int StringToInt(string q);
 
 };
 

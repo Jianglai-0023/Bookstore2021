@@ -11,7 +11,30 @@ BookSystem::BookSystem() : file_book_data("book_data"), file_isbn_index("isbn_in
 Book::Book(string isbn) {
     strcpy(isbn_, isbn.c_str());
 }
-
+string BookSystem::ReturnRight(string s){
+    string right;
+    right.clear();
+    bool flag = false;
+    for (int i = 0; i < s.length(); ++i) {
+        if (s[i] == '='){
+            flag = true;
+            continue;
+        }
+        if (!flag) continue;
+        else {
+            right += s[i];
+        }
+    }
+    return right;
+};
+int BookSystem::StringToInt(string q) {
+    int ans = 0;
+    for (int i = 0; i < q.length(); ++i) {
+        ans *= 10;
+        ans += q[i] - '0';
+    }
+    return ans;
+}
 void BookSystem::ReturnKeyWord(string s, std::vector<string> word) {
     string key;
     word.clear();
@@ -132,8 +155,25 @@ int BookSystem::Select(string isbn) {
     }
 }
 
-void BookSystem::Modify(string isbn, string name, string author, string keyword, string price, int index) {
-//todo
+
+void BookSystem::Modify(const vector<string> &command, int index) {
+    Book bookm;
+    file_book_data.Read(bookm,index);
+    for(int i = 1; i < command.size(); ++i){
+        if(command[i][1] == 'I') strcpy(bookm.isbn_, ReturnRight(command[i]).c_str());
+        else if(command[i][1] == 'a') strcpy(bookm.author_, ReturnRight(command[i]).c_str());
+        else if(command[i][1] == 'p') bookm.price_ = StringToInt(command[i]);
+        else if(command[i][1] == 'n') strcpy(bookm.name_, ReturnRight(command[i]).c_str());
+        else if(command[i][1] == 'k'){
+            vector<string> word;
+            ReturnKeyWord(ReturnRight(command[i]), word);
+            bookm.n_ = word.size();
+            for(int j = 0;j < bookm.n_; ++j){
+                strcpy(bookm.keyword_[j],word[j].c_str());
+            }
+        }
+
+    }
 }
 
 void BookSystem::Import(int quantity, int index) {

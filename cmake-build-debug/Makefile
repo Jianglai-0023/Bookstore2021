@@ -201,6 +201,30 @@ Bookstorebody/Command.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Command.cpp.s
 .PHONY : Bookstorebody/Command.cpp.s
 
+Bookstorebody/Logsystem.o: Bookstorebody/Logsystem.cpp.o
+.PHONY : Bookstorebody/Logsystem.o
+
+# target to build an object file
+Bookstorebody/Logsystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Logsystem.cpp.o
+.PHONY : Bookstorebody/Logsystem.cpp.o
+
+Bookstorebody/Logsystem.i: Bookstorebody/Logsystem.cpp.i
+.PHONY : Bookstorebody/Logsystem.i
+
+# target to preprocess a source file
+Bookstorebody/Logsystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Logsystem.cpp.i
+.PHONY : Bookstorebody/Logsystem.cpp.i
+
+Bookstorebody/Logsystem.s: Bookstorebody/Logsystem.cpp.s
+.PHONY : Bookstorebody/Logsystem.s
+
+# target to generate assembly for a file
+Bookstorebody/Logsystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/Bookstorebody/Logsystem.cpp.s
+.PHONY : Bookstorebody/Logsystem.cpp.s
+
 Bookstorebody/blocklist.o: Bookstorebody/blocklist.cpp.o
 .PHONY : Bookstorebody/blocklist.o
 
@@ -315,6 +339,9 @@ help:
 	@echo "... Bookstorebody/Command.o"
 	@echo "... Bookstorebody/Command.i"
 	@echo "... Bookstorebody/Command.s"
+	@echo "... Bookstorebody/Logsystem.o"
+	@echo "... Bookstorebody/Logsystem.i"
+	@echo "... Bookstorebody/Logsystem.s"
 	@echo "... Bookstorebody/blocklist.o"
 	@echo "... Bookstorebody/blocklist.i"
 	@echo "... Bookstorebody/blocklist.s"

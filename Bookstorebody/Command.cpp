@@ -4,7 +4,7 @@
 #include"usermanager.h"
 #include"file.h"
 #include "lubang.h"
-
+#include"LogSystem.h"
 
 //UserSelect::UserSelect(string id) {
 //    //todo
@@ -90,7 +90,10 @@ string CommandManager::ReturnRight(string s) {
     right.clear();
     bool flag = false;
     for (int i = 0; i < s.length(); ++i) {
-        if (s[i] == '=') flag = true;
+        if (s[i] == '='){
+            flag = true;
+            continue;
+        }
         if (!flag) continue;
         else {
             right += s[i];
@@ -100,15 +103,15 @@ string CommandManager::ReturnRight(string s) {
 }
 
 string CommandManager::ReturnLeft(string s) {
-    string right;
-    right.clear();
+    string left;
+    left.clear();
     for (int i = 0; i < s.length(); ++i) {
         if (s[i] == '=') break;
         else {
-            right += s[i];
+            left += s[i];
         }
     }
-    return right;
+    return left;
 }
 
 
@@ -208,6 +211,7 @@ void CommandManager::Run(string command) {
             if (!CheckPriority(command_words[0])) throw Book_error("modify_prio");
             else {
                 if (usersystem.BookNow() == -1) throw Book_error("modify: no book is selected");
+                booksystem.Modify(command_words,usersystem.BookNow());
 
             }
         } else if (command_words[0] == "import") {

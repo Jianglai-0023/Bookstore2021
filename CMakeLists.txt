@@ -14,5 +14,5 @@ add_executable(code
         Bookstorebody/file.cpp
         Bookstorebody/lubang.cpp
         Bookstorebody/Booksystem.cpp
-
+        Bookstorebody/Logsystem.cpp
         )

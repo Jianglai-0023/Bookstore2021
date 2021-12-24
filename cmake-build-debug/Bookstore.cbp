@@ -97,6 +97,12 @@
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.h">
 			<Option target="code"/>
 		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Logsystem.cpp">
+			<Option target="code"/>
+		</Unit>
+		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/Logsystem.h">
+			<Option target="code"/>
+		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp">
 			<Option target="code"/>
 		</Unit>
