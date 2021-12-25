@@ -73,7 +73,7 @@ public:
 
     bool CheckPriority(string com);
 
-    int StringToInt(string q);
+    float StringTofloat(string q);
 
     string ReturnRight(string s);
 

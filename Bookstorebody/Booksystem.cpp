@@ -32,8 +32,8 @@ string BookSystem::ReturnRight(string s) {
     return right;
 };
 
-double BookSystem::StringToInt(string q) {
-    double ans = 0;
+float BookSystem::StringTofloat(string q) {
+    float ans = 0;
     bool flag = false;
     int n = 0;
     for (int i = 0; i < q.length(); ++i) {
@@ -44,11 +44,11 @@ double BookSystem::StringToInt(string q) {
         if (flag) ++n;
         ans *= 10;
         ans += q[i] - '0';
-        if(n == 1) ans/=10;
-        else if(n == 2) ans /= 100;
     }
+    if(n == 1) ans/=10;
+    else if(n == 2) ans /= 100;
 //    cout << "testdouble" << ans << endl;
-//    cout << q << endl;
+//    cout << q <<' ' << n<< endl;
     return ans;
 }
 
@@ -78,8 +78,9 @@ void BookSystem::Print(vector<Book> &res) {
         }
         if (res[i].n_ == 0) cout << '\t';
         if (res[i].price_ != -1) {
-            if(res[i].price_ != int(res[i].price_) && !(int(res[i].price_ * 100) % 10)) cout << res[i].price_<<'0' << '\t';
-            else cout << res[i].price_ << '\t';
+            if(res[i].price_ != int(res[i].price_) && (int(res[i].price_ * 100) % 10) == 0) cout << res[i].price_<<'0' << '\t';
+            else if(res[i].price_ == int(res[i].price_)) cout << res[i].price_ <<".00" <<'\t';
+            else cout << res[i].price_  <<'\t';
         } else {
             cout << '\t';
         }
@@ -91,30 +92,15 @@ void BookSystem::Print(vector<Book> &res) {
 void BookSystem::showISBN(string isbn) {
     book_key.clear();
     res.clear();
-//    cout << "showISBN" << "&&" << endl;
 
-//    file_isbn_index.Test(989);
-//    file_isbn_index.Test(00);
-    //=======debug==========//
-//    BlockNode de(88,"debug");
-//    file_isbn_index.Test(99);
-//    file_isbn_index.AddNode(de);
-//    file_isbn_index.Test(77);
-//    file_isbn_index.FindNode("debug",book_key);
-//    cout << book_key.empty() << endl;
-//    exit(0);
-    //============debug============//
     file_isbn_index.FindNode(isbn, book_key);
-//    cout << isbn << "test" << endl;
     if (book_key.empty()) {
         cout << '\n';
         return;
     }
     for (int i = 0; i < book_key.size(); ++i) {
         Book findbook;
-//        cout << "debugshowisbn" << book_key[i] << endl;
         file_book_data.Read(findbook, book_key[i]);
-//        cout << findbook.isbn_ << endl;
         res.push_back(findbook);
     }
     Print(res);
@@ -123,6 +109,7 @@ void BookSystem::showISBN(string isbn) {
 void BookSystem::showName(string name) {
     book_key.clear();
     res.clear();
+//    cout << name << "yuy" << endl;
     file_name_index.FindNode(name, book_key);
     if (book_key.empty()) cout << '\n';
     for (int i = 0; i < book_key.size(); ++i) {
@@ -173,17 +160,23 @@ void BookSystem::showAll() {
     Print(res);
 }
 
-void BookSystem::Buy(string isbn, int quantity) {
+float BookSystem::Buy(string isbn, int quantity) {
     Book buybook;
     book_key.clear();
     file_isbn_index.FindNode(isbn, book_key);
-
     if (book_key.empty()) throw Book_error("buy:book is not found");
     file_book_data.Read(buybook, book_key[0]);
     if (buybook.quantity_ >= quantity) {
         buybook.quantity_ -= quantity;
         file_book_data.Write(buybook, book_key[0]);
     } else throw Book_error("buy:book is not enough");
+    float p = quantity * buybook.price_;
+//    cout << p << "&&&"<< endl;
+    if(p == 0) cout << "0.00" << endl;
+    else if(p != int(p) && (int(p * 100) % 10) == 0) cout << p<<'0' << endl;
+    else if(p == int(p)) cout << p <<".00" <<endl;
+    else cout << p  <<endl;
+    return buybook.price_ * quantity;
 }
 
 int BookSystem::Select(string isbn) {
@@ -207,82 +200,53 @@ void BookSystem::Modify(const vector<string> &command, int index) {//修改index
     for (int i = 1; i < command.size(); ++i) {
         if (command[i][1] == 'I') {
             string right = ReturnRight(command[i]);
-            //维护blocklist
-//            book_key.clear();
-//            file_isbn_index.FindNode(right, book_key);
-//            if (bookm.isbn_) {
-//                BlockNode isbn;
-//                isbn.position = index;
-//                strcpy(isbn.str, right.c_str());
-//                file_isbn_index.AddNode(isbn);
-//                cout << "here" << endl;
-//            } else {
+            book_key.clear();
+            file_isbn_index.FindNode(right,book_key);
+            if(!book_key.empty() && book_key[0] != index)throw Book_error("modify:isbn is repeated");
+//            if (right == bookm.isbn_) return;
                 BlockNode isbn(index, bookm.isbn_);
                 file_isbn_index.DeleteNode(isbn);
                 BlockNode newisbn(index, right);
                 file_isbn_index.AddNode(newisbn);
-//            }
             strcpy(bookm.isbn_, right.c_str());
         } else if (command[i][1] == 'a') {
             string right = ReturnRight(command[i]);
-            //维护blocklist
-
+//if(bookm.author_ == right) return;
             if (bookm.author_[0] == '\0') {
                 BlockNode author(index, right);
                 file_author_index.AddNode(author);
             } else {
-//                book_key.clear();
-//                file_author_index.FindNode(bookm.author_, book_key);
-//                for (auto iter = book_key.begin(); iter != book_key.end(); ++iter) {
-//                    if (*iter == index) {
                         BlockNode author(index,bookm.author_);
                         file_author_index.DeleteNode(author);
                         BlockNode newauthor(index, right);
                         file_author_index.AddNode(newauthor);
-//                        break;
                     }
-//                }
-//            }
             strcpy(bookm.author_, right.c_str());
         } else if (command[i][1] == 'p') {
-            bookm.price_ = StringToInt(ReturnRight(command[i]));
+            bookm.price_ = StringTofloat(ReturnRight(command[i]));
         } else if (command[i][1] == 'n') {
             string right = ReturnRight(command[i]);
             //维护blocklist
-//            book_key.clear();
-//            file_name_index.FindNode(right, book_key);
+            if(bookm.name_ == right) break;
             if (bookm.name_[0] == '\0') {
                 BlockNode name(index, right);
                 file_name_index.AddNode(name);
             } else {
-//                for (auto iter = book_key.begin(); iter != book_key.end(); ++iter) {
-//                    if (*iter == index) {
                         BlockNode name(index, bookm.name_);
                         file_name_index.DeleteNode(name);
                         BlockNode newname(index, right);
                         file_name_index.AddNode(newname);
-//                        break;
                     }
-//                }
-//            }
             strcpy(bookm.name_, right.c_str());
         } else if (command[i][1] == 'k') {
             vector<string> word;
             ReturnKeyWord(ReturnRight(command[i]), word);
-//            cout << word.empty() << "&&&" << endl;
+
             for (int j = 0; j < bookm.n_; ++j) {
                 string s = bookm.keyword_[j];
-//                book_key.clear();
-//                file_keyword_index.FindNode(s, book_key);
-//                for (auto iter = book_key.begin(); iter != book_key.end(); ++iter) {
-//                    if (*iter == index) {
                         BlockNode keyword(index, s);
                         file_keyword_index.DeleteNode(keyword);
-//                        break;
                     }
-//                }
-//
-//            }
             for (int j = 0; j < word.size(); ++j) {
                 BlockNode newkeyword(index, word[j]);
                 file_keyword_index.AddNode(newkeyword);

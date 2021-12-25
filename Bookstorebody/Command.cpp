@@ -99,11 +99,12 @@ string CommandManager::ReturnRight(string s) {
     right.clear();
     bool flag = false;
     for (int i = 0; i < s.length(); ++i) {
-        if (s[i] == '='){
+        if (s[i] == '=') {
             flag = true;
             continue;
         }
         if (!flag) continue;
+        if (s[i] == '"') continue;
         else {
             right += s[i];
         }
@@ -124,12 +125,23 @@ string CommandManager::ReturnLeft(string s) {
 }
 
 
-int CommandManager::StringToInt(string q) {
-    int ans = 0;
+float CommandManager::StringTofloat(string q) {
+    float ans = 0;
+    bool flag = false;
+    int n = 0;
     for (int i = 0; i < q.length(); ++i) {
+        if (q[i] == '.') {
+            flag = true;
+            continue;
+        }
+        if (flag) ++n;
         ans *= 10;
         ans += q[i] - '0';
     }
+    if(n == 1) ans/=10;
+    else if(n == 2) ans /= 100;
+//    cout << "testfloat" << ans << endl;
+//    cout << q <<' ' << n<< endl;
     return ans;
 }
 
@@ -186,7 +198,7 @@ void CommandManager::Run(string command) {
             }
         }
             //Booksystem
-        else if (command_words[0] == "show") {
+        else if (command_words[0] == "show" && command_words.size() == 1||command_words[0] == "show" && command_words[1][0] != 'f') {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("show_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("show_prio");
             else {
@@ -202,8 +214,8 @@ void CommandManager::Run(string command) {
             if (!CheckPriority(command_words[0])) throw Book_error("buy_prio");
             else {
                 int quantity;
-                quantity = StringToInt(command_words[2]);
-                booksystem.Buy(command_words[1], quantity);
+                quantity = int(StringTofloat(command_words[2]));
+                logsystem.AddFinance(booksystem.Buy(command_words[1], quantity));
             }
 
         } else if (command_words[0] == "select") {
@@ -228,8 +240,10 @@ void CommandManager::Run(string command) {
             if (!CheckPriority(command_words[0])) throw Book_error("import_prio");
             else {
                 if (usersystem.BookNow() == -1) throw Book_error("import: no book is selected");
-                int quantity = StringToInt(command_words[1]);
+                int quantity = int(StringTofloat(command_words[1]));
+                logsystem.AddFinance((-1) * StringTofloat(command_words[2]));
                 booksystem.Import(quantity, usersystem.BookNow());
+//                cout << usersystem.BookNow() << "&*&" <<endl;
             }
         }
             //LogSystem
@@ -243,7 +257,8 @@ void CommandManager::Run(string command) {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("show_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("show_prio");
             if(command_words.size() == 3){
-                logsystem.ShowFinance(StringToInt(command_words[3]));
+//                cout << command_words[2] <<"$$$"<< endl;
+                logsystem.ShowFinance(int(StringTofloat(command_words[2])));
             }
             else{
                 logsystem.ShowFinance();

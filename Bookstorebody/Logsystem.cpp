@@ -30,6 +30,8 @@ void LogSystem::ShowFinance(int time) {
     else{
         int tmp;
         file_finance_data.ReadInfo(tmp);
+//        cout << tmp <<"&&&" <<endl;
+//        cout << time << "%%%" << endl;
         int index = sizeof(int) + (tmp - 1) * sizeof(Finance);
         if(tmp < time) throw Book_error("showfinance: timeout");
         for(int i = 0; i< time; ++i){
@@ -40,5 +42,13 @@ void LogSystem::ShowFinance(int time) {
             else output += f.money_;
         }
     }
-    cout << '+' << ' ' << input << ' ' << '-' << ' ' << output << endl;
+    cout << '+' << ' ' ;
+    if(input != int(input) && (int(input * 100) % 10) == 0) cout << input<<'0';
+    else if(input == int(input)) cout << input <<".00";
+    else cout << input;
+    cout << ' ' << '-' << ' ' ;
+    output*=-1;
+    if(output != int(output) && (int(output * 100) % 10) == 0) cout << output<<'0'<<endl;
+    else if(output == int(output)) cout << output <<".00"<<endl;
+    else cout << output<<endl;
 }

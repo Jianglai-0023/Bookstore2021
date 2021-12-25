@@ -16,14 +16,15 @@ int totalblock;
 
 
 Blocklist::Blocklist(const std::string &a0) : file_name(a0) {
-//    fileIndex.open(file_name);
-//    if (!fileIndex.good()) {
+    fileIndex.open(file_name);
+    if (!fileIndex.good()) {
         fileIndex.open(file_name, ios::out);
         fileIndex.close();
         fileIndex.open(file_name);
         fileIndex.seekg(0);
         totalblock = 0;
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
+    }
 //    }
 //    fileIndex.close();
 };
