@@ -67,31 +67,33 @@ void BookSystem::Print(vector<Book> &res) {
 void BookSystem::showISBN(string isbn) {
     book_key.clear();
     res.clear();
-    cout << "showISBN" << "&&" << endl;
+//    cout << "showISBN" << "&&" << endl;
 
-    file_isbn_index.Test(989);
-
+//    file_isbn_index.Test(989);
+//    file_isbn_index.Test(00);
     //=======debug==========//
-    BlockNode de(88,"debug");
-    file_isbn_index.Test(99);
-    file_isbn_index.AddNode(de);
-    file_isbn_index.Test(77);
-    file_isbn_index.FindNode("debug",book_key);
-    cout << book_key.empty() << endl;
-    exit(0);
+//    BlockNode de(88,"debug");
+//    file_isbn_index.Test(99);
+//    file_isbn_index.AddNode(de);
+//    file_isbn_index.Test(77);
+//    file_isbn_index.FindNode("debug",book_key);
+//    cout << book_key.empty() << endl;
+//    exit(0);
     //============debug============//
     file_isbn_index.FindNode(isbn, book_key);
-    cout << isbn << "test" << endl;
+//    cout << isbn << "test" << endl;
     if (book_key.empty()){
         cout << '\n';
         return;
     }
     for (int i = 0; i < book_key.size(); ++i) {
         Book findbook;
+//        cout << "debugshowisbn" << book_key[i] << endl;
         file_book_data.Read(findbook, book_key[i]);
+        cout << findbook.isbn_ << endl;
         res.push_back(findbook);
     }
-    Print(res);
+//    Print(res);
 }
 
 void BookSystem::showName(string name) {
@@ -168,10 +170,6 @@ int BookSystem::Select(string isbn) {
         int position = file_book_data.Add(newbook);
         BlockNode newbook_key(position, isbn);
         file_isbn_index.AddNode(newbook_key);
-        file_isbn_index.FindNode(isbn, book_key);
-        cout << "debug" << book_key[0] <<endl;
-         file_isbn_index.Test(1);
-         file_book_data.Add(newbook);
         return position;
     } else {
         return book_key[0];

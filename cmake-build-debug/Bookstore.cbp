@@ -109,12 +109,6 @@
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h">
 			<Option target="code"/>
 		</Unit>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/file.cpp">
-			<Option target="code"/>
-		</Unit>
-		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h">
-			<Option target="code"/>
-		</Unit>
 		<Unit filename="/Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.cpp">
 			<Option target="code"/>
 		</Unit>

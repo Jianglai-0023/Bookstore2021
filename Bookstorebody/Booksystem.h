@@ -15,20 +15,20 @@ public:
 
     Book(string isbn);
 
-    char isbn_[21];
+    char isbn_[21] = {'\0'};
 
-    char name_[61];
+    char name_[61] = {'\0'};
 
-    char author_[61];
+    char author_[61] = {'\0'};
 
     //the number of the keywords
-    int n_;
+    int n_ = 0;
 
     char keyword_[20][61];
 
-    double price_;
+    double price_ = -1;
 
-    int quantity_;
+    int quantity_ = 0;
 
     bool operator<(const Book &b) const {
         if (strcmp(isbn_, b.isbn_) == 0) return false;

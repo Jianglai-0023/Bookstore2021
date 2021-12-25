@@ -34,8 +34,6 @@ CMakeFiles/code.dir/Bookstorebody/Logsystem.cpp.o: \
 CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.o: \
  ../Bookstorebody/blocklist.cpp \
  ../Bookstorebody/blocklist.h
-CMakeFiles/code.dir/Bookstorebody/file.cpp.o: \
- ../Bookstorebody/file.cpp
 CMakeFiles/code.dir/Bookstorebody/lubang.cpp.o: \
  ../Bookstorebody/lubang.cpp \
  ../Bookstorebody/lubang.h

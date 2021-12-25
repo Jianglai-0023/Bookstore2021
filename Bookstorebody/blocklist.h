@@ -39,6 +39,7 @@ public:
     int num = 0;
     //read head and tail from array
     BlockNode array[BLOCK_SIZE];
+
     Block();
 };
 
@@ -56,6 +57,7 @@ public:
 
     Blocklist(const std::string &arg);
 
+    ~Blocklist();
 
     void AddNode(const BlockNode &BlockNode);
 
