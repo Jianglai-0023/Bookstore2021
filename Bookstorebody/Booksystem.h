@@ -26,7 +26,7 @@ public:
 
     char keyword_[20][61];
 
-    float price_ = -1;
+    float price_ = 0;
 
     int quantity_ = 0;
 

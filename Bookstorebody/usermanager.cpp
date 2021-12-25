@@ -27,7 +27,7 @@ User::User(string id, string password, int priority, string name) {
 
 User::User() {}
 
-Usersystem::Usersystem() : file_user_data("user_data"), file_user_index("user_index") {
+Usersystem::Usersystem() : file_user_data("./user_data"), file_user_index("./user_index") {
     User root("root", "sjtu", 7, "root");
     BlockNode root_;
     strcpy(root_.str, "root");

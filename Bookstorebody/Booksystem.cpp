@@ -4,9 +4,9 @@
 #include"Booksystem.h"
 #include"lubang.h"
 
-BookSystem::BookSystem() : file_book_data("book_data"), file_isbn_index("isbn_index"),
-                           file_author_index("author_index"),
-                           file_keyword_index("keyword_index"), file_name_index("name_index") {}
+BookSystem::BookSystem() : file_book_data("./book_data"), file_isbn_index("./isbn_index"),
+                           file_author_index("./author_index"),
+                           file_keyword_index("./keyword_index"), file_name_index("./name_index") {}
 
 Book::Book(string isbn) {
     strcpy(isbn_, isbn.c_str());
@@ -77,13 +77,13 @@ void BookSystem::Print(vector<Book> &res) {
             }
         }
         if (res[i].n_ == 0) cout << '\t';
-        if (res[i].price_ != -1) {
+//        if (res[i].price_ != -1) {
             if(res[i].price_ != int(res[i].price_) && (int(res[i].price_ * 100) % 10) == 0) cout << res[i].price_<<'0' << '\t';
             else if(res[i].price_ == int(res[i].price_)) cout << res[i].price_ <<".00" <<'\t';
             else cout << res[i].price_  <<'\t';
-        } else {
-            cout << '\t';
-        }
+//        } else {
+//            cout << '\t';
+//        }
         cout << res[i].quantity_ << '\n';
     }
 
