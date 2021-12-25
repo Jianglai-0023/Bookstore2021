@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<cstring>
+#include<algorithm>
 #include"file.h"
 #include"blocklist.h"
 
