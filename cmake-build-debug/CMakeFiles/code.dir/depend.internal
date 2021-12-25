@@ -3,7 +3,9 @@
 
 CMakeFiles/code.dir/Bookstorebody/Bookstore_main.cpp.o
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/Bookstore_main.cpp
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.h
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/LogSystem.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
@@ -13,13 +15,22 @@ CMakeFiles/code.dir/Bookstorebody/Booksystem.cpp.o
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
 CMakeFiles/code.dir/Bookstorebody/Command.cpp.o
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.cpp
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/Command.h
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/LogSystem.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/usermanager.h
+CMakeFiles/code.dir/Bookstorebody/Logsystem.cpp.o
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/LogSystem.h
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/Logsystem.cpp
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
+ /Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
 CMakeFiles/code.dir/Bookstorebody/blocklist.cpp.o
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp
  /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h

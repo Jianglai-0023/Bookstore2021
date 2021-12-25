@@ -30,7 +30,7 @@ public:
 
     int quantity_;
 
-    bool operator<(Book b) {
+    bool operator<(const Book &b) const {
         if (strcmp(isbn_, b.isbn_) == 0) return false;
         else if (strcmp(isbn_, b.isbn_) < 0) return true;
         return false;

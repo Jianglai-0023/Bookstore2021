@@ -16,15 +16,15 @@ int totalblock;
 
 
 Blocklist::Blocklist(const std::string &a0) : file_name(a0) {
-    fileIndex.open(file_name);
-    if (!fileIndex.good()) {
+//    fileIndex.open(file_name);
+//    if (!fileIndex.good()) {
         fileIndex.open(file_name, ios::out);
         fileIndex.close();
         fileIndex.open(file_name);
         fileIndex.seekg(0);
         totalblock = 0;
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
-    }
+//    }
     fileIndex.close();
 };
 
@@ -134,10 +134,14 @@ void Blocklist::AddNode(const BlockNode &node) {
         block.array[block.num] = node;
         ++totalblock;
         fileIndex.seekg(0);
+        cout << fileIndex.bad() << "wrong?" << endl;
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
+        cout << fileIndex.bad() << "wrong?2" << endl;
         ++block.num;
         fileIndex.seekg(0 + sizeofInt);
+        cout << fileIndex.bad() << "wrong?3" << endl;
         fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
+        cout << fileIndex.bad() << "wrong?4" << endl;
     } else {//遍历链表头
         //特判：node比第一个链表头小
         //delete后只有一个block的情况
@@ -353,23 +357,23 @@ bool BlockNode::operator==(const BlockNode &x) const {
 
 
 
-//void Test(int x) {
-//    Block block0;
-//    fileIndex.seekg(0);
-//    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
-//    cout << totalblock;
-//    fileIndex.seekg(0 + sizeofInt);
-//    fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
-//    cout << "______" << x << "______" << endl;
-//    for (int i = 0; i < totalblock; ++i) {
-//        cout <<'|' << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << '|' ;
-//        for (int j = 0; j < block0.num; ++j) {
-//            cout << block0.array[j].str <<'+' << block0.array[j].position << ' ';
-//        }
-//        cout << endl;
-//        if(block0.nxt == -1)
-//            return;
-//        fileIndex.seekg(block0.nxt + sizeofInt);
-//        fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
-//    }
-//}
+void Blocklist::Test(int x) {
+    Block block0;
+    fileIndex.seekg(0);
+    fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
+    cout << totalblock;
+    fileIndex.seekg(0 + sizeofInt);
+    fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
+    cout << "______" << x << "______" << endl;
+    for (int i = 0; i < totalblock; ++i) {
+        cout <<'|' << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << '|' ;
+        for (int j = 0; j < block0.num; ++j) {
+            cout << block0.array[j].str <<'+' << block0.array[j].position << ' ';
+        }
+        cout << endl;
+        if(block0.nxt == -1)
+            return;
+        fileIndex.seekg(block0.nxt + sizeofInt);
+        fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
+    }
+}

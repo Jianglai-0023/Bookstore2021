@@ -7,6 +7,7 @@
 #include"lubang.h"
 #include"usermanager.h"
 #include"Booksystem.h"
+#include"LogSystem.h"
 using namespace std;
 //class Book_error {
 //public:
@@ -54,6 +55,8 @@ private:
     BookSystem booksystem;
 
     Lubang lubang_check;
+
+    LogSystem logsystem;
 
     //priority{0,1,3,7}
     //begin as 0;

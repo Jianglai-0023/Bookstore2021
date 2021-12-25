@@ -42,23 +42,31 @@ bool CommandManager::CheckPriority(string com) {
     }
         //Booksystem
     else if (com == "show") {
-
+        if (priority_now < 1) return false;
+        return true;
     } else if (com == "buy") {
-
+        if (priority_now < 1) return false;
+        return true;
     } else if (com == "select") {
-
+        if (priority_now < 3) return false;
+        return true;
     } else if (com == "modify") {
-
+if(priority_now < 3) return false;
+return true;
     } else if (com == "import") {
-
+        if (priority_now < 3) return false;
+        return true;
     }
         //LogSystem
     else if (com == "report") {
-
+        if (priority_now < 3) return false;
+        return true;
     } else if (com == "show") {
-
+        if (priority_now < 7) return false;
+        return true;
     } else if (com == "log") {
-
+        if (priority_now < 7) return false;
+        return true;
     }
 }
 
@@ -82,6 +90,7 @@ void CommandManager::DealString(string command) {
         }
     }
     if (!word.empty()) command_words.push_back(word);
+
     word.clear();
 }
 
@@ -225,8 +234,21 @@ void CommandManager::Run(string command) {
         }
             //LogSystem
         else if (command_words[0] == "report") {
-
+            if (!lubang_check.checkSentence(command_words)) throw Book_error("report_checkSen");
+            if (!CheckPriority(command_words[0])) throw Book_error("report_prio");
+            if(command_words[1] == "finance" || command_words[1] == "employee"){
+                if (priority_now < 7) throw Book_error("report_prio");
+            }
         } else if (command_words[0] == "show") {
+            if (!lubang_check.checkSentence(command_words)) throw Book_error("show_checkSen");
+            if (!CheckPriority(command_words[0])) throw Book_error("show_prio");
+            if(command_words.size() == 3){
+                logsystem.ShowFinance(StringToInt(command_words[3]));
+            }
+            else{
+                logsystem.ShowFinance();
+            }
+
 
         } else if (command_words[0] == "log") {
 

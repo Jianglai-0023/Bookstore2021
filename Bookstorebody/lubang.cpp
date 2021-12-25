@@ -102,22 +102,22 @@ bool Lubang::checkSentence(const vector<string> sentence) {
     }
         //Booksystem
     else if (sentence[0] == "show") {
-
+      return true;
     } else if (sentence[0] == "buy") {
-
+        return true;
     } else if (sentence[0] == "select") {
-
+        return true;
     } else if (sentence[0] == "modify") {
-
+        return true;
     } else if (sentence[0] == "import") {
-
+        return true;
     }
         //LogSystem
     else if (sentence[0] == "report") {
-
+        return true;
     } else if (sentence[0] == "show") {
-
+        return true;
     } else if (sentence[0] == "log") {
-
+        return true;
     }
 }

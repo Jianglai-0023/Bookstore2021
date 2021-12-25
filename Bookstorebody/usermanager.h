@@ -21,7 +21,7 @@ public:
 
     int priority;
 
-    char isbn[21];
+//    char isbn[21];
 
     int index_book;
 

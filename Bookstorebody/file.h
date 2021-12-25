@@ -15,13 +15,13 @@ public:
     };
 
     void Initialize(){
-        file.open(file_name_);
-        if (!file.good()) {
+//        file.open(file_name_);
+//        if (!file.good()) {
             file.open(file_name_, ios::out);
             file.close();
             file.open(file_name_);
 
-        }
+//        }
         file.close();
         WriteInfo(0);
     }
