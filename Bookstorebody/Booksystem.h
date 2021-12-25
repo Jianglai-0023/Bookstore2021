@@ -83,11 +83,11 @@ public:
 
     void Import(int quantity, int index);
 
-    void ReturnKeyWord(string s, std::vector<string> word);
+    void ReturnKeyWord(string s, std::vector<string> &word);
 
     string ReturnRight(string s);
 
-    int StringToInt(string q);
+    double StringToInt(string q);
 
 };
 

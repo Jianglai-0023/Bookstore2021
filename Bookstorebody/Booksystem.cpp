@@ -11,38 +11,55 @@ BookSystem::BookSystem() : file_book_data("book_data"), file_isbn_index("isbn_in
 Book::Book(string isbn) {
     strcpy(isbn_, isbn.c_str());
 }
+
 Book::Book() {}
-string BookSystem::ReturnRight(string s){
+
+string BookSystem::ReturnRight(string s) {
     string right;
     right.clear();
     bool flag = false;
     for (int i = 0; i < s.length(); ++i) {
-        if (s[i] == '='){
+        if (s[i] == '=') {
             flag = true;
             continue;
         }
         if (!flag) continue;
+        if (s[i] == '"') continue;
         else {
             right += s[i];
         }
     }
     return right;
 };
-int BookSystem::StringToInt(string q) {
-    int ans = 0;
+
+double BookSystem::StringToInt(string q) {
+    double ans = 0;
+    bool flag = false;
+    int n = 0;
     for (int i = 0; i < q.length(); ++i) {
+        if (q[i] == '.') {
+            flag = true;
+            continue;
+        }
+        if (flag) ++n;
         ans *= 10;
         ans += q[i] - '0';
+        if(n == 1) ans/=10;
+        else if(n == 2) ans /= 100;
     }
+//    cout << "testdouble" << ans << endl;
+//    cout << q << endl;
     return ans;
 }
-void BookSystem::ReturnKeyWord(string s, std::vector<string> word) {
+
+void BookSystem::ReturnKeyWord(string s, std::vector<string> &word) {
     string key;
     word.clear();
     for (int i = 0; i < s.length(); ++i) {
         if (s[i] == '|') {
             word.push_back(key);
             key.clear();
+            continue;
         }
         key += s[i];
     }
@@ -59,7 +76,14 @@ void BookSystem::Print(vector<Book> &res) {
                 cout << res[i].keyword_[j] << '|';
             }
         }
-        cout << res[i].price_ << '\t' << res[i].quantity_ << '\n';
+        if (res[i].n_ == 0) cout << '\t';
+        if (res[i].price_ != -1) {
+            if(res[i].price_ != int(res[i].price_) && !(int(res[i].price_ * 100) % 10)) cout << res[i].price_<<'0' << '\t';
+            else cout << res[i].price_ << '\t';
+        } else {
+            cout << '\t';
+        }
+        cout << res[i].quantity_ << '\n';
     }
 
 }
@@ -82,7 +106,7 @@ void BookSystem::showISBN(string isbn) {
     //============debug============//
     file_isbn_index.FindNode(isbn, book_key);
 //    cout << isbn << "test" << endl;
-    if (book_key.empty()){
+    if (book_key.empty()) {
         cout << '\n';
         return;
     }
@@ -90,10 +114,10 @@ void BookSystem::showISBN(string isbn) {
         Book findbook;
 //        cout << "debugshowisbn" << book_key[i] << endl;
         file_book_data.Read(findbook, book_key[i]);
-        cout << findbook.isbn_ << endl;
+//        cout << findbook.isbn_ << endl;
         res.push_back(findbook);
     }
-//    Print(res);
+    Print(res);
 }
 
 void BookSystem::showName(string name) {
@@ -179,103 +203,99 @@ int BookSystem::Select(string isbn) {
 
 void BookSystem::Modify(const vector<string> &command, int index) {//修改index
     Book bookm;
-    file_book_data.Read(bookm,index);
-    for(int i = 1; i < command.size(); ++i){
-        if(command[i][1] == 'I'){
+    file_book_data.Read(bookm, index);
+    for (int i = 1; i < command.size(); ++i) {
+        if (command[i][1] == 'I') {
             string right = ReturnRight(command[i]);
             //维护blocklist
-            book_key.clear();
-            file_isbn_index.FindNode(right,book_key);
-            if(book_key.empty()){
-                BlockNode isbn;
-                isbn.position = index;
-                strcpy(isbn.str,right.c_str());
-                file_isbn_index.AddNode(isbn);
-            }
-            else{
-                BlockNode isbn(book_key[0],bookm.isbn_);
+//            book_key.clear();
+//            file_isbn_index.FindNode(right, book_key);
+//            if (bookm.isbn_) {
+//                BlockNode isbn;
+//                isbn.position = index;
+//                strcpy(isbn.str, right.c_str());
+//                file_isbn_index.AddNode(isbn);
+//                cout << "here" << endl;
+//            } else {
+                BlockNode isbn(index, bookm.isbn_);
                 file_isbn_index.DeleteNode(isbn);
-                BlockNode newisbn(book_key[0],right);
+                BlockNode newisbn(index, right);
                 file_isbn_index.AddNode(newisbn);
-            }
+//            }
             strcpy(bookm.isbn_, right.c_str());
-        }
-        else if(command[i][1] == 'a'){
+        } else if (command[i][1] == 'a') {
             string right = ReturnRight(command[i]);
             //维护blocklist
-            book_key.clear();
-            file_author_index.FindNode(right,book_key);
-            if(book_key.empty()){
-                BlockNode author(index,right);
+
+            if (bookm.author_[0] == '\0') {
+                BlockNode author(index, right);
                 file_author_index.AddNode(author);
-            }
-            else{
-                for(auto iter = book_key.begin(); iter != book_key.end();++iter){
-                    if(*iter == index){
-                        BlockNode author(*iter,bookm.author_);
+            } else {
+//                book_key.clear();
+//                file_author_index.FindNode(bookm.author_, book_key);
+//                for (auto iter = book_key.begin(); iter != book_key.end(); ++iter) {
+//                    if (*iter == index) {
+                        BlockNode author(index,bookm.author_);
                         file_author_index.DeleteNode(author);
-                        BlockNode newauthor(book_key[0],right);
+                        BlockNode newauthor(index, right);
                         file_author_index.AddNode(newauthor);
-                        break;
+//                        break;
                     }
-                }
-            }
-            strcpy(bookm.author_, ReturnRight(command[i]).c_str());
-        }
-        else if(command[i][1] == 'p'){
-            bookm.price_ = StringToInt(command[i]);
-        }
-        else if(command[i][1] == 'n'){
+//                }
+//            }
+            strcpy(bookm.author_, right.c_str());
+        } else if (command[i][1] == 'p') {
+            bookm.price_ = StringToInt(ReturnRight(command[i]));
+        } else if (command[i][1] == 'n') {
             string right = ReturnRight(command[i]);
             //维护blocklist
-            book_key.clear();
-            file_name_index.FindNode(right,book_key);
-            if(book_key.empty()){
-                BlockNode name(index,right);
+//            book_key.clear();
+//            file_name_index.FindNode(right, book_key);
+            if (bookm.name_[0] == '\0') {
+                BlockNode name(index, right);
                 file_name_index.AddNode(name);
-            }
-            else{
-                for(auto iter = book_key.begin(); iter != book_key.end();++iter){
-                    if(*iter == index){
-                        BlockNode name(*iter,bookm.name_);
+            } else {
+//                for (auto iter = book_key.begin(); iter != book_key.end(); ++iter) {
+//                    if (*iter == index) {
+                        BlockNode name(index, bookm.name_);
                         file_name_index.DeleteNode(name);
-                        BlockNode newname(book_key[0],right);
+                        BlockNode newname(index, right);
                         file_name_index.AddNode(newname);
-                        break;
+//                        break;
                     }
-                }
-            }
-            strcpy(bookm.name_, ReturnRight(command[i]).c_str());
-        }
-        else if(command[i][1] == 'k'){
+//                }
+//            }
+            strcpy(bookm.name_, right.c_str());
+        } else if (command[i][1] == 'k') {
             vector<string> word;
             ReturnKeyWord(ReturnRight(command[i]), word);
-            for(int j = 0;j < bookm.n_; ++j){
+//            cout << word.empty() << "&&&" << endl;
+            for (int j = 0; j < bookm.n_; ++j) {
                 string s = bookm.keyword_[j];
-                book_key.clear();
-                file_keyword_index.FindNode(s,book_key);
-                for(auto iter = book_key.begin(); iter != book_key.end(); ++iter){
-                    if(*iter == index){
-                        BlockNode keyword(index,s);
+//                book_key.clear();
+//                file_keyword_index.FindNode(s, book_key);
+//                for (auto iter = book_key.begin(); iter != book_key.end(); ++iter) {
+//                    if (*iter == index) {
+                        BlockNode keyword(index, s);
                         file_keyword_index.DeleteNode(keyword);
-                        break;
+//                        break;
                     }
-                }
-
-            }
-            for(int j = 0; j < word.size(); ++j){
-              BlockNode newkeyword(index,word[j]);
-              file_keyword_index.AddNode(newkeyword);
+//                }
+//
+//            }
+            for (int j = 0; j < word.size(); ++j) {
+                BlockNode newkeyword(index, word[j]);
+                file_keyword_index.AddNode(newkeyword);
             }
 
             bookm.n_ = word.size();
-            for(int j = 0;j < bookm.n_; ++j){
-                strcpy(bookm.keyword_[j],word[j].c_str());
+            for (int j = 0; j < bookm.n_; ++j) {
+                strcpy(bookm.keyword_[j], word[j].c_str());
             }
         }
 
     }
-    file_book_data.Write(bookm,index);
+    file_book_data.Write(bookm, index);
 }
 
 void BookSystem::Import(int quantity, int index) {
