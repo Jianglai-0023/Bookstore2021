@@ -6,25 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp
-blocklist.h
-/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
-cstring
--
-fstream
--
-algorithm
--
-cstring
--
-vector
--
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.cpp
+Booksystem.h
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h
+lubang.h
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
+
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h
 iostream
 -
+file.h
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
+blocklist.h
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
 
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
 fstream
 -
 vector
+-
+
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
+fstream
+-
+
+/Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
+vector
+-
+cstring
+-
+iostream
 -
 

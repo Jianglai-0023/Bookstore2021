@@ -67,8 +67,21 @@ void BookSystem::Print(vector<Book> &res) {
 void BookSystem::showISBN(string isbn) {
     book_key.clear();
     res.clear();
-    cout << "testISBN" << isbn << endl;
+    cout << "showISBN" << "&&" << endl;
+
+    file_isbn_index.Test(989);
+
+    //=======debug==========//
+    BlockNode de(88,"debug");
+    file_isbn_index.Test(99);
+    file_isbn_index.AddNode(de);
+    file_isbn_index.Test(77);
+    file_isbn_index.FindNode("debug",book_key);
+    cout << book_key.empty() << endl;
+    exit(0);
+    //============debug============//
     file_isbn_index.FindNode(isbn, book_key);
+    cout << isbn << "test" << endl;
     if (book_key.empty()){
         cout << '\n';
         return;
@@ -138,6 +151,7 @@ void BookSystem::Buy(string isbn, int quantity) {
     Book buybook;
     book_key.clear();
     file_isbn_index.FindNode(isbn, book_key);
+
     if (book_key.empty()) throw Book_error("buy:book is not found");
     file_book_data.Read(buybook, book_key[0]);
     if (buybook.quantity_ >= quantity) {
@@ -152,10 +166,10 @@ int BookSystem::Select(string isbn) {
     if (book_key.empty()) {
         Book newbook(isbn);
         int position = file_book_data.Add(newbook);
-
         BlockNode newbook_key(position, isbn);
         file_isbn_index.AddNode(newbook_key);
-        cout << "qwq" << endl;
+        file_isbn_index.FindNode(isbn, book_key);
+        cout << "debug" << book_key[0] <<endl;
          file_isbn_index.Test(1);
          file_book_data.Add(newbook);
         return position;

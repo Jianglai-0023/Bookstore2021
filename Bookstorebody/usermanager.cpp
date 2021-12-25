@@ -34,8 +34,9 @@ Usersystem::Usersystem() : file_user_data("user_data"), file_user_index("user_in
     root_.position = file_user_data.Add(root);
     file_user_index.AddNode(root_);
     //debug
-    vector<int> debug;
-    file_user_index.FindNode("root", debug);
+//    vector<int> debug;
+//    file_user_index.FindNode("root", debug);
+//    cout << "test root" << debug[0] << endl;
     file_user_data.Add(root);
 };
 

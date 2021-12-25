@@ -131,17 +131,15 @@ void Blocklist::AddNode(const BlockNode &node) {
     Block block;
     Block block1, block2;
     if (totalblock == 0) {//第一个block
+        fileIndex.close();
+        fileIndex.open(file_name);
         block.array[block.num] = node;
         ++totalblock;
-        fileIndex.seekg(0);
-        cout << fileIndex.bad() << "wrong?" << endl;
+        fileIndex.seekp(0);
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
-        cout << fileIndex.bad() << "wrong?2" << endl;
         ++block.num;
-        fileIndex.seekg(0 + sizeofInt);
-        cout << fileIndex.bad() << "wrong?3" << endl;
+        fileIndex.seekp(0 + sizeofInt);
         fileIndex.write(reinterpret_cast<char *>(&block), sizeofBlock);
-        cout << fileIndex.bad() << "wrong?4" << endl;
     } else {//遍历链表头
         //特判：node比第一个链表头小
         //delete后只有一个block的情况
@@ -359,6 +357,9 @@ bool BlockNode::operator==(const BlockNode &x) const {
 
 void Blocklist::Test(int x) {
     Block block0;
+//    cout << fileIndex.bad() << "QWQ" <<endl;
+    fileIndex.open(file_name);
+//    cout << fileIndex.bad() << "QWQ" <<endl;
     fileIndex.seekg(0);
     fileIndex.read(reinterpret_cast<char *>(&totalblock), sizeofInt);
     cout << totalblock;
@@ -367,6 +368,7 @@ void Blocklist::Test(int x) {
     cout << "______" << x << "______" << endl;
     for (int i = 0; i < totalblock; ++i) {
         cout <<'|' << "pre nxt" << ' ' << block0.pre << ' ' << block0.nxt << '|' ;
+        cout << block0.num << endl;
         for (int j = 0; j < block0.num; ++j) {
             cout << block0.array[j].str <<'+' << block0.array[j].position << ' ';
         }
@@ -376,4 +378,5 @@ void Blocklist::Test(int x) {
         fileIndex.seekg(block0.nxt + sizeofInt);
         fileIndex.read(reinterpret_cast<char *>(&block0), sizeofBlock);
     }
+    fileIndex.close();
 }
