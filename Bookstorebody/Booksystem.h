@@ -6,6 +6,7 @@
 #define BOOKSTORE_BOOKSYSTEM_H
 
 #include<iostream>
+#include<cstring>
 #include"file.h"
 #include"blocklist.h"
 

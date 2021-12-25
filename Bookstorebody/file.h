@@ -1,6 +1,7 @@
 #ifndef BOOKSTORE_FILE_H
 #define BOOKSTORE_FILE_H
 #include<fstream>
+#include<cstring>
 using namespace std;
 template<class T, int n = 1>
 class File{
