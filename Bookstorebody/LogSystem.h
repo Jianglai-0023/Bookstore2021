@@ -7,8 +7,8 @@
 #include<iomanip>
 class Finance{
 public:
-    float money_;
-    Finance(float money);
+    double money_;
+    Finance(double money);
     Finance();
 };
 class LogSystem{
@@ -19,7 +19,7 @@ public:
 
     void ShowFinance(int time = -1);
 
-    void AddFinance(float money);
+    void AddFinance(double money);
 
     void remove();
 };

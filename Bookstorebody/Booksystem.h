@@ -29,7 +29,7 @@ public:
 
     char keyword_[20][61];
 
-    float price_ = 0;
+    double price_ = 0;
 
     int quantity_ = 0;
 
@@ -76,7 +76,7 @@ public:
 
     void Print(vector<Book> &res);
 
-    float Buy(string isbn, int quantity);
+    double Buy(string isbn, int quantity);
 
     int Select(string isbn);
 
@@ -90,7 +90,7 @@ public:
 
     string ReturnRight(string s);
 
-    float StringTofloat(string q);
+    double StringTodouble(string q);
 
     void remove();
 

@@ -3,17 +3,17 @@
 //LogSystem::LogSystem(): file_finance_data("./rundata/finance_data") {}
 LogSystem::LogSystem(): file_finance_data("./finance_data") {}
 
-Finance::Finance(float money):money_(money) {}
+Finance::Finance(double money):money_(money) {}
 Finance::Finance(){};
 
-void LogSystem::AddFinance(float money) {
+void LogSystem::AddFinance(double money) {
 //    cout << "add finance" << money
     Finance f(money);
     file_finance_data.Add(f);
 }
 
 void LogSystem::ShowFinance(int time) {
-    float input = 0, output = 0;
+    double input = 0, output = 0;
     if(time == -1){
         int tmp;
         file_finance_data.ReadInfo(tmp);

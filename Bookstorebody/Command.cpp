@@ -125,8 +125,8 @@ string CommandManager::ReturnLeft(string s) {
 }
 
 
-float CommandManager::StringTofloat(string q) {
-    float ans = 0;
+double CommandManager::StringTodouble(string q) {
+    double ans = 0;
     bool flag = false;
     int n = 0;
     for (int i = 0; i < q.length(); ++i) {
@@ -140,7 +140,7 @@ float CommandManager::StringTofloat(string q) {
     }
     if(n == 1) ans/=10;
     else if(n == 2) ans /= 100;
-//    cout << "testfloat" << ans << endl;
+//    cout << "testdouble" << ans << endl;
 //    cout << q <<' ' << n<< endl;
     return ans;
 }
@@ -214,7 +214,7 @@ void CommandManager::Run(string command) {
             if (!CheckPriority(command_words[0])) throw Book_error("buy_prio");
             else {
                 int quantity;
-                quantity = int(StringTofloat(command_words[2]));
+                quantity = int(StringTodouble(command_words[2]));
                 logsystem.AddFinance(booksystem.Buy(command_words[1], quantity));
             }
 
@@ -240,8 +240,8 @@ void CommandManager::Run(string command) {
             if (!CheckPriority(command_words[0])) throw Book_error("import_prio");
             else {
                 if (usersystem.BookNow() == -1) throw Book_error("import: no book is selected");
-                int quantity = int(StringTofloat(command_words[1]));
-                logsystem.AddFinance((-1) * StringTofloat(command_words[2]));
+                int quantity = int(StringTodouble(command_words[1]));
+                logsystem.AddFinance((-1) * StringTodouble(command_words[2]));
                 booksystem.Import(quantity, usersystem.BookNow());
 //                cout << usersystem.BookNow() << "&*&" <<endl;
             }
@@ -258,7 +258,7 @@ void CommandManager::Run(string command) {
             if (!CheckPriority(command_words[0])) throw Book_error("show_prio");
             if(command_words.size() == 3){
 //                cout << command_words[2] <<"$$$"<< endl;
-                logsystem.ShowFinance(int(StringTofloat(command_words[2])));
+                logsystem.ShowFinance(int(StringTodouble(command_words[2])));
             }
             else{
                 logsystem.ShowFinance();

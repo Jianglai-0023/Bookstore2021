@@ -35,8 +35,8 @@ string BookSystem::ReturnRight(string s) {
     return right;
 };
 
-float BookSystem::StringTofloat(string q) {
-    float ans = 0;
+double BookSystem::StringTodouble(string q) {
+    double ans = 0;
     bool flag = false;
     int n = 0;
     for (int i = 0; i < q.length(); ++i) {
@@ -167,7 +167,7 @@ void BookSystem::showAll() {
     Print(res);
 }
 
-float BookSystem::Buy(string isbn, int quantity) {
+double BookSystem::Buy(string isbn, int quantity) {
     Book buybook;
     book_key.clear();
     file_isbn_index.FindNode(isbn, book_key);
@@ -181,7 +181,7 @@ float BookSystem::Buy(string isbn, int quantity) {
 //        if(isbn == "978-1-4693-2357-2") cout << "QWQ" << buybook.quantity_ << " # " << book_key[0] << endl;
 
     } else throw Book_error("buy:book is not enough");
-    float p = quantity * buybook.price_;
+    double p = quantity * buybook.price_;
 //    cout << p << "&&&"<< endl;
     cout << setiosflags(std::ios::fixed) << setprecision(2) << p << endl;
 //    if (p == 0) cout << "0.00" << endl;
@@ -235,7 +235,7 @@ void BookSystem::Modify(const vector<string> &command, int index) {//修改index
             }
             strcpy(bookm.author_, right.c_str());
         } else if (command[i][1] == 'p') {
-            bookm.price_ = StringTofloat(ReturnRight(command[i]));
+            bookm.price_ = StringTodouble(ReturnRight(command[i]));
         } else if (command[i][1] == 'n') {
             string right = ReturnRight(command[i]);
             //维护blocklist
