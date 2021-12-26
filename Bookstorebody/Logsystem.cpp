@@ -22,6 +22,7 @@ void LogSystem::ShowFinance(int time) {
             Finance f;
             file_finance_data.Read(f,index);
             index += sizeof(Finance);
+//            cout << "ORZ show finance" << f.money_ << endl;
             if(f.money_ > 0) input += f.money_;
             else output += f.money_;
         }

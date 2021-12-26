@@ -242,6 +242,7 @@ void CommandManager::Run(string command) {
                 if (usersystem.BookNow() == -1) throw Book_error("import: no book is selected");
                 int quantity = int(StringTodouble(command_words[1]));
                 logsystem.AddFinance((-1) * StringTodouble(command_words[2]));
+//                cout << command_words[2] << ' ' << StringTodouble(command_words[2]) << "QWQ"  <<endl;
                 booksystem.Import(quantity, usersystem.BookNow());
 //                cout << usersystem.BookNow() << "&*&" <<endl;
             }

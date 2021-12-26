@@ -32,10 +32,10 @@ void remove(){
             file.open(file_name_, ios::out);
             file.close();
             file.open(file_name_);
-
+            WriteInfo(0);
         }
 //        file.close();
-        WriteInfo(0);
+
     }
 
     void Read(T &value, int index){
