@@ -27,20 +27,7 @@ User::User(string id, string password, int priority, string name) {
 
 User::User() {}
 
-//Usersystem::Usersystem() : file_user_data("./rundata/user_data"), file_user_index("./rundata/user_index") {
-//    users_key.clear();
-//    file_user_index.FindNode("root",users_key);
-//    if(users_key.empty()){
-//        User root("root", "sjtu", 7, "root");
-//        BlockNode root_;
-//        strcpy(root_.str, "root");
-//        root_.position = file_user_data.Add(root);
-//        file_user_index.AddNode(root_);
-//        file_user_data.Add(root);
-//    }
-//
-//};
-Usersystem::Usersystem() : file_user_data("./user_data"), file_user_index("./user_index") {
+Usersystem::Usersystem() : file_user_data("./rundata/user_data"), file_user_index("./rundata/user_index") {
     users_key.clear();
     file_user_index.FindNode("root",users_key);
     if(users_key.empty()){
@@ -53,6 +40,19 @@ Usersystem::Usersystem() : file_user_data("./user_data"), file_user_index("./use
     }
 
 };
+//Usersystem::Usersystem() : file_user_data("./user_data"), file_user_index("./user_index") {
+//    users_key.clear();
+//    file_user_index.FindNode("root",users_key);
+//    if(users_key.empty()){
+//        User root("root", "sjtu", 7, "root");
+//        BlockNode root_;
+//        strcpy(root_.str, "root");
+//        root_.position = file_user_data.Add(root);
+//        file_user_index.AddNode(root_);
+//        file_user_data.Add(root);
+//    }
+//
+//};
 
 int Usersystem::BookNow() {
     if (!user_select_[user_select_.size() - 1].bookselected_) return -1;

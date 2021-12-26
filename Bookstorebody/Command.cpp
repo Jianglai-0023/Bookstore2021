@@ -255,7 +255,7 @@ void CommandManager::Run(string command) {
             }
         } else if (command_words[0] == "show") {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("show_checkSen");
-            if (!CheckPriority(command_words[0])) throw Book_error("show_prio");
+            if (priority_now < 7) throw Book_error("show_prio");
             if(command_words.size() == 3){
 //                cout << command_words[2] <<"$$$"<< endl;
                 logsystem.ShowFinance(int(StringTodouble(command_words[2])));
