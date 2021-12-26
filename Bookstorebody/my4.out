@@ -1,0 +1,94 @@
+select_prio select 978-0-8249-1027-3
+modify_prio modify -name="cabinet" -keyword="tulle|nutritious" -price=238.11
+select_prio select 978-1-61075-232-9
+modify_prio modify -name="Nebraska" -author="JefferyHill" -keyword="Syria" -price=114.97
+buy:book is not enough buy 978-0-641-43198-2 1
+select_prio select 978-0-7827-9310-9
+modify_prio modify -name="camp" -author="NathanielOdom" -keyword="tulle|lordosis|nutritious" -price=307.58
+select_prio select 978-1-02-106115-7
+modify_prio modify -name="Basque" -author="RavenHancock" -keyword="greenwood|nutritious" -price=323.77
+select_prio select 978-1-57076-066-2
+modify_prio modify -author="MckenzieWhite" -keyword="grandniece|hiatus|greenwood" -price=138.82
+buy:book is not enough buy 978-0-88211-570-2 1
+buy:book is not enough buy 978-0-09-047259-8 1
+buy:book is not enough buy 978-0-89779-874-7 1
+
+978-0-7827-9310-9	immigrate	MonicaZavala	greenwood|nutritious|denizen	119.05	10
+342.19
+select_prio select 978-0-7064-9871-4
+modify_prio modify -name="walnut" -author="ZacharySilva" -keyword="grandniece" -price=493.74
+
+978-0-09-047259-8	conveyor	ZacharySilva	frigate|Syria	20.10	0
+978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
+978-0-88211-570-2	category	AmandaDean	frigate|hiatus|Syria	311.12	0
+978-0-89779-874-7	nurture	MckenzieWhite	Syria|purslane|nutritious	191.68	0
+978-1-261-59338-8	Methuselah	RavenHancock	hiatus|grandniece|incessant|tulle|Syria	250.79	0
+978-1-57076-066-2	profile	MckenzieWhite	Syria|bianco	245.51	0
+978-1-972437-83-4	Algenib	TiffanyBrown	Syria|purslane|denizen	141.68	30
+buy:book is not enough buy 978-0-88211-570-2 1
+119.05
+select_prio select 978-0-257-68321-8
+modify_prio modify -name="legend" -price=226.85
+select_prio select 978-1-06-863673-8
+modify_prio modify -name="epsilon" -author="AmandaDean" -keyword="tulle|Syria|withheld" -price=475.50
+buy:book is not enough buy 978-0-89779-874-7 1
+select_prio select 978-0-16-491400-9
+modify_prio modify -name="cuneiform" -author="JonathanAdams" -keyword="nutritious|douse|frigate|grandniece|greenwood" -price=80.60
+
+buy:book is not found buy 978-0-514-80251-2 1
+select_prio select 978-0-280-51417-6
+modify_prio modify -name="lithograph" -author="JefferyHill" -keyword="greenwood|nutritious" -price=165.66
+978-1-261-59338-8	Methuselah	RavenHancock	hiatus|grandniece|incessant|tulle|Syria	250.79	0
+978-1-279-17902-4	filament	RavenHancock	bianco|incessant|frigate	165.43	0
+978-1-4693-2357-2	poultry	RavenHancock	bianco	342.19	5
+978-0-89779-874-7	nurture	MckenzieWhite	Syria|purslane|nutritious	191.68	0
+978-1-59466-314-7	framework	MckenzieWhite	hiatus|purslane	422.34	0
+978-1-972437-83-4	Algenib	TiffanyBrown	Syria|purslane|denizen	141.68	30
+buy:book is not found buy 978-0-615-46275-2 1
+buy:book is not found buy 978-0-514-80251-2 1
+select_prio select 978-1-61075-232-9
+modify_prio modify -name="convivial" -keyword="Watkins|greenwood|denizen"
+buy:book is not found buy 978-1-112-77091-3 1
+
+select_prio select 978-1-279-17902-4
+modify_prio modify -price=234.49
+buy:book is not found buy 978-1-4073-5808-6 1
+978-1-261-59338-8	Methuselah	RavenHancock	hiatus|grandniece|incessant|tulle|Syria	250.79	0
+select_prio select 978-0-561-27243-6
+modify_prio modify -name="schedule" -author="NathanielOdom" -keyword="purslane|nutritious|Watkins|denizen|frigate" -price=197.41
+buy:book is not enough buy 978-0-89779-874-7 1
+
+select_prio select 978-1-130-87263-7
+modify_prio modify -name="angelic" -author="NathanielOdom" -keyword="lordosis|tulle|grandniece" -price=469.56
+
+select_prio select 978-1-261-59338-8
+modify_prio modify -name="sedulous" -author="AmandaDean" -price=475.62
+978-1-279-17902-4	filament	RavenHancock	bianco|incessant|frigate	165.43	0
+select_prio select 978-1-308-23156-3
+modify_prio modify -name="arena" -author="JefferyHill" -keyword="frigate|bianco|grandniece" -price=397.90
+select_prio select 978-1-130-87263-7
+modify_prio modify -name="opprobrium" -author="NathanielOdom" -keyword="Syria|incessant|purslane|douse" -price=299.53
+select_prio select 978-1-931511-66-7
+modify_prio modify -name="intuit" -author="NathanielOdom" -keyword="greenwood|Syria" -price=444.27
+passwd: wrong passwd passwd 82By7iz1wUx 4rezEVS1bSo0r zMtRWOFz2lSSBpXmxYa1Q
+select_prio select 978-1-4693-2357-2
+modify_prio modify -name="obsolete" -author="MonicaZavala" -price=257.00
+select_prio select 978-1-9733-9912-4
+modify_prio modify -name="booty" -price=139.01
+buy:book is not found buy 978-0-561-27243-6 1
+978-0-346-59823-2	Messrs	MckenzieWhite	denizen|bianco	323.72	16
+select_prio select 978-0-641-43198-2
+modify_prio modify -name="proprioceptive" -author="TiffanyBrown" -keyword="withheld|Syria|tulle|nutritious|greenwood" -price=345.42
+
+buy:book is not found buy 978-0-607-26789-1 1
+select_prio select 978-1-7395987-2-3
+modify_prio modify -name="passim" -author="AmandaDean" -keyword="hiatus" -price=53.18
+buy:book is not enough buy 978-1-279-17902-4 1
+buy:book is not found buy 978-0-513-66114-1 1
+buy:book is not found buy 978-1-66922-045-9 1
+select_prio select 978-1-895872-24-8
+modify_prio modify -name="debate" -author="JefferyHill" -keyword="withheld|greenwood|incessant" -price=134.40
+select_prio select 978-0-458-78062-4
+modify_prio modify -keyword="withheld|Watkins|frigate"
+select_prio select 978-1-262-62821-8
+modify_prio modify -name="enervate" -author="ZacharySilva" -keyword="greenwood|grandniece|withheld" -price=324.77

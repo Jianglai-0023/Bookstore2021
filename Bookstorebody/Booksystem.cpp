@@ -170,8 +170,12 @@ float BookSystem::Buy(string isbn, int quantity) {
     if (book_key.empty()) throw Book_error("buy:book is not found");
     file_book_data.Read(buybook, book_key[0]);
     if (buybook.quantity_ >= quantity) {
+//        if(isbn == "978-1-4693-2357-2") cout << "ORZ" << buybook.quantity_  << " @ " << book_key[0]<<' '<< quantity<< endl;
         buybook.quantity_ -= quantity;
+//        if(isbn == "978-1-4693-2357-2") cout << "QWQ" << buybook.quantity_ << " # " << book_key[0] << endl;
         file_book_data.Write(buybook, book_key[0]);
+//        if(isbn == "978-1-4693-2357-2") cout << "QWQ" << buybook.quantity_ << " # " << book_key[0] << endl;
+
     } else throw Book_error("buy:book is not enough");
     float p = quantity * buybook.price_;
 //    cout << p << "&&&"<< endl;

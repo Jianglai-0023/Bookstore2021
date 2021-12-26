@@ -39,6 +39,8 @@ void remove(){
     }
 
     void Read(T &value, int index){
+        file.close();
+        file.open(file_name_);
 //        file.open(file_name_);
         file.seekg(index);
         file.read(reinterpret_cast<char *>(&value),sizeof(T));
@@ -46,12 +48,15 @@ void remove(){
     };
     //write:include new and change, need check;
     void Write(T &value,int index){
-//        file.open(file_name_);
+        file.close();
+        file.open(file_name_);
         file.seekg(index);
         file.write(reinterpret_cast<char *>(&value),sizeof(T));
-//        file.close();
+
     };
     int Add(T &value){
+        file.close();
+        file.open(file_name_);
         int tmp;
         int index;
         ReadInfo(tmp);

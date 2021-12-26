@@ -1,36 +1,34 @@
-su: user unexisted su root sjtu
-useradd_prio useradd worker worker_password 3 Liu,TaylorandStewart
-select_prio select 9787544287722
-modify_prio modify -name="Phillips,HallandWelch" -keyword="KlinePLC|GoldenInc" -author="SantiagoPLC" -price=45.00
-select_prio select 9787559410443
-modify_prio modify -name="GonzalesLLC" -keyword="KlinePLC|SuttonPLC" -author="HunterLtd" -price=38
-log_pri logout
-su: user unexisted su worker worker_password
-select_prio select 9787559410443
-import_prio import 48 233.33
-select_prio select 9787544287722
-import_prio import 15 150
-log_pri logout
-su: user unexisted su user0 user0_password 
-buy_prio buy 9787559410443 5 
-buy_prio buy 9787544287722 3
-log_pri logout
-su: user unexisted su worker worker_password 
-buy_prio buy 9787559410443 20
-select_prio select 9787559410443
-import_prio import 20 200
-select_prio select 9787544287722
-import_prio import 3 30
-buy_prio buy 9787544287722 5
-log_pri logout
-su: user unexisted su root sjtu 
-buy_prio buy 9787544287722 1
-select_prio select 9787544287722
-import_prio import 20 200.00
-show_prio show finance
-show_prio show finance 1
-show_prio show finance 3
-show_prio show finance 5
-show_prio show finance 10
-show_prio show
-log_pri logout
+select_prio select 978-1-4693-2357-2
+modify_prio modify -author="RavenHancock" -price=283.30
+select_prio select 978-0-04-724155-0
+modify_prio modify -name="beechwood" -author="TiffanyBrown" -keyword="frigate|incessant|bianco|grandniece|purslane" -price=168.70
+select_prio select 978-1-4693-2357-2
+modify_prio modify -name="coccidiosis" -author="TiffanyBrown" -keyword="tulle" -price=127.69
+select_prio select 978-1-261-59338-8
+modify_prio modify -name="inapproachable" -author="MonicaZavala" -keyword="frigate|lordosis|douse" -price=456.65
+select_prio select 978-1-4466-7829-9
+modify_prio modify -name="sprue" -author="RavenHancock" -keyword="Syria" -price=473.74
+245.51
+323.72
+buy:book is not enough buy 978-0-88211-570-2 1
+select_prio select 978-1-261-59338-8
+modify_prio modify -name="dear" -keyword="purslane|greenwood|withheld|hiatus"
+buy:book is not enough buy 978-0-88211-570-2 1
+978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
+978-1-4693-2357-2	poultry	RavenHancock	bianco	342.19	9
+select_prio select 978-1-972437-83-4
+modify_prio modify -author="TiffanyBrown" -price=434.43
+978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
+978-1-57076-066-2	profile	MckenzieWhite	Syria|bianco	245.51	1
+978-1-59466-314-7	framework	MckenzieWhite	hiatus|purslane	77.27	0
+select_prio select 978-0-514-80251-2
+modify_prio modify -name="Magdalene" -author="JefferyHill" -keyword="greenwood" -price=326.77
+buy:book is not enough buy 978-0-641-43198-2 1
+select_prio select 978-1-57076-066-2
+modify_prio modify -name="scrape" -author="JonathanAdams" -keyword="bianco|frigate|hiatus"
+select_prio select 978-1-972437-83-4
+modify_prio modify -name="Thorpe" -author="ZacharySilva" -keyword="Watkins|lordosis|incessant" -price=132.79
+select_prio select 978-0-342-92615-2
+modify_prio modify -name="emigree" -author="NathanielOdom" -keyword="lordosis|greenwood" -price=4.48
+select_prio select 978-0-346-59823-2
+modify_prio modify -price=382.05
