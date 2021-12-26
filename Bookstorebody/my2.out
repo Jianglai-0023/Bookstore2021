@@ -1,79 +1,459 @@
-select_prio select 978-0-346-59823-2su
-modify_prio modify -name="fair" -keyword="douse" -price=5.22
-select_prio select 978-1-5005-7607-3
-modify_prio modify -name="traitorous" -author="JefferyHill" -keyword="frigate|grandniece" -price=159.57
-323.72
-978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
-978-1-57076-066-2	profile	MckenzieWhite	Syria|bianco	245.51	1
-978-1-59466-314-7	framework	MckenzieWhite	hiatus|purslane	422.34	0
-select_prio select 978-1-4693-2357-2
-modify_prio modify -author="ZacharySilva" -keyword="Syria|douse|nutritious|greenwood"
-342.19
-select_prio select 978-0-346-59823-2
-modify_prio modify -price=137.80
-select_prio select 978-1-57076-066-2
-978-0-88211-570-2	category	AmandaDean	frigate|hiatus|Syria	311.12	0
-buy:book is not enough buy 978-1-59466-314-7 1
-select_prio select 978-0-641-43198-2
-modify_prio modify -name="foxtail" -author="JonathanAdams" -price=449.39
-select_prio select 978-1-4905-6971-0
-modify_prio modify -name="brother" -author="MckenzieWhite" -keyword="purslane|grandniece" -price=14.87
-978-0-346-59823-2	syllabic	JefferyHill	denizen|bianco	323.72	18
-978-1-4693-2357-2	poultry	RavenHancock	bianco	342.19	8
-978-1-57076-066-2	profile	MckenzieWhite	Syria|bianco	245.51	1
-select_prio select 978-0-647-74020-0
-modify_prio modify -name="Jorge" -author="JefferyHill" -keyword="greenwood|purslane" -price=492.57
-select_prio select 978-0-416-72400-4
-modify_prio modify -name="clutter" -author="JefferyHill" -keyword="greenwood|denizen|incessant|grandniece" -price=146.87
-select_prio select 978-0-641-43198-2
-modify_prio modify -name="hideous" -author="AmandaDean" -keyword="frigate|grandniece" -price=1.12
-select_prio select 978-0-88211-570-2
-modify_prio modify -name="skill" -price=194.78
-select_prio select 978-0-615-46275-2
-modify_prio modify -name="eohippus" -author="JonathanAdams" -keyword="Watkins" -price=287.62
-buy:book is not found buy 978-0-615-46275-2 1
-select_prio select 978-0-88211-570-2
-modify_prio modify -name="Vishnu" -author="NathanielOdom" -keyword="nutritious" -price=335.13
-978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
-buy:book is not enough buy 978-1-59466-314-7 1
-select_prio select 978-1-4905-6971-0
-modify_prio modify -name="Bergman" -author="JefferyHill" -keyword="douse|hiatus|tulle|withheld" -price=159.58
-buy:book is not found buy 978-1-4905-6971-0 1
-buy:book is not found buy 978-0-514-80251-2 1
-select_prio select 978-0-513-66114-1
-modify_prio modify -name="rowdy" -author="MckenzieWhite" -keyword="denizen|frigate|Watkins|incessant" -price=479.44
-978-1-59466-314-7	framework	MckenzieWhite	hiatus|purslane	422.34	0
-buy:book is not enough buy 978-1-261-59338-8 1
-select_prio select 978-0-7827-9310-9
-modify_prio modify -name="perilous" -author="JefferyHill" -keyword="tulle|lordosis|incessant|purslane" -price=328.80
-323.72
-select_prio select 978-1-57076-066-2
-modify_prio modify -keyword="hiatus|nutritious|grandniece|denizen"
-342.19
-select_prio select 978-0-7233-3606-8
-modify_prio modify -name="wove" -author="TiffanyBrown" -keyword="incessant" -price=78.80
-select_prio select 978-0-88211-570-2
-modify_prio modify -author="JonathanAdams"
-select_prio select 978-0-513-66114-1
-modify_prio modify -name="phoebe" -author="JonathanAdams" -price=156.87
-978-0-09-047259-8	conveyor	ZacharySilva	frigate|Syria	20.10	0
-select_prio select 978-1-66922-045-9
-modify_prio modify -name="periphery" -author="TiffanyBrown" -keyword="frigate|grandniece|purslane|lordosis|Syria" -price=164.71
-select_prio select 978-0-910812-86-3
-modify_prio modify -name="bleak" -author="MonicaZavala" -keyword="bianco" -price=259.24
-select_prio select 978-0-458-78062-4
-modify_prio modify -name="econometric" -author="BryanJohnson" -keyword="frigate|purslane|grandniece|hiatus|incessant" -price=353.53
-buy:book is not enough buy 978-0-641-43198-2 1
+select_prio select 978-1-70023-462-9
+modify_prio modify -name="horsewomen" -keyword="tippy|sunset|ergative|extrapolate"
+buy:book is not found buy 978-0-692-98289-1 1
+select_prio select 978-1-70023-462-9
+modify_prio modify -name="purple" -author="KevinSchmidt" -keyword="tram|gym|numeral|ergative|Linus"
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+select_prio select 978-1-70023-462-9
+modify_prio modify -name="histrionic" -author="HeidiLopez" -keyword="Schuylkill|scary|tram|gym" -price=340.78
+select_prio select 978-1-4238-3775-6
+modify_prio modify -keyword="microbe|scary|Osborne|tippy"
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+buy:book is not found buy 978-1-155-48175-3 1
+buy:book is not enough buy 978-0-08-874137-8 1
+select_prio select 978-1-76494-559-2
+modify_prio modify -name="guaranty" -author="CameronCook" -keyword="tippy|expressive" -price=255.39
+select_prio select 978-0-696-48517-6
+modify_prio modify -name="sarcasm" -author="GeoffreyGomez" -keyword="microbe" -price=400.77
+152.61
+select_prio select 978-0-498-57415-3
+modify_prio modify -name="psychopath" -author="JohnChan" -keyword="Schuylkill|gym" -price=377.29
 
-select_prio select 978-0-615-46275-2
-modify_prio modify -name="heterogamous" -author="JonathanAdams" -keyword="withheld|purslane|nutritious"
-978-0-7827-9310-9	immigrate	MonicaZavala	greenwood|nutritious|denizen	119.05	10
-978-0-89779-874-7	nurture	MckenzieWhite	Syria|purslane|nutritious	191.68	0
-245.51
-buy:book is not found buy 978-0-7233-3606-8 1
-passwd: wrong passwd passwd nkIt8LYyGrMvDX fRTRwy83QKvvHExwiqcocVZwH Ju6xwndExn7yKVEh3UFsI7Xo
-select_prio select 978-0-641-43198-2
-modify_prio modify -keyword="hiatus|Watkins|douse|incessant" -price=87.45
-select_prio select 978-1-59466-314-7
-modify_prio modify -name="ozone" -author="JefferyHill" -keyword="grandniece|tulle" -price=263.93
-buy:book is not enough buy 978-1-57076-066-2 1
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+
+select_prio select 978-1-4238-3775-6
+modify_prio modify -name="rectify" -keyword="numeral|tram"
+
+buy:book is not enough buy 978-1-886881-31-0 1
+select_prio select 978-1-884479-78-6
+modify_prio modify -name="homestead" -author="JenniferObrien" -keyword="tram" -price=479.02
+select_prio select 978-1-70191-415-5
+modify_prio modify -name="Edmonton" -price=405.46
+
+
+select_prio select 978-1-267-48091-0
+modify_prio modify -author="ChristinaKennedy" -price=51.70
+buy:book is not found buy 978-1-76494-559-2 1
+select_prio select 978-0-85730-732-3
+modify_prio modify -name="Abo"
+buy:book is not found buy 978-0-498-57415-3 1
+select_prio select 978-0-393-65758-6
+modify_prio modify -name="impelled" -author="KimberlyCross" -keyword="sunset|Schuylkill|extrapolate|deliquesce" -price=229.89
+44.62
+
+
+buy:book is not enough buy 978-0-900241-36-9 1
+buy:book is not found buy 978-0-88673-602-6 1
+buy:book is not found buy 978-0-527-25074-4 1
+select_prio select 978-1-07-092812-8
+modify_prio modify -name="minute" -author="CameronCook" -keyword="tippy" -price=244.57
+buy:book is not enough buy 978-0-08-874137-8 1
+buy:book is not found buy 978-1-07-299798-6 1
+
+978-0-696-48517-6		EvelynMoore		82.84	0
+select_prio select 978-1-366-32894-6
+modify_prio modify -name="cowlick" -author="KevinSchmidt" -keyword="numeral|scary"
+select_prio select 978-0-08-874137-8
+modify_prio modify -name="York" -author="SaraJoseph" -keyword="expressive|extrapolate|tippy"
+select_prio select 978-1-886881-31-0
+modify_prio modify -name="hominid" -author="HeidiLopez" -keyword="deliquesce|tram"
+
+buy:book is not found buy 978-0-294-64970-3 1
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+select_prio select 978-1-4238-3775-6
+modify_prio modify -name="Emily" -author="MatthewWright" -keyword="tippy|Linus" -price=381.79
+select_prio select 978-1-4799-6355-3
+modify_prio modify -name="wrathful" -author="KevinSchmidt" -keyword="tippy|scary|deliquesce|expressive|Schuylkill" -price=341.89
+select_prio select 978-1-07-092812-8
+modify_prio modify -name="onion" -author="SamanthaDuarte"
+select_prio select 978-1-334-99071-7
+modify_prio modify -name="Amos" -keyword="scary|paw|gym|Linus"
+select_prio select 978-1-339-30713-8
+modify_prio modify -name="alphabet" -keyword="microbe|extrapolate|scary|tram|numeral" -price=183.42
+buy:book is not enough buy 978-0-900241-36-9 1
+buy:book is not found buy 978-1-155-48175-3 1
+buy:book is not found buy 978-1-07-092812-8 1
+
+select_prio select 978-0-7898-8572-2
+modify_prio modify -name="Fabian" -author="KimberlyCross" -keyword="expressive|ergative|paw|Schuylkill|tippy" -price=252.44
+select_prio select 978-1-342-18510-5
+modify_prio modify -name="slag" -author="KimberlyCross" -keyword="Schuylkill|tippy|numeral" -price=8.80
+buy:book is not found buy 978-1-342-18510-5 1
+select_prio select 978-1-85950-697-4
+modify_prio modify -name="eighty" -author="JenniferObrien" -keyword="tram|tippy" -price=167.34
+select_prio select 978-0-7072-6975-7
+modify_prio modify -name="spacesuit" -author="EvelynMoore" -keyword="Osborne|numeral" -price=423.29
+buy:book is not found buy 978-1-155-48175-3 1
+buy:book is not enough buy 978-1-366-32894-6 1
+select_prio select 978-1-68650-894-3
+modify_prio modify -name="conservatism" -author="BelindaKlein" -keyword="scary|Schuylkill" -price=32.66
+select_prio select 978-0-7740-0256-1
+modify_prio modify -name="sector" -author="RichardManning" -keyword="tram|numeral" -price=153.95
+buy:book is not found buy 978-0-09-963422-5 1
+select_prio select 978-0-7123-9101-6
+modify_prio modify -name="Manitoba" -author="ChristinaKennedy" -keyword="tippy|Osborne|numeral|paw" -price=301.75
+buy:book is not found buy 978-1-70191-415-5 1
+select_prio select 978-1-915380-50-0
+modify_prio modify -name="inhabit" -author="KimberlyCross" -keyword="extrapolate|scary|sunset|tippy|ergative" -price=49.73
+buy:book is not found buy 978-0-498-57415-3 1
+buy:book is not found buy 978-1-884479-78-6 1
+select_prio select 978-1-76494-559-2
+modify_prio modify -name="furrier" -author="SaraJoseph" -keyword="paw|numeral|scary" -price=369.36
+select_prio select 978-1-4772-0106-0
+modify_prio modify -name="ply" -author="JillCarrillo" -keyword="paw" -price=60.11
+
+buy:book is not found buy 978-0-294-64970-3 1
+buy:book is not found buy 978-0-88673-602-6 1
+select_prio select 978-1-4609-8843-5
+modify_prio modify -name="hydrosphere" -author="SamanthaDuarte" -keyword="tram" -price=324.95
+select_prio select 978-1-282-55272-2
+modify_prio modify -name="straightway" -author="HeidiLopez" -keyword="Schuylkill" -price=203.37
+select_prio select 978-1-60436-035-6
+modify_prio modify -name="Carruthers" -author="SaraJoseph" -keyword="tram|expressive" -price=383.05
+select_prio select 978-1-4499-0125-7
+modify_prio modify -name="indistinguishable" -author="KimberlyButler" -keyword="Schuylkill" -price=393.24
+select_prio select 978-1-366-32894-6
+modify_prio modify -name="confirmatory" -author="JillCarrillo"
+select_prio select 978-1-85950-697-4
+modify_prio modify -price=434.65
+select_prio select 978-0-9687621-2-7
+modify_prio modify -name="bliss" -author="CarrieAnderson" -keyword="ergative" -price=30.82
+buy:book is not found buy 978-1-282-55272-2 1
+select_prio select 978-0-698-21258-9
+modify_prio modify -name="Boise" -author="MatthewWright" -keyword="ergative|paw|deliquesce|Schuylkill" -price=252.97
+buy:book is not found buy 978-0-09-963422-5 1
+select_prio select 978-1-76494-559-2
+modify_prio modify -name="incommensurate" -price=9.42
+select_prio select 978-0-08-874137-8
+modify_prio modify -author="SaraJoseph" -price=126.04
+buy:book is not found buy 978-1-248-95598-7 1
+select_prio select 978-1-275-78962-3
+modify_prio modify -name="Ferdinand" -author="SamanthaDuarte" -keyword="microbe|expressive" -price=329.85
+select_prio select 978-0-9623228-6-0
+modify_prio modify -name="erroneous" -price=72.75
+buy:book is not found buy 978-0-480-83259-9 1
+select_prio select 978-1-915380-50-0
+modify_prio modify -author="RickyBaker" -keyword="Osborne|scary|paw|extrapolate" -price=196.95
+
+buy:book is not found buy 978-1-155-48175-3 1
+select_prio select 978-0-692-98289-1
+modify_prio modify -keyword="extrapolate|gym|sunset" -price=97.36
+select_prio select 978-1-76494-559-2
+modify_prio modify -name="wherefore" -price=494.32
+passwd: wrong passwd passwd uAr4Z101L4W9g1Ia9guJE uYaWqpsUiaEYbiiHJWd5oSOhq JdNMbaABMSRBi8jG4zul8g
+buy:book is not enough buy 978-0-10-157784-7 1
+select_prio select 978-0-480-83259-9
+modify_prio modify -name="greet" -keyword="tippy|ergative|expressive|microbe" -price=94.00
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+buy:book is not found buy 978-1-282-55272-2 1
+
+select_prio select 978-1-7330257-2-0
+modify_prio modify -name="ship" -author="KimberlyCross" -keyword="scary|Linus|paw" -price=437.71
+select_prio select 978-0-594-71344-9
+modify_prio modify -name="evangelic" -author="JesusBlack" -keyword="tram" -price=299.39
+select_prio select 978-0-393-65758-6
+modify_prio modify -name="w" -author="CameronCook" -keyword="gym|paw|microbe" -price=61.60
+select_prio select 978-1-275-78962-3
+modify_prio modify -name="phrasemake" -author="SaraJoseph" -keyword="sunset"
+
+
+select_prio select 978-1-68650-894-3
+modify_prio modify -author="RickyBaker"
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+
+select_prio select 978-1-4772-0106-0
+modify_prio modify -name="anthropoid"
+
+select_prio select 978-1-884479-78-6
+modify_prio modify -author="GeoffreyGomez" -keyword="ergative|extrapolate" -price=56.18
+select_prio select 978-0-7559-3326-6
+modify_prio modify -name="aboriginal" -author="KimberlyCross" -keyword="gym|expressive" -price=115.27
+select_prio select 978-1-85798-186-5
+modify_prio modify -name="top" -author="SamanthaDuarte" -keyword="tippy|deliquesce" -price=418.52
+select_prio select 978-1-09-319811-9
+modify_prio modify -name="Jolla" -author="MarieAdkins" -keyword="Schuylkill|Linus" -price=300.78
+
+152.61
+select_prio select 978-1-248-95598-7
+modify_prio modify -author="CarrieAnderson" -keyword="paw|ergative|tippy" -price=390.85
+select_prio select 978-1-04-358365-1
+modify_prio modify -name="fathom" -author="JesusBlack" -keyword="ergative" -price=165.88
+
+
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+
+select_prio select 978-1-60436-035-6
+modify_prio modify -author="SamanthaDuarte" -price=219.40
+select_prio select 978-0-7072-6975-7
+modify_prio modify -name="pallet" -author="MarieAdkins" -keyword="extrapolate|scary" -price=364.14
+
+
+buy:book is not found buy 978-1-85798-186-5 1
+
+select_prio select 978-1-85950-697-4
+modify_prio modify -author="GeoffreyGomez" -keyword="extrapolate|sunset|expressive|paw"
+select_prio select 978-0-8450-3372-2
+modify_prio modify -name="demise" -author="MarieAdkins" -keyword="expressive|ergative" -price=458.83
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+select_prio select 978-1-919501-01-7
+modify_prio modify -name="adjutant" -author="SamanthaDuarte" -keyword="tram" -price=228.10
+
+
+buy:book is not found buy 978-0-9687621-2-7 1
+select_prio select 978-1-00-278579-9
+modify_prio modify -name="rimy" -author="KimberlyCross" -keyword="Schuylkill|scary|microbe|expressive" -price=371.31
+select_prio select 978-0-7386-3684-9
+modify_prio modify -name="Hanoverian" -author="CarrieAnderson" -keyword="scary|Osborne|Schuylkill" -price=488.01
+buy:book is not found buy 978-0-9687621-2-7 1
+select_prio select 978-1-05-004309-4
+modify_prio modify -name="vicious" -author="HeidiLopez" -keyword="Linus|numeral|ergative|deliquesce|scary" -price=378.30
+
+
+select_prio select 978-0-10-301377-0
+modify_prio modify -name="venereal" -author="JenniferObrien" -keyword="tram|paw|deliquesce|Schuylkill|microbe" -price=322.86
+
+select_prio select 978-0-696-48517-6
+modify_prio modify -name="moonlit" -author="GeoffreyGomez" -keyword="extrapolate|scary|Linus" -price=420.21
+select_prio select 978-0-393-65758-6
+modify_prio modify -name="churn" -author="EvelynMoore" -price=131.06
+passwd: wrong passwd passwd iq8Og58UOP3yEpWFNXKqB4PCVmf7 81Z ubu8WdhfmWo0QZ8janCAZVAkVaBiQ
+select_prio select 978-0-391-93427-6
+modify_prio modify -name="melange" -author="HeidiLopez" -keyword="paw|scary" -price=381.05
+select_prio select 978-0-10-157784-7
+modify_prio modify -name="pelvis" -keyword="expressive" -price=443.55
+buy:book is not found buy 978-1-70191-415-5 1
+
+select_prio select 978-0-12-301238-8
+modify_prio modify -name="Dugan" -author="MarieAdkins" -keyword="tippy|Linus|gym" -price=147.69
+select_prio select 978-0-446-08493-2
+modify_prio modify -keyword="sunset|tippy" -price=281.98
+
+select_prio select 978-0-576-00363-6
+modify_prio modify -name="freehold" -author="CarrieAnderson" -keyword="deliquesce|sunset" -price=198.19
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+select_prio select 978-0-12-301238-8
+modify_prio modify -name="draftee" -keyword="scary" -price=99.65
+buy:book is not enough buy 978-1-339-30713-8 1
+
+buy:book is not found buy 978-1-155-48175-3 1
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+978-0-85730-732-3	Deirdre	JesusBlack	paw	152.61	3
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+buy:book is not found buy 978-1-334-99071-7 1
+152.61
+select_prio select 978-1-59272-406-2
+modify_prio modify -name="wilt" -author="BelindaKlein" -keyword="numeral|gym" -price=204.75
+buy:book is not enough buy 978-1-366-32894-6 1
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+select_prio select 978-0-480-83259-9
+modify_prio modify -name="froze" -author="ChristinaKennedy" -keyword="deliquesce|gym|Osborne" -price=316.98
+select_prio select 978-1-70023-462-9
+modify_prio modify -name="tolerant" -author="RickyBaker" -keyword="microbe|Linus"
+select_prio select 978-1-205-13932-0
+modify_prio modify -name="mumble" -author="KevinSchmidt" -keyword="gym" -price=400.57
+select_prio select 978-1-70191-415-5
+modify_prio modify -author="KimberlyCross" -keyword="microbe|gym|Linus|extrapolate" -price=7.01
+select_prio select 978-1-312-36607-7
+modify_prio modify -name="epistle" -author="CameronCook" -keyword="paw"
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+select_prio select 978-1-4238-3775-6
+modify_prio modify -name="scription" -keyword="Schuylkill|deliquesce|tram|numeral|gym" -price=12.03
+select_prio select 978-1-200-62996-3
+modify_prio modify -name="immigrant" -author="MatthewWright" -keyword="tram" -price=433.48
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+
+buy:book is not found buy 978-1-282-55272-2 1
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+buy:book is not found buy 978-0-87684-018-4 1
+
+buy:book is not found buy 978-0-12-301238-8 1
+
+select_prio select 978-0-87684-018-4
+modify_prio modify -keyword="tippy|Osborne|extrapolate|tram"
+
+select_prio select 978-1-366-32894-6
+modify_prio modify -author="MatthewWright" -keyword="Schuylkill"
+select_prio select 978-0-527-25074-4
+modify_prio modify -author="CarrieAnderson"
+select_prio select 978-1-58109-212-7
+modify_prio modify -name="Maxwellian" -author="RichardManning" -keyword="Linus|numeral|paw|sunset" -price=43.37
+buy:book is not found buy 978-0-09-963422-5 1
+select_prio select 978-0-922659-41-8
+modify_prio modify -name="Alice" -author="EvelynMoore" -keyword="deliquesce|tippy|gym" -price=409.87
+buy:book is not found buy 978-1-09-319811-9 1
+
+select_prio select 978-1-70819-263-1
+modify_prio modify -name="Virginia" -author="CameronCook" -keyword="tippy|microbe|gym|paw" -price=334.12
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+select_prio select 978-1-392-46100-6
+modify_prio modify -name="Chesterton" -author="GeoffreyGomez" -keyword="Schuylkill" -price=448.83
+
+select_prio select 978-1-04-358365-1
+modify_prio modify -name="tome" -author="RichardManning" -keyword="scary" -price=145.24
+select_prio select 978-1-70023-462-9
+modify_prio modify -name="shoreline" -price=60.93
+select_prio select 978-0-263-57373-2
+modify_prio modify -name="wastrel" -author="JesusBlack" -keyword="microbe|ergative" -price=11.06
+select_prio select 978-1-5399-0983-5
+modify_prio modify -name="obnoxious" -author="CarrieAnderson" -keyword="tram|expressive" -price=21.75
+buy:book is not found buy 978-0-09-963422-5 1
+buy:book is not enough buy 978-1-339-30713-8 1
+buy:book is not found buy 978-0-8450-3372-2 1
+
+buy:book is not found buy 978-0-446-08493-2 1
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+978-0-85730-732-3	Deirdre	JesusBlack	paw	152.61	2
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+select_prio select 978-0-942521-80-1
+modify_prio modify -name="heed" -author="KevinSchmidt" -keyword="deliquesce" -price=497.37
+buy:book is not found buy 978-1-59272-406-2 1
+select_prio select 978-0-85730-732-3
+modify_prio modify -name="pedigree" -author="KevinSchmidt" -keyword="numeral|microbe" -price=229.36
+978-0-900241-36-9	Lowe	CameronCook	ergative	211.30	0
+
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+978-0-498-57415-3	ytterbium	RickyBaker	paw|Schuylkill	63.76	0
+
+
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+buy:book is not found buy 978-1-70191-415-5 1
+select_prio select 978-1-334-99071-7
+modify_prio modify -name="Electra" -author="EvelynMoore"
+978-0-10-157784-7	interpretation	MarieAdkins		0.00	0
+buy:book is not found buy 978-0-7740-0256-1 1
+select_prio select 978-0-263-57373-2
+modify_prio modify -name="melodious" -author="JenniferObrien" -keyword="ergative|tippy|expressive|microbe" -price=266.50
+select_prio select 978-1-76494-559-2
+modify_prio modify -keyword="Linus|scary"
+select_prio select 978-1-70819-263-1
+modify_prio modify -author="HeidiLopez"
+select_prio select 978-1-79670-186-9
+modify_prio modify -name="roadside" -author="KevinSchmidt" -keyword="scary" -price=230.02
+978-1-366-32894-6	psycho	CarrieAnderson	sunset|tram|Linus	88.85	0
+978-1-81401-511-4	gantlet	JenniferObrien	sunset|tram	44.62	13
+buy:book is not found buy 978-1-07-299798-6 1
+select_prio select 978-0-7386-3684-9
+modify_prio modify -name="gigawatt" -author="RickyBaker" -price=122.26
+
+select_prio select 978-0-533-93145-3
+modify_prio modify -name="hilt" -author="MarieAdkins" -price=395.06
+
+select_prio select 978-1-06-932025-4
+modify_prio modify -name="teleconference" -author="JesusBlack" -keyword="tram" -price=163.78
+buy:book is not found buy 978-0-9709886-6-9 1
+buy:book is not found buy 978-0-09-963422-5 1
+select_prio select 978-0-7435-9998-6
+modify_prio modify -name="triploidy" -author="GeoffreyGomez" -keyword="paw|sunset|Linus|numeral|tippy" -price=251.67
+
+44.62
+978-0-08-874137-8	Whatley	JenniferObrien	ergative	475.57	0
+978-1-81401-511-4	gantlet	JenniferObrien	sunset|tram	44.62	12
+buy:book is not enough buy 978-0-696-48517-6 1
+select_prio select 978-1-158-33301-1
+modify_prio modify -name="viscosity" -author="BelindaKlein" -keyword="extrapolate" -price=434.25
+buy:book is not found buy 978-1-4772-0106-0 1
+
+select_prio select 978-0-04-916808-4
+modify_prio modify -name="irreparable" -author="SaraJoseph" -keyword="paw|gym" -price=271.46
+select_prio select 978-1-4238-3775-6
+modify_prio modify -name="singsong" -author="JillCarrillo" -keyword="microbe|Schuylkill|sunset|ergative"
+select_prio select 978-1-60436-035-6
+modify_prio modify -price=160.50
+select_prio select 978-1-04-358365-1
+modify_prio modify -name="distinct" -author="RickyBaker"
+select_prio select 978-1-915380-50-0
+modify_prio modify -name="Poynting" -author="SamanthaDuarte" -keyword="Linus"
+select_prio select 978-1-952778-39-1
+modify_prio modify -name="tall" -author="KimberlyCross" -keyword="expressive|gym|Linus|paw" -price=11.55
+select_prio select 978-0-10-301377-0
+modify_prio modify -price=497.48
+buy:book is not found buy 978-1-5399-0983-5 1
+select_prio select 978-0-498-57415-3
+modify_prio modify -name="invariable" -author="JesusBlack"
+buy:book is not enough buy 978-0-900241-36-9 1
+select_prio select 978-0-85730-732-3
+modify_prio modify -name="corroboree" -author="KimberlyButler" -keyword="Schuylkill|paw|expressive|tram"
+
+buy:book is not found buy 978-0-692-98289-1 1
+
+buy:book is not found buy 978-1-248-95598-7 1
+select_prio select 978-0-498-57415-3
+modify_prio modify -name="measle" -author="SaraJoseph" -keyword="extrapolate|microbe" -price=167.75
+buy:book is not found buy 978-1-70191-415-5 1
+
+buy:book is not enough buy 978-0-10-157784-7 1
+buy:book is not found buy 978-1-919501-01-7 1
+select_prio select 978-0-9943671-5-0
+modify_prio modify -name="bruit" -author="KimberlyButler" -keyword="Schuylkill|microbe|numeral" -price=414.31
+select_prio select 978-0-294-64970-3
+modify_prio modify -name="dolce" -price=498.67
+select_prio select 978-1-61615-778-4
+modify_prio modify -name="equal" -author="KimberlyCross" -keyword="microbe|tippy|gym" -price=37.45
+select_prio select 978-0-498-57415-3
+modify_prio modify -name="gnome" -price=438.27
+select_prio select 978-1-03-608896-5
+modify_prio modify -name="Celebes" -author="CameronCook" -keyword="expressive|tippy|numeral|extrapolate" -price=468.25
+select_prio select 978-0-263-57373-2
+modify_prio modify -name="graveyard" -author="HeidiLopez" -keyword="tippy" -price=410.17
+select_prio select 978-0-7435-9998-6
+modify_prio modify -name="veal" -author="MatthewWright" -price=325.11
+select_prio select 978-0-480-83259-9
+modify_prio modify -keyword="paw|deliquesce|microbe"
+select_prio select 978-1-04-847072-7
+modify_prio modify -name="beautify" -author="EvelynMoore" -keyword="expressive" -price=125.59
+978-0-9623228-6-0	hormone	KimberlyButler	Linus|expressive|ergative|Schuylkill	287.82	7
+978-1-366-32894-6	psycho	CarrieAnderson	sunset|tram|Linus	88.85	0
+buy:book is not enough buy 978-0-900241-36-9 1
+buy:book is not found buy 978-1-4772-0106-0 1
+buy:book is not found buy 978-0-358-56331-0 1
+
+buy:book is not found buy 978-0-393-65758-6 1
+select_prio select 978-1-158-33301-1
+modify_prio modify -name="daze" -keyword="numeral" -price=340.42
+978-1-339-30713-8	invective	GeoffreyGomez	Osborne|expressive	378.17	0
+buy:book is not found buy 978-1-884479-78-6 1
+select_prio select 978-0-422-69350-9
+modify_prio modify -name="pediatric" -author="KimberlyButler" -keyword="microbe|sunset" -price=443.23
+select_prio select 978-1-877076-00-8
+modify_prio modify -name="transparent" -author="KevinSchmidt" -keyword="tram|microbe|Linus|expressive" -price=149.52
+select_prio select 978-0-8324-3990-2
+modify_prio modify -name="ensconce" -price=189.43
+select_prio select 978-1-921760-64-8
+modify_prio modify -name="salesman" -author="KimberlyButler" -keyword="scary|expressive" -price=404.39
+select_prio select 978-0-7072-6975-7
+modify_prio modify -name="farewell" -author="GeoffreyGomez" -keyword="ergative|deliquesce" -price=370.11
+select_prio select 978-1-5068-8710-4
+modify_prio modify -name="coexistent" -author="JesusBlack" -keyword="paw|extrapolate|Osborne|gym" -price=249.27
+
+select_prio select 978-1-158-33301-1
+modify_prio modify -name="befuddle" -price=429.89
+buy:book is not found buy 978-1-76494-559-2 1
+buy:book is not enough buy 978-0-498-57415-3 1
+978-1-886881-31-0	licensable	SamanthaDuarte	deliquesce|paw|microbe|extrapolate	41.71	0
+select_prio select 978-0-698-21258-9
+modify_prio modify -name="blowfish" -price=394.08
+select_prio select 978-1-366-32894-6
+modify_prio modify -name="Yvette" -keyword="Osborne|ergative|sunset"
+select_prio select 978-1-884479-78-6
+modify_prio modify -name="ferry" -author="KimberlyCross" -keyword="extrapolate|paw|tram|Schuylkill" -price=129.36
+select_prio select 978-1-320-37297-8
+modify_prio modify -name="accrual" -author="RickyBaker" -keyword="tram" -price=311.92
+buy:book is not found buy 978-1-267-48091-0 1
+select_prio select 978-1-339-30713-8
+modify_prio modify -name="urban" -author="SamanthaDuarte" -keyword="scary"
+buy:book is not found buy 978-0-7435-9998-6 1
+select_prio select 978-0-12-301238-8
+modify_prio modify -name="affectionate" -author="RickyBaker"
+select_prio select 978-1-325-50575-3
+modify_prio modify -name="apprehend" -author="KimberlyCross" -keyword="deliquesce|Schuylkill|Osborne" -price=409.58
+buy:book is not found buy 978-0-393-65758-6 1
+buy:book is not found buy 978-1-70023-462-9 1
+select_prio select 978-0-426-86905-4
+modify_prio modify -name="entropy" -author="MarieAdkins" -keyword="numeral|extrapolate|scary|ergative" -price=410.63

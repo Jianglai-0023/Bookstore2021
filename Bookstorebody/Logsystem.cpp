@@ -1,7 +1,7 @@
 #include"LogSystem.h"
 #include"lubang.h"
-//LogSystem::LogSystem(): file_finance_data("./rundata/finance_data") {}
-LogSystem::LogSystem(): file_finance_data("./finance_data") {}
+LogSystem::LogSystem(): file_finance_data("./rundata/finance_data") {}
+//LogSystem::LogSystem(): file_finance_data("./finance_data") {}
 
 Finance::Finance(float money):money_(money) {}
 Finance::Finance(){};
@@ -45,14 +45,16 @@ void LogSystem::ShowFinance(int time) {
         }
     }
     cout << '+' << ' ' ;
-    if(input != int(input) && (int(input * 100) % 10) == 0) cout << input<<'0';
-    else if(input == int(input)) cout << input <<".00";
-    else cout << input;
+    cout << setiosflags(std::ios::fixed) << setprecision(2) << input << endl;
+//    if(input != int(input) && (int(input * 100) % 10) == 0) cout << input<<'0';
+//    else if(input == int(input)) cout << input <<".00";
+//    else cout << input;
     cout << ' ' << '-' << ' ' ;
     output*=-1;
-    if(output != int(output) && (int(output * 100) % 10) == 0) cout << output<<'0'<<endl;
-    else if(output == int(output)) cout << output <<".00"<<endl;
-    else cout << output<<endl;
+    cout << setiosflags(std::ios::fixed) << setprecision(2) << output << endl;
+//    if(output != int(output) && (int(output * 100) % 10) == 0) cout << output<<'0'<<endl;
+//    else if(output == int(output)) cout << output <<".00"<<endl;
+//    else cout << output<<endl;
 }
 
 void LogSystem::remove() {

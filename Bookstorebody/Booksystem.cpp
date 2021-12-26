@@ -4,12 +4,12 @@
 #include"Booksystem.h"
 #include"lubang.h"
 
-//BookSystem::BookSystem() : file_book_data("./rundata/book_data"), file_isbn_index("./rundata/isbn_index"),
-//                           file_author_index("./rundata/author_index"),
-//                           file_keyword_index("./rundata/keyword_index"), file_name_index("./rundata/name_index") {}
-BookSystem::BookSystem() : file_book_data("./book_data"), file_isbn_index("./isbn_index"),
-                           file_author_index("./author_index"),
-                           file_keyword_index("./keyword_index"), file_name_index("./name_index") {}
+BookSystem::BookSystem() : file_book_data("./rundata/book_data"), file_isbn_index("./rundata/isbn_index"),
+                           file_author_index("./rundata/author_index"),
+                           file_keyword_index("./rundata/keyword_index"), file_name_index("./rundata/name_index") {}
+//BookSystem::BookSystem() : file_book_data("./book_data"), file_isbn_index("./isbn_index"),
+//                           file_author_index("./author_index"),
+//                           file_keyword_index("./keyword_index"), file_name_index("./name_index") {}
 
 Book::Book(string isbn) {
     strcpy(isbn_, isbn.c_str());
@@ -48,8 +48,8 @@ float BookSystem::StringTofloat(string q) {
         ans *= 10;
         ans += q[i] - '0';
     }
-    if(n == 1) ans/=10;
-    else if(n == 2) ans /= 100;
+    if (n == 1) ans /= 10;
+    else if (n == 2) ans /= 100;
 //    cout << "testdouble" << ans << endl;
 //    cout << q <<' ' << n<< endl;
     return ans;
@@ -81,9 +81,13 @@ void BookSystem::Print(vector<Book> &res) {
         }
         if (res[i].n_ == 0) cout << '\t';
 //        if (res[i].price_ != -1) {
-            if(res[i].price_ != int(res[i].price_) && (int(res[i].price_ * 100) % 10) == 0) cout << res[i].price_<<'0' << '\t';
-            else if(res[i].price_ == int(res[i].price_)) cout << res[i].price_ <<".00" <<'\t';
-            else cout << res[i].price_  <<'\t';
+
+            cout << setiosflags(std::ios::fixed) << setprecision(2) << res[i].price_ << '\t';
+
+
+//            if(res[i].price_ != int(res[i].price_) && (int(res[i].price_ * 100) % 10) == 0) cout << res[i].price_<<'0' << '\t';
+//            else if(res[i].price_ == int(res[i].price_)) cout << res[i].price_ <<".00" <<'\t';
+//            else cout << res[i].price_  <<'\t';
 //        } else {
 //            cout << '\t';
 //        }
@@ -179,10 +183,11 @@ float BookSystem::Buy(string isbn, int quantity) {
     } else throw Book_error("buy:book is not enough");
     float p = quantity * buybook.price_;
 //    cout << p << "&&&"<< endl;
-    if(p == 0) cout << "0.00" << endl;
-    else if(p != int(p) && (int(p * 100) % 10) == 0) cout << p<<'0' << endl;
-    else if(p == int(p)) cout << p <<".00" <<endl;
-    else cout << p  <<endl;
+    cout << setiosflags(std::ios::fixed) << setprecision(2) << p << endl;
+//    if (p == 0) cout << "0.00" << endl;
+//    else if (p != int(p) && (int(p * 100) % 10) == 0) cout << p << '0' << endl;
+//    else if (p == int(p)) cout << p << ".00" << endl;
+//    else cout << p << endl;
     return buybook.price_ * quantity;
 }
 
@@ -208,13 +213,13 @@ void BookSystem::Modify(const vector<string> &command, int index) {//修改index
         if (command[i][1] == 'I') {
             string right = ReturnRight(command[i]);
             book_key.clear();
-            file_isbn_index.FindNode(right,book_key);
-            if(!book_key.empty() && book_key[0] != index)throw Book_error("modify:isbn is repeated");
+            file_isbn_index.FindNode(right, book_key);
+            if (!book_key.empty() && book_key[0] != index)throw Book_error("modify:isbn is repeated");
 //            if (right == bookm.isbn_) return;
-                BlockNode isbn(index, bookm.isbn_);
-                file_isbn_index.DeleteNode(isbn);
-                BlockNode newisbn(index, right);
-                file_isbn_index.AddNode(newisbn);
+            BlockNode isbn(index, bookm.isbn_);
+            file_isbn_index.DeleteNode(isbn);
+            BlockNode newisbn(index, right);
+            file_isbn_index.AddNode(newisbn);
             strcpy(bookm.isbn_, right.c_str());
         } else if (command[i][1] == 'a') {
             string right = ReturnRight(command[i]);
@@ -223,27 +228,27 @@ void BookSystem::Modify(const vector<string> &command, int index) {//修改index
                 BlockNode author(index, right);
                 file_author_index.AddNode(author);
             } else {
-                        BlockNode author(index,bookm.author_);
-                        file_author_index.DeleteNode(author);
-                        BlockNode newauthor(index, right);
-                        file_author_index.AddNode(newauthor);
-                    }
+                BlockNode author(index, bookm.author_);
+                file_author_index.DeleteNode(author);
+                BlockNode newauthor(index, right);
+                file_author_index.AddNode(newauthor);
+            }
             strcpy(bookm.author_, right.c_str());
         } else if (command[i][1] == 'p') {
             bookm.price_ = StringTofloat(ReturnRight(command[i]));
         } else if (command[i][1] == 'n') {
             string right = ReturnRight(command[i]);
             //维护blocklist
-            if(bookm.name_ == right) break;
+            if (bookm.name_ == right) break;
             if (bookm.name_[0] == '\0') {
                 BlockNode name(index, right);
                 file_name_index.AddNode(name);
             } else {
-                        BlockNode name(index, bookm.name_);
-                        file_name_index.DeleteNode(name);
-                        BlockNode newname(index, right);
-                        file_name_index.AddNode(newname);
-                    }
+                BlockNode name(index, bookm.name_);
+                file_name_index.DeleteNode(name);
+                BlockNode newname(index, right);
+                file_name_index.AddNode(newname);
+            }
             strcpy(bookm.name_, right.c_str());
         } else if (command[i][1] == 'k') {
             vector<string> word;
@@ -251,9 +256,9 @@ void BookSystem::Modify(const vector<string> &command, int index) {//修改index
 
             for (int j = 0; j < bookm.n_; ++j) {
                 string s = bookm.keyword_[j];
-                        BlockNode keyword(index, s);
-                        file_keyword_index.DeleteNode(keyword);
-                    }
+                BlockNode keyword(index, s);
+                file_keyword_index.DeleteNode(keyword);
+            }
             for (int j = 0; j < word.size(); ++j) {
                 BlockNode newkeyword(index, word[j]);
                 file_keyword_index.AddNode(newkeyword);
