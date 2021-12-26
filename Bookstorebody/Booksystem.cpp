@@ -4,12 +4,12 @@
 #include"Booksystem.h"
 #include"lubang.h"
 
-BookSystem::BookSystem() : file_book_data("./rundata/book_data"), file_isbn_index("./rundata/isbn_index"),
-                           file_author_index("./rundata/author_index"),
-                           file_keyword_index("./rundata/keyword_index"), file_name_index("./rundata/name_index") {}
-//BookSystem::BookSystem() : file_book_data("./book_data"), file_isbn_index("./isbn_index"),
-//                           file_author_index("./author_index"),
-//                           file_keyword_index("./keyword_index"), file_name_index("./name_index") {}
+//BookSystem::BookSystem() : file_book_data("./rundata/book_data"), file_isbn_index("./rundata/isbn_index"),
+//                           file_author_index("./rundata/author_index"),
+//                           file_keyword_index("./rundata/keyword_index"), file_name_index("./rundata/name_index") {}
+BookSystem::BookSystem() : file_book_data("./book_data"), file_isbn_index("./isbn_index"),
+                           file_author_index("./author_index"),
+                           file_keyword_index("./keyword_index"), file_name_index("./name_index") {}
 
 Book::Book(string isbn) {
     strcpy(isbn_, isbn.c_str());
