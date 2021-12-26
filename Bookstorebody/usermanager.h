@@ -77,5 +77,7 @@ public:
     void UserSelectBook(int book_index);
 
     int BookNow();
+
+    void remove();
 };
 #endif //BOOKSTORE_USERMANAGER_H

@@ -91,6 +91,8 @@ public:
 
     float StringTofloat(string q);
 
+    void remove();
+
 };
 
 

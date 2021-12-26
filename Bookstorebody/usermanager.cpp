@@ -27,17 +27,23 @@ User::User(string id, string password, int priority, string name) {
 
 User::User() {}
 
-Usersystem::Usersystem() : file_user_data("./user_data"), file_user_index("./user_index") {
-    User root("root", "sjtu", 7, "root");
-    BlockNode root_;
-    strcpy(root_.str, "root");
-    root_.position = file_user_data.Add(root);
-    file_user_index.AddNode(root_);
+Usersystem::Usersystem() : file_user_data("./rundata/user_data"), file_user_index("./rundata/user_index") {
+    users_key.clear();
+    file_user_index.FindNode("root",users_key);
+    if(users_key.empty()){
+        User root("root", "sjtu", 7, "root");
+        BlockNode root_;
+        strcpy(root_.str, "root");
+        root_.position = file_user_data.Add(root);
+        file_user_index.AddNode(root_);
+        file_user_data.Add(root);
+    }
+//    cout << sizeof(User) << "@@@@"? << endl;
     //debug
 //    vector<int> debug;
 //    file_user_index.FindNode("root", debug);
 //    cout << "test root" << debug[0] << endl;
-    file_user_data.Add(root);
+
 };
 
 int Usersystem::BookNow() {
@@ -61,9 +67,11 @@ void Usersystem::Su(string user_ID, string password) {
     UserSelect user_select;
     users_key.clear();
     file_user_index.FindNode(user_ID, users_key);
+
     if (users_key.empty()) throw Book_error("su: user unexisted");
     file_user_data.Read(user_be_sued, users_key[0]);
     //check passwd
+//    cout <<"#"<< users_key[0] << "#\n";
     if (Tell_priority() > user_be_sued.priority_) {
         strcpy(user_select.ID, user_ID.c_str());
         user_select.priority = user_be_sued.priority_;
@@ -74,7 +82,15 @@ void Usersystem::Su(string user_ID, string password) {
         user_select.priority = user_be_sued.priority_;
         user_select.index_user = users_key[0];
         user_select_.push_back(user_select);
-    } else throw Book_error("su: wrong passwd");
+    } else{
+//        cout << users_key.size() << ' ' << "&&&" << endl;
+//        users_key.clear();
+//        file_user_index.FindNode("wFZrr6",users_key);
+//        cout << "&&" << users_key.size() << ' ' << users_key[0] << "&&" << endl;
+//        cout << "right passwd" << user_be_sued.password_ <<' ' << user_be_sued.ID_<<' '<< user_be_sued.name_<<endl;
+//        cout << user_ID << "QWQ" << endl;
+        throw Book_error("su: wrong passwd");
+    }
 };
 
 void Usersystem::Logout() {
@@ -94,6 +110,7 @@ void Usersystem::Register(string user_ID, string password, string user_name) {
 }
 
 void Usersystem::Passwd(string user_ID, string new_password, string old_password) {
+//    cout << "here";
     users_key.clear();
     file_user_index.FindNode(user_ID, users_key);
     if (users_key.empty()) throw Book_error("passwd: no user find");
@@ -103,8 +120,9 @@ void Usersystem::Passwd(string user_ID, string new_password, string old_password
         strcpy(user_passwd.password_, new_password.c_str());
         file_user_data.Write(user_passwd, users_key[0]);
     } else {
+//        cout << user_passwd.password_ << "%%%" << endl;
         if (old_password == "") throw Book_error("passwd: need old passwd");
-        if (strcmp(user_passwd.password_, old_password.c_str()) == 0) {
+        else if (strcmp(user_passwd.password_, old_password.c_str()) == 0) {
             strcpy(user_passwd.password_, new_password.c_str());
             file_user_data.Write(user_passwd, users_key[0]);
         } else throw Book_error("passwd: wrong passwd");
@@ -119,7 +137,7 @@ void Usersystem::UserAdd(string user_ID, string password, string priority, strin
 //cout << priority_now << "here" <<endl;
     if (priority_now <= p_new - '0') throw Book_error("useradd: low priority");
     else {
-        UserSelect add_user;
+//        UserSelect add_user;
         users_key.clear();
         file_user_index.FindNode(user_ID, users_key);
         if (users_key.empty()) {
@@ -150,4 +168,16 @@ void Usersystem::Delete(string user_ID) {
 void Usersystem::UserSelectBook(int book_index) {
     user_select_[user_select_.size() - 1].index_book = book_index;
     user_select_[user_select_.size() - 1].bookselected_ = true;
+}
+
+void Usersystem::remove() {
+    file_user_index.remove();
+    file_user_data.remove();
+    User root("root", "sjtu", 7, "root");
+    BlockNode root_;
+    strcpy(root_.str, "root");
+    root_.position = file_user_data.Add(root);
+    file_user_index.AddNode(root_);
+
+    file_user_index.Test(8);
 }

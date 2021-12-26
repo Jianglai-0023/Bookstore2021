@@ -35,6 +35,10 @@ lubang.h
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/Booksystem.h
 iostream
 -
+cstring
+-
+algorithm
+-
 file.h
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
 blocklist.h
@@ -86,22 +90,6 @@ LogSystem.h
 lubang.h
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h
 
-/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.cpp
-blocklist.h
-/Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
-cstring
--
-fstream
--
-algorithm
--
-cstring
--
-vector
--
-iostream
--
-
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/blocklist.h
 fstream
 -
@@ -110,6 +98,10 @@ vector
 
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/file.h
 fstream
+-
+cstring
+-
+iostream
 -
 
 /Users/jianglai/Desktop/Bookstore/Bookstorebody/lubang.h

@@ -2,6 +2,8 @@
 #define BOOKSTORE_FILE_H
 #include<fstream>
 #include<cstring>
+#include<iostream>
+//#include"usermanager.h"
 using namespace std;
 template<class T, int n = 1>
 class File{
@@ -9,6 +11,7 @@ private:
     fstream file;
     const string file_name_;
     int sizeofInt = sizeof(int);
+    int sizeofT = sizeof(T);
 public:
 
     File(string file_name):file_name_(file_name){
@@ -16,6 +19,12 @@ public:
     };
 ~File(){
     file.close();
+}
+void remove(){
+//    file.close();
+//    file.open(file_name_,ios::out);
+//    file.close();
+//    file.open(file_name_);
 }
     void Initialize(){
         file.open(file_name_);
@@ -45,10 +54,13 @@ public:
     int Add(T &value){
         int tmp;
         int index;
-        ReadInfo(tmp);
-        index = tmp * sizeof(T) + sizeofInt;
+//        ReadInfo(tmp);
+//        index = tmp * sizeof(T) + sizeofInt;
+//        cout << tmp << "$tmp$ " << index << " " << sizeofT << "%sizeofT%" << endl;
+
 //        file.open(file_name_);
-        file.seekg(index);
+        file.seekp(0,ios::end);
+        index = file.tellp();
         file.write(reinterpret_cast<char *>(&value),sizeof(T));
         ++tmp;
 //        file.close();

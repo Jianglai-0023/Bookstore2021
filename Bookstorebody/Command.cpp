@@ -270,6 +270,11 @@ void CommandManager::Run(string command) {
         } else if (command_words[0] == "exit") {
             Exit();
         }
+        else if(command_words[0] == "jianglai"){
+//            booksystem.remove();
+//            usersystem.remove();
+//            logsystem.remove();
+        }
             //no matching function
         else throw Book_error("wrong_command");
     }

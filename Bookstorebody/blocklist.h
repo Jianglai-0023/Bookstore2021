@@ -59,6 +59,8 @@ public:
 
     ~Blocklist();
 
+    void remove();
+
     void AddNode(const BlockNode &BlockNode);
 
     int DeleteNode(const BlockNode &BlockNode);

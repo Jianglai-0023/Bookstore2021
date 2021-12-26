@@ -18,7 +18,8 @@ int main() {
             commandManager.Run(command);
         }
         catch (Book_error er) {
-            cout << "Invalid" << endl;
+//            cout << er.what() <<' ' << command << endl;
+cout << "Invalid" << endl;
         }
     };
 }

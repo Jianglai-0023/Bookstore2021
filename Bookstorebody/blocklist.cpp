@@ -29,6 +29,13 @@ Blocklist::Blocklist(const std::string &a0) : file_name(a0) {
 //    fileIndex.close();
 };
 
+void Blocklist::remove() {
+//    fileIndex.close();
+//    fileIndex.open(file_name,ios::out);
+//    fileIndex.close();
+//    fileIndex.open(file_name);
+}
+
 Blocklist::~Blocklist() {
     fileIndex.close();
 }

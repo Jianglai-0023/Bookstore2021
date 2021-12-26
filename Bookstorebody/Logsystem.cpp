@@ -1,6 +1,6 @@
 #include"LogSystem.h"
 #include"lubang.h"
-LogSystem::LogSystem(): file_finance_data("finance_data") {}
+LogSystem::LogSystem(): file_finance_data("./rundata/finance_data") {}
 
 Finance::Finance(float money):money_(money) {}
 Finance::Finance(){};
@@ -51,4 +51,8 @@ void LogSystem::ShowFinance(int time) {
     if(output != int(output) && (int(output * 100) % 10) == 0) cout << output<<'0'<<endl;
     else if(output == int(output)) cout << output <<".00"<<endl;
     else cout << output<<endl;
+}
+
+void LogSystem::remove() {
+//    file_finance_data.remove();
 }

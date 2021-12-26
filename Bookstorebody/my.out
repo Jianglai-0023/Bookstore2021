@@ -1,0 +1,66 @@
+select_prio select 978-0-261-70065-9
+modify_prio modify -name="heterozygous" -author="BryanJohnson" -keyword="withheld|Watkins" -price=27.26
+select_prio select 978-1-211-33099-5
+modify_prio modify -name="volatile" -author="TiffanyBrown" -keyword="denizen|purslane|grandniece|incessant" -price=118.71
+select_prio select 978-1-72007-969-9
+modify_prio modify -name="reverend" -author="NathanielOdom" -keyword="withheld" -price=476.47
+buy:book is not found buy 978-1-112-77091-3 1
+buy:book is not found buy 978-0-561-27243-6 1
+select_prio select 978-0-7827-9310-9
+modify_prio modify -name="climactic" -keyword="tulle|greenwood|incessant"
+978-0-280-51417-6	mockernut	ZacharySilva	hiatus|frigate|nutritious|douse|tulle	228.61	0
+978-0-388-60682-7	phase	ZacharySilva	hiatus|purslane|withheld	48.90	0
+978-0-427-96596-0	ignorant	AmandaDean	hiatus|douse|nutritious|grandniece	448.73	0
+978-0-601-41528-1	salaam	MckenzieWhite	hiatus	351.99	2
+978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
+978-0-88211-570-2	category	AmandaDean	frigate|hiatus|Syria	311.12	0
+978-0-89779-874-7	Irishmen	MckenzieWhite	Watkins|hiatus|incessant	191.68	6
+978-1-261-59338-8	Methuselah	RavenHancock	hiatus|grandniece|incessant|tulle|Syria	250.79	0
+978-1-59466-314-7	framework	MckenzieWhite	hiatus|purslane	422.34	0
+978-1-59999-417-8	gear		purslane|hiatus	379.86	0
+select_prio select 978-0-89230-182-9
+modify_prio modify -name="Ponce" -author="AmandaDean" -keyword="purslane|grandniece|withheld|douse" -price=155.38
+978-0-280-51417-6	mockernut	ZacharySilva	hiatus|frigate|nutritious|douse|tulle	228.61	0
+978-0-388-60682-7	phase	ZacharySilva	hiatus|purslane|withheld	48.90	0
+978-0-427-96596-0	ignorant	AmandaDean	hiatus|douse|nutritious|grandniece	448.73	0
+978-0-601-41528-1	salaam	MckenzieWhite	hiatus	351.99	2
+978-0-641-43198-2	not	MckenzieWhite	Syria|tulle|frigate|hiatus	359.46	0
+978-0-88211-570-2	category	AmandaDean	frigate|hiatus|Syria	311.12	0
+978-0-89779-874-7	Irishmen	MckenzieWhite	Watkins|hiatus|incessant	191.68	6
+978-1-261-59338-8	Methuselah	RavenHancock	hiatus|grandniece|incessant|tulle|Syria	250.79	0
+978-1-59466-314-7	framework	MckenzieWhite	hiatus|purslane	422.34	0
+978-1-59999-417-8	gear		purslane|hiatus	379.86	0
+select_prio select 978-1-261-59338-8
+modify_prio modify -author="NathanielOdom" -keyword="douse|bianco" -price=285.96
+
+select_prio select 978-1-66922-045-9
+modify_prio modify -author="JonathanAdams" -keyword="nutritious" -price=284.73
+select_prio select 978-1-81009-001-6
+modify_prio modify -author="RavenHancock" -price=222.87
+select_prio select 978-0-19-936062-8
+modify_prio modify -name="grapple" -author="AmandaDean" -price=12.06
+buy:book is not found buy 978-0-257-68321-8 1
+select_prio select 978-1-59999-417-8
+modify_prio modify -name="quetzal" -author="TiffanyBrown" -price=448.47
+buy:book is not found buy 978-1-931511-66-7 1
+buy:book is not found buy 978-0-910531-00-9 1
+978-1-72026-968-7	contradistinguish	JonathanAdams	grandniece|tulle	358.04	3
+select_prio select 978-1-70610-796-5
+modify_prio modify -name="apprise" -author="MckenzieWhite" -keyword="Syria" -price=120.89
+buy:book is not found buy 978-0-89230-182-9 1
+buy:book is not found buy 978-0-16-491400-9 1
+buy:book is not found buy 978-1-74922-767-5 1
+select_prio select 978-1-4131-2784-3
+modify_prio modify -name="extreme" -keyword="greenwood|hiatus"
+buy:book is not enough buy 978-1-07-334578-6 1
+
+buy:book is not enough buy 978-0-09-047259-8 1
+select_prio select 978-0-89230-182-9
+modify_prio modify -name="shipyard" -author="RavenHancock" -keyword="withheld|incessant|greenwood"
+buy:book is not found buy 978-0-455-86870-7 1
+select_prio select 978-1-373-78087-4
+modify_prio modify -name="cantor" -author="AmandaDean" -keyword="lordosis|Syria|Watkins" -price=447.46
+978-0-601-41528-1	salaam	MckenzieWhite	hiatus	351.99	2
+978-1-72026-968-7	contradistinguish	JonathanAdams	grandniece|tulle	358.04	3
+select_prio select 978-0-644-55391-9
+modify_prio modify -name="Chisholm" -author="BryanJohnson" -keyword="hiatus|purslane|lordosis|frigate|tulle" -price=168.07

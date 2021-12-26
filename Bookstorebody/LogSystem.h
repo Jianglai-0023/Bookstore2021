@@ -19,6 +19,8 @@ public:
     void ShowFinance(int time = -1);
 
     void AddFinance(float money);
+
+    void remove();
 };
 
 #endif //BOOKSTORE_LOGSYSTEM_H
