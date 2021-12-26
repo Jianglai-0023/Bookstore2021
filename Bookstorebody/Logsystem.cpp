@@ -2,7 +2,7 @@
 #include"lubang.h"
 //LogSystem::LogSystem(): file_finance_data("./rundata/finance_data") {}
 LogSystem::LogSystem(): file_finance_data("./finance_data") {}
-
+//
 Finance::Finance(double money):money_(money) {}
 Finance::Finance(){};
 
@@ -51,8 +51,12 @@ void LogSystem::ShowFinance(int time) {
 //    else if(input == int(input)) cout << input <<".00";
 //    else cout << input;
     cout << ' ' << '-' << ' ' ;
-    output*=-1;
-    cout << setiosflags(std::ios::fixed) << setprecision(2) << output << endl;
+    if(output == 0) cout << "0.00"<< endl;
+    else{
+        output*=-1;
+        cout << setiosflags(std::ios::fixed) << setprecision(2) << output << endl;
+    }
+
 //    if(output != int(output) && (int(output * 100) % 10) == 0) cout << output<<'0'<<endl;
 //    else if(output == int(output)) cout << output <<".00"<<endl;
 //    else cout << output<<endl;
