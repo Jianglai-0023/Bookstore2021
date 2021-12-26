@@ -60,11 +60,17 @@ void BookSystem::ReturnKeyWord(string s, std::vector<string> &word) {
     word.clear();
     for (int i = 0; i < s.length(); ++i) {
         if (s[i] == '|') {
+            for(int j = 0; j < word.size(); ++j){
+                if(key == word[j]) throw Book_error("modify: keyword repeated");
+            }
             word.push_back(key);
             key.clear();
             continue;
         }
         key += s[i];
+    }
+    for(int j = 0; j < word.size(); ++j){
+        if(key == word[j]) throw Book_error("modify: keyword repeated");
     }
     word.push_back(key);
 }
@@ -206,7 +212,7 @@ void BookSystem::Modify(const vector<string> &command, int index) {//修改index
             string right = ReturnRight(command[i]);
             book_key.clear();
             file_isbn_index.FindNode(right, book_key);
-            if (!book_key.empty() && book_key[0] != index)throw Book_error("modify:isbn is repeated");
+            if (!book_key.empty())throw Book_error("modify:isbn is repeated");
 //            if (right == bookm.isbn_) return;
             BlockNode isbn(index, bookm.isbn_);
             file_isbn_index.DeleteNode(isbn);

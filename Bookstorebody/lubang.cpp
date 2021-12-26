@@ -19,6 +19,14 @@ bool Lubang::checkWord(const char c, int n) {
         if (c >= '0' && c <= '9') return true;
         return false;
     }
+    else if(n == 3){
+        if(int(c) >= 36 && int(c) <= 126 && c != '"') return true;
+        return false;
+    }
+    else if(n == 4){
+        if(c >= '0' && c <= '9' || c == '.') return true;
+        return false;
+    }
 }
 
 bool Lubang::checkSentence(const vector<string> sentence) {
@@ -110,6 +118,23 @@ bool Lubang::checkSentence(const vector<string> sentence) {
     } else if (sentence[0] == "modify") {
         return true;
     } else if (sentence[0] == "import") {
+        if(sentence.size() != 3) return false;
+        check = sentence[1];
+        if (check.length()  >10 ) return false;
+        for(int j = 0; j< check.length(); ++j){
+            if(!checkWord(check[j],2)) return false;
+        }
+        check = sentence[2];
+        if(check.length() > 13) return false;
+        bool flag = true;
+        for(int j = 0; j < check.length(); ++j){
+            if(check[j] == '.' && flag){
+                flag = false;
+            }
+            else if(check[j] == '.' && !flag) return false;
+            if(!checkWord(check[j],4)) return false;
+        }
+//        if(flag) return false;
         return true;
     }
         //LogSystem

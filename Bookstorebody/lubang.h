@@ -27,8 +27,10 @@ class Lubang{
 public:
     bool checkSentence(const vector<string> sentence);
     /* n == 0 ID,Passwd,
-     * n == 1 UserName
-     * n == 2 priority;
+     * n == 1 UserName,ISBN
+     * n == 2 priority,quantity;
+     * n == 3 bookname,author,keyword
+     * n == 4 price,total-cost
      * */
     bool checkWord(const char c, int n);
 };
