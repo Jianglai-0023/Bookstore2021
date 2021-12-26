@@ -45,7 +45,7 @@ void LogSystem::ShowFinance(int time) {
         }
     }
     cout << '+' << ' ' ;
-    cout << setiosflags(std::ios::fixed) << setprecision(2) << input << endl;
+    cout << setiosflags(std::ios::fixed) << setprecision(2) << input;
 //    if(input != int(input) && (int(input * 100) % 10) == 0) cout << input<<'0';
 //    else if(input == int(input)) cout << input <<".00";
 //    else cout << input;
