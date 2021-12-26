@@ -4,6 +4,7 @@
 #include<iostream>
 #include"file.h"
 #include"blocklist.h"
+#include<iomanip>
 class Finance{
 public:
     float money_;
