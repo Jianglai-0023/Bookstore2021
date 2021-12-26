@@ -54,7 +54,7 @@ void remove(){
     int Add(T &value){
         int tmp;
         int index;
-//        ReadInfo(tmp);
+        ReadInfo(tmp);
 //        index = tmp * sizeof(T) + sizeofInt;
 //        cout << tmp << "$tmp$ " << index << " " << sizeofT << "%sizeofT%" << endl;
 

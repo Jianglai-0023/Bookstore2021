@@ -7,6 +7,7 @@ Finance::Finance(float money):money_(money) {}
 Finance::Finance(){};
 
 void LogSystem::AddFinance(float money) {
+//    cout << "add finance" << money
     Finance f(money);
     file_finance_data.Add(f);
 }
