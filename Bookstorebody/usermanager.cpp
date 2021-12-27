@@ -79,7 +79,6 @@ void Usersystem::Su(string user_ID, string password) {
     if (users_key.empty()) throw Book_error("su: user unexisted");
     file_user_data.Read(user_be_sued, users_key[0]);
     //check passwd
-//    cout <<"#"<< users_key[0] << "#\n";
     if (Tell_priority() > user_be_sued.priority_) {
         strcpy(user_select.ID, user_ID.c_str());
         user_select.priority = user_be_sued.priority_;
@@ -91,12 +90,6 @@ void Usersystem::Su(string user_ID, string password) {
         user_select.index_user = users_key[0];
         user_select_.push_back(user_select);
     } else{
-//        cout << users_key.size() << ' ' << "&&&" << endl;
-//        users_key.clear();
-//        file_user_index.FindNode("wFZrr6",users_key);
-//        cout << "&&" << users_key.size() << ' ' << users_key[0] << "&&" << endl;
-//        cout << "right passwd" << user_be_sued.password_ <<' ' << user_be_sued.ID_<<' '<< user_be_sued.name_<<endl;
-//        cout << user_ID << "QWQ" << endl;
         throw Book_error("su: wrong passwd");
     }
 };
@@ -118,7 +111,6 @@ void Usersystem::Register(string user_ID, string password, string user_name) {
 }
 
 void Usersystem::Passwd(string user_ID, string new_password, string old_password) {
-//    cout << "here";
     users_key.clear();
     file_user_index.FindNode(user_ID, users_key);
     if (users_key.empty()) throw Book_error("passwd: no user find");
@@ -128,7 +120,6 @@ void Usersystem::Passwd(string user_ID, string new_password, string old_password
         strcpy(user_passwd.password_, new_password.c_str());
         file_user_data.Write(user_passwd, users_key[0]);
     } else {
-//        cout << user_passwd.password_ << "%%%" << endl;
         if (old_password == "") throw Book_error("passwd: need old passwd");
         else if (strcmp(user_passwd.password_, old_password.c_str()) == 0) {
             strcpy(user_passwd.password_, new_password.c_str());
@@ -140,12 +131,8 @@ void Usersystem::Passwd(string user_ID, string new_password, string old_password
 void Usersystem::UserAdd(string user_ID, string password, string priority, string user_name) {
     int priority_now = Tell_priority();
     char p_new = priority[0];
-//    strcpy(p,priority.c_str());
-//cout << p_new - '0' << "&&" << endl;
-//cout << priority_now << "here" <<endl;
     if (priority_now <= p_new - '0') throw Book_error("useradd: low priority");
     else {
-//        UserSelect add_user;
         users_key.clear();
         file_user_index.FindNode(user_ID, users_key);
         if (users_key.empty()) {
@@ -178,14 +165,3 @@ void Usersystem::UserSelectBook(int book_index) {
     user_select_[user_select_.size() - 1].bookselected_ = true;
 }
 
-void Usersystem::remove() {
-    file_user_index.remove();
-    file_user_data.remove();
-    User root("root", "sjtu", 7, "root");
-    BlockNode root_;
-    strcpy(root_.str, "root");
-    root_.position = file_user_data.Add(root);
-    file_user_index.AddNode(root_);
-
-    file_user_index.Test(8);
-}

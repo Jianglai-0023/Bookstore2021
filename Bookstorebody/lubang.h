@@ -29,9 +29,18 @@ public:
     /* n == 0 ID,Passwd,
      * n == 1 UserName,ISBN
      * n == 2 priority,quantity;
-     * n == 3 bookname,author,keyword
+     * n == 3 bookname,author
      * n == 4 price,total-cost
+     * n == 5 keyword
      * */
     bool checkWord(const char c, int n);
+
+    string ReturnLeft(string s);
+
+    string ReturnRight(string s);
+
+    void ReturnKeyWord(string s, std::vector<string> &word);
+
+    double StringTodouble(string q);
 };
 #endif //BOOKSTORE_LUBANG_H
