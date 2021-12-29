@@ -332,7 +332,7 @@ bool Lubang::checkSentence(const vector<string> sentence) {
         return true;
     } else if (sentence[0] == "show") {
         if(sentence[1] != "finance") return false;
-        if(sentence.size() != 3 || sentence.size() != 2) return false;
+        if(sentence.size() != 3 && sentence.size() != 2) return false;
         if(sentence.size() == 3){
             check = sentence[2];
             if(check.length() > 10) return false;
