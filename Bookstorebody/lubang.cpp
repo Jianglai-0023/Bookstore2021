@@ -75,21 +75,26 @@ void Lubang::ReturnKeyWord(string s, std::vector<string> &word) {
 bool Lubang::checkWord(const char c, int n) {
     if (n == 0) {
         if (c >= '0' && c <= '9' || c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c == '_') return true;
+        if(c == ' ') return false;
         return false;
     }
     if (n == 1) {
-        if (int(c) >= 36 && int(c) <= 126) return true;
+        if (!iscntrl(c)) return true;
+        if(c == ' ') return false;
         return false;
     } else if (n == 2) {
         if (c >= '0' && c <= '9') return true;
+        if(c == ' ') return false;
         return false;
     }
     else if(n == 3){
-        if(int(c) >= 36 && int(c) <= 126 && c != '"') return true;
+        if(!iscntrl(c) && c != '"') return true;
+        if(c == ' ') return false;
         return false;
     }
     else if(n == 4){
         if(c >= '0' && c <= '9' || c == '.') return true;
+        if(c == ' ') return false;
         return false;
     }
 }

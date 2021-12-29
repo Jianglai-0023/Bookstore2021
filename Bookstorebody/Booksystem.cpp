@@ -65,6 +65,8 @@ void BookSystem::ReturnKeyWord(string s, std::vector<string> &word) {
             key.clear();
             continue;
         }
+        else if(s[i] == ' ') throw("modify: blank spaces");
+//        if(s[i] == ' ') continue;
         key += s[i];
     }
     for(int j = 0; j < word.size(); ++j){
