@@ -92,7 +92,7 @@ public:
 
     double StringTodouble(string q);
 
-    void remove();
+//    string ReturnBookISBN(int index);
 
 };
 

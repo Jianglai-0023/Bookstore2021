@@ -21,7 +21,7 @@ public:
 
     int priority;
 
-//    char isbn[21];
+    char isbn_[21];
 
     int index_book;
 
@@ -74,10 +74,12 @@ public:
 
     int Tell_priority();
 
-    void UserSelectBook(int book_index);
+    void UserSelectBook(int book_index,string isbn);
 
     int BookNow();
 
-    void remove();
+    string Bookisbn();
+
+    string StaffNow();
 };
 #endif //BOOKSTORE_USERMANAGER_H

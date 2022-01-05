@@ -57,6 +57,7 @@ void remove(){
     int Add(T &value){
         file.close();
         file.open(file_name_);
+        file.clear();
         int tmp;
         int index;
         ReadInfo(tmp);
@@ -64,8 +65,9 @@ void remove(){
 //        cout << tmp << "$tmp$ " << index << " " << sizeofT << "%sizeofT%" << endl;
 
 //        file.open(file_name_);
-        file.seekp(0,ios::end);
-        index = file.tellp();
+        file.seekg(0,ios::end);
+        index = file.tellg();
+        cout << file.bad() << "&&" << endl;
         file.write(reinterpret_cast<char *>(&value),sizeof(T));
         ++tmp;
 //        file.close();
