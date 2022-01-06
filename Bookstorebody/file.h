@@ -27,7 +27,7 @@ void remove(){
 //    file.open(file_name_);
 }
     void Initialize(){
-        file.open(file_name_);
+        file.open(file_name_,ios::out|ios::in|ios::binary);
         if (!file.good()) {
             file.open(file_name_, ios::out);
             file.close();
@@ -55,19 +55,26 @@ void remove(){
 
     };
     int Add(T &value){
+        cout << file.fail() << "here"<< endl;
         file.close();
-        file.open(file_name_);
+        file.open(file_name_,ios::binary);
         file.clear();
+        cout << file.fail() << "HI"<< endl;
         int tmp;
         int index;
+        cout << file.fail() << "##" << endl;
         ReadInfo(tmp);
+        cout << file.fail() << "!!" << endl;
 //        index = tmp * sizeof(T) + sizeofInt;
 //        cout << tmp << "$tmp$ " << index << " " << sizeofT << "%sizeofT%" << endl;
 
 //        file.open(file_name_);
-        file.seekg(0,ios::end);
-        index = file.tellg();
-        cout << file.bad() << "&&" << endl;
+
+        file.seekp(0,ios::end);
+        cout << file.fail() << "**" << endl;
+        index = file.tellp();
+        cout << file.fail() << "@@" << endl;
+        cout << file.fail() << "%%" << endl;
         file.write(reinterpret_cast<char *>(&value),sizeof(T));
         ++tmp;
 //        file.close();
@@ -77,14 +84,19 @@ void remove(){
 
    void  ReadInfo(int &tmp){
 //        file.open(file_name_);
+       cout << file.fail() << "((" << endl;
         file.seekg(0);
+       cout << file.fail() << "~~" << endl;
         file.read(reinterpret_cast<char *>(&tmp),sizeofInt);
+       cout << file.fail() << "??" << endl;
 //        file.close();
     };
 
     void WriteInfo(int tmp){
 //        file.open(file_name_);
+
         file.seekg(0);
+
         file.write(reinterpret_cast<char *>(&tmp),sizeofInt);
 //        file.close();
     };

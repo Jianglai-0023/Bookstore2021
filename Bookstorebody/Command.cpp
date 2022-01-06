@@ -155,7 +155,7 @@ void CommandManager::Run(string command) {
         priority_now = usersystem.Tell_priority();
         if (command_words[0] == "su") {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("su_checkSen");
-            logsystem.AddLog(command_words[0],usersystem.StaffNow());
+//            logsystem.AddLog(command_words[0],usersystem.StaffNow());
             if (command_words.size() == 2) {
                 usersystem.Su(command_words[1]);
             } else {
@@ -230,7 +230,7 @@ void CommandManager::Run(string command) {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("select_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("select_prio");
             else {
-                logsystem.AddLog(command_words[0],usersystem.StaffNow());
+//                logsystem.AddLog(command_words[0],usersystem.StaffNow());
                 cout << command_words[0] << ' ' << command_words[1] << "UUU"<< endl;
                 int index = booksystem.Select(command_words[1]);
                 cout << index;
