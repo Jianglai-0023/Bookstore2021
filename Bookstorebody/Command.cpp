@@ -230,15 +230,14 @@ void CommandManager::Run(string command) {
             if (!lubang_check.checkSentence(command_words)) throw Book_error("select_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("select_prio");
             else {
-//                logsystem.AddLog(command_words[0],usersystem.StaffNow());
-                cout << command_words[0] << ' ' << command_words[1] << "UUU"<< endl;
+                logsystem.AddLog(command_words[0],usersystem.StaffNow());
+//                cout << command_words[0] << ' ' << command_words[1] << "UUU"<< endl;
                 int index = booksystem.Select(command_words[1]);
-                cout << index;
+//                cout << index;
                 usersystem.UserSelectBook(index,command_words[1]);
             }
 
         } else if (command_words[0] == "modify") {
-            //todo
             if (!lubang_check.checkSentence(command_words)) throw Book_error("modify_checkSen");
             if (!CheckPriority(command_words[0])) throw Book_error("modify_prio");
             else {
@@ -276,6 +275,7 @@ void CommandManager::Run(string command) {
                 }
                 else {
                     logsystem.AddLog("report myself🎗",usersystem.StaffNow());
+//                    cout << usersystem.StaffNow()<< endl;
                     logsystem.ReportMe(usersystem.StaffNow());
                 }
 

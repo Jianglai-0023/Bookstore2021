@@ -63,8 +63,8 @@ void LogSystem::ShowFinance(int time) {
     strcpy(ID_,ID.c_str());
     strcpy(command_,command.c_str());
 }
-void LogSystem::AddLog(string staff, string command) {
-    if(command == "") return;
+void LogSystem::AddLog(string command, string staff) {
+    if(staff == "") return;
     Staff newstaff(staff,command);
     int index = file_staff_data.Add(newstaff);
     BlockNode node(index,staff);
@@ -81,14 +81,13 @@ void LogSystem::ReportFinance() {
         Finance f;
         file_finance_data.Read(f, index);
         index += sizeof(Finance);
-        cout << f.isbn_ << '\t' << setiosflags(std::ios::fixed) << setprecision(2) << f.money_ << endl;
+        cout << f.isbn_ << '\t' << '\t' << setiosflags(std::ios::fixed) << setprecision(2) << f.money_ << endl;
     }
     cout << "📚---------------------------------📚\n";
 }
 
 void LogSystem::Report() {
-    cout << "📚Book\t" << "input/output📚" << '\n';
-    cout << "---------------------------------\n";
+    cout <<"📚-------"<< "Books" <<"-------📚" << '\n';
     int tmp;
     file_finance_data.ReadInfo(tmp);
     int index = sizeof(int);
@@ -98,9 +97,8 @@ void LogSystem::Report() {
         index += sizeof(Finance);
         cout << f.isbn_ << '\t' << setiosflags(std::ios::fixed) << setprecision(2) << f.money_ << endl;
     }
-    cout << "📚---------------------------------📚\n";
-    cout << "🥸EMPLOYEE🥸" << endl;
-    cout << "---------------------------------\n";
+    cout << "📚---------------------📚\n";
+    cout <<"🥸------"<< "EMPLOYEE" <<"------🥸"<< endl;
     file_staff_data.ReadInfo(tmp);
     index = sizeof(int);
     for (int i = 0; i < tmp; ++i) {
@@ -109,12 +107,11 @@ void LogSystem::Report() {
         index += sizeof(Staff);
         cout << st.ID_ << '\t' << st.command_ << endl;
     }
-    cout << "🥸---------------------------------🥸\n";
+    cout << "🥸--------------------🥸\n";
 }
 void LogSystem::ReportEmployee() {
     int tmp;
-    cout << "🥸EMPLOYEE🥸" << endl;
-    cout << "---------------------------------\n";
+    cout <<"------"<< "🥸EMPLOYEE🥸" <<"------"<< endl;
     file_staff_data.ReadInfo(tmp);
     int index = sizeof(int);
     for (int i = 0; i < tmp; ++i) {
@@ -123,19 +120,18 @@ void LogSystem::ReportEmployee() {
         index += sizeof(Staff);
         cout << st.ID_ << '\t' << st.command_ << endl;
     }
-    cout << "🥸---------------------------------🥸\n";
+    cout << "🥸---------------------🥸\n";
 }
 void LogSystem::ReportMe(string ID) {
 vector<int> key;
-cout << "😎EMPLOYEE-ME😎" << endl;
-cout << "---------------------------------\n";
+cout << "------😎EMPLOYEE-ME😎------" << endl;
 file_staff_index.FindNode(ID,key);
 for(int i = 0; i < key.size(); ++i){
     Staff sta;
 file_staff_data.Read(sta,key[i]);
 cout << sta.ID_ << '\t' << sta.command_ << endl;
 }
-cout << "😎---------------------------------😎\n";
+cout << "😎----------------------😎\n";
 
 }
 

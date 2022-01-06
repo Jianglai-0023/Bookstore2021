@@ -17,7 +17,7 @@ public:
     Staff(string ID, string command);
     Staff();
     char  ID_[31];
-    char command_[10];
+    char command_[20];
 };
 class LogSystem{
 private:

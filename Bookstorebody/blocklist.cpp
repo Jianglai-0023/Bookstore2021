@@ -16,11 +16,11 @@ int totalblock;
 
 
 Blocklist::Blocklist(const std::string &a0) : file_name(a0) {
-    fileIndex.open(file_name);
+    fileIndex.open(file_name,ios::out|ios::in|ios::binary);
     if (!fileIndex.good()) {
         fileIndex.open(file_name, ios::out);
         fileIndex.close();
-        fileIndex.open(file_name);
+        fileIndex.open(file_name,ios::out|ios::in|ios::binary);
         fileIndex.seekg(0);
         totalblock = 0;
         fileIndex.write(reinterpret_cast<char *>(&totalblock), sizeofInt);
@@ -143,7 +143,7 @@ void Blocklist::AddNode(const BlockNode &node) {
     Block block1, block2;
     if (totalblock == 0) {//第一个block
         fileIndex.close();
-        fileIndex.open(file_name);
+        fileIndex.open(file_name,ios::out|ios::in|ios::binary);
         block.array[block.num] = node;
         ++totalblock;
         fileIndex.seekp(0);

@@ -31,7 +31,7 @@ void remove(){
         if (!file.good()) {
             file.open(file_name_, ios::out);
             file.close();
-            file.open(file_name_);
+            file.open(file_name_,ios::out|ios::in|ios::binary);
             WriteInfo(0);
         }
 //        file.close();
@@ -40,7 +40,7 @@ void remove(){
 
     void Read(T &value, int index){
         file.close();
-        file.open(file_name_);
+        file.open(file_name_,ios::out|ios::in|ios::binary);
 //        file.open(file_name_);
         file.seekg(index);
         file.read(reinterpret_cast<char *>(&value),sizeof(T));
@@ -49,32 +49,33 @@ void remove(){
     //write:include new and change, need check;
     void Write(T &value,int index){
         file.close();
-        file.open(file_name_);
+        file.open(file_name_,ios::out|ios::in|ios::binary);
         file.seekg(index);
         file.write(reinterpret_cast<char *>(&value),sizeof(T));
 
     };
     int Add(T &value){
-        cout << file.fail() << "here"<< endl;
+//        cout << file.fail() << "here"<< endl;
         file.close();
-        file.open(file_name_,ios::binary);
+//        file.open(file_name_,ios::binary);
+        file.open(file_name_,ios::in|ios::out|ios::binary);
         file.clear();
-        cout << file.fail() << "HI"<< endl;
+//        cout << file.fail() << "HI"<< endl;
         int tmp;
         int index;
-        cout << file.fail() << "##" << endl;
+//        cout << file.fail() << "##" << endl;
         ReadInfo(tmp);
-        cout << file.fail() << "!!" << endl;
+//        cout << file.fail() << "!!" << endl;
 //        index = tmp * sizeof(T) + sizeofInt;
 //        cout << tmp << "$tmp$ " << index << " " << sizeofT << "%sizeofT%" << endl;
 
 //        file.open(file_name_);
 
         file.seekp(0,ios::end);
-        cout << file.fail() << "**" << endl;
+//        cout << file.fail() << "**" << endl;
         index = file.tellp();
-        cout << file.fail() << "@@" << endl;
-        cout << file.fail() << "%%" << endl;
+//        cout << file.fail() << "@@" << endl;
+//        cout << file.fail() << "%%" << endl;
         file.write(reinterpret_cast<char *>(&value),sizeof(T));
         ++tmp;
 //        file.close();
@@ -84,11 +85,13 @@ void remove(){
 
    void  ReadInfo(int &tmp){
 //        file.open(file_name_);
-       cout << file.fail() << "((" << endl;
+//       cout << file.fail() << "((" << endl;
         file.seekg(0);
-       cout << file.fail() << "~~" << endl;
+//       cout << file.fail() << "~~" << endl;
+//       cout << tmp << "TMP" << endl;
+//       cout << sizeofInt << endl;
         file.read(reinterpret_cast<char *>(&tmp),sizeofInt);
-       cout << file.fail() << "??" << endl;
+//       cout << file.fail() << "??" << endl;
 //        file.close();
     };
 
