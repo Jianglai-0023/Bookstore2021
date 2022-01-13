@@ -50,13 +50,12 @@ src
 // Command.h
 
 // implement command, deliver to different classes and functions
-bool Input(string command);
+void Input(string command);
 
 // exit the system
-bool Quit();
 
 // quit the system
-bool Exit();
+void Exit();
 ```
 
 ```c++
@@ -84,10 +83,10 @@ int priority;
 stack<User> users;
 
 // transfer to specified user
-bool Su(string user_ID, string password = "");
+void Su(string user_ID, string password = "");
 
 // log out
-bool Logout();
+void Logout();
 
 // register
 void Register(string user_ID, string password, string user_name);
@@ -138,23 +137,23 @@ double total_cost;
 
 Book selected;
 
-bool ShowISBN(string ISBN, vector<Book> &res);
+void ShowISBN(string ISBN, vector<Book> &res);
 
-bool ShowName(string name);
+void ShowName(string name);
 
-bool ShowAuthor(string author);
+void ShowAuthor(string author);
 
-bool ShowKeyword(string keyword);
+void ShowKeyword(string keyword);
 
-bool ShowAll();
+void ShowAll();
 
-bool buy(string ISBN, int Quantity);
+void buy(string ISBN, int Quantity);
 
-bool Select(string ISBN);
+void Select(string ISBN);
 
-bool Modify(string ISBN, string name, string author, string keyword, string price); 
+void Modify(string ISBN, string name, string author, string keyword, string price); 
 
-bool Import(int quantity, double total_cost);
+void Import(int quantity, double total_cost);
 ```
 
 ```c++
@@ -162,16 +161,16 @@ bool Import(int quantity, double total_cost);
 
 // the same format of the input command
 
-bool Report(string name);
+void Report(string name);
 ```
 
 ```c++
 // Log.h -> class Finance;
  ----
 |
-bool ShowFinance(int time = -1);
+void ShowFinance(int time = -1);
 
-bool Report();
+void Report();
 
 /*
 the format of financial statement
